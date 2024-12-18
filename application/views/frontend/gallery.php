@@ -26,7 +26,7 @@
                 <div class="col-6 col-md-4 col-lg-3 col-xl-3 mb-4">
                     <div class="card h-100 shadow-sm">
                         <!-- Display image -->
-                        <img src="<?php echo base_url('uploads/gallery/' . $gallery_items->images); ?>" alt="Gallery Image" class="img-fluid rounded">
+                        <img src="<?php echo base_url('uploads/gallery/All_images/' . $gallery_items->images); ?>" alt="Gallery Image" class="img-fluid rounded">
 
                     </div>
                 </div>

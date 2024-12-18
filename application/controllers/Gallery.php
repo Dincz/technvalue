@@ -40,6 +40,8 @@ class Gallery extends CI_Controller
         }
         // $banner['banner'] = $this->Banner_model->get_banner_by_page_name('gallerycategory'); // Adjust the page name as needed
 
+        // print_r( $data);
+        // exit;
 
         $this->load->view('frontend/gallery', $data);
     }   

@@ -17,6 +17,9 @@ class Gallery_model extends CI_Model
 
     public function get_gallery_images($category_id)
     {
+        
+        $category_id = urldecode($category_id);
+
         // Check if category_id is not null
         if ($category_id === NULL) {
             return [];  // Return empty array if category_id is null
@@ -28,9 +31,6 @@ class Gallery_model extends CI_Model
         $this->db->where('gallery_category.title', $category_id);
         $query = $this->db->get(); // Execute the query
         return $query->result(); // Fetch all the results as an array of objects
-        
-        // print_r($returnss);
-        // exit();
 
         // Check if result is null
         if ($result === NULL || !isset($result['images'])) {

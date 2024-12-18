@@ -29,7 +29,7 @@
                     <div class="card h-100 border-0 rounded-3 overflow-hidden position-relative gallery-item"
                         style="transition: all 0.3s ease;">
                         <div class="card-img background-image ratio ratio-4x3"
-                            style="background-image: url('<?php echo base_url('uploads/gallery/' . $item['background_image']); ?>');">
+                            style="background-image: url('<?php echo base_url('uploads/gallery/All_images/' . $item['background_image']); ?>');">
                         </div>
                         <div class="card-img-overlay d-flex flex-column justify-content-end p-4 text-white"
                             style="background-color: rgba(0, 0, 0, 0.1); transition: background-color 0.3s ease;">
