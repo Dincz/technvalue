@@ -57,6 +57,7 @@ $route['translate_uri_dashes'] = FALSE;
 
 //Product Routes
 $route['product-category'] = 'ProductController/productCategory';
+$route['product-category/(:num)'] = 'ProductController/productCategory/$1';
 // $route['product-detail'] = 'ProductController/productDetail';
 $route['product-detail/(:num)'] = 'ProductController/productDetail/$1';
 

@@ -281,7 +281,7 @@
                                         <!-- <li><a href="<?php echo base_url("service-details") ?>">Service Details</a></li> -->
 
                                         <li class="menu-item-has-children mega-menu-wrap">
-                                            <a href="<?php echo base_url("product-category") ?>">Products</a>
+                                            <a href="#">Products</a>
                                             <ul class="mega-menu">
                                                 <div class="row">
                                                     <?php
@@ -290,7 +290,9 @@
                                                             if (isset($category['category_name']) || isset($category['category_id'])):
                                                                 ?>
                                                                 <li class="col-3">
-                                                                    <a href="#" class="category-title">
+                                                                    <!-- Update the anchor link to redirect to the category page -->
+                                                                    <a href="<?php echo site_url('product-category/' . (isset($category['category_id']) ? $category['category_id'] : '')); ?>"
+                                                                        class="category-title">
                                                                         <?php echo isset($category['category_name']) ? $category['category_name'] : 'Category ' . $category['category_id']; ?>
                                                                     </a>
                                                                     <div class="submenu-wrapper">
@@ -305,12 +307,20 @@
                                                                                     <li
                                                                                         class="subcategory-item <?php echo $visibility_class; ?>">
                                                                                         <a href="javascript:void(0);"
-                                                                                            class="subcategory-link d-flex align-items-center"
-                                                                                            onclick="toggleProducts(this)">
-                                                                                            <span class="subcategory-name">
-                                                                                                <?php echo isset($subcategory['subcategory_name']) ? $subcategory['subcategory_name'] : 'Subcategory'; ?>
+                                                                                            class="subcategory-link d-flex align-items-center justify-content-between">
+                                                                                            <!-- Subcategory name with redirection -->
+                                                                                            <span class="subcategory-name d-flex justify-content-between">
+                                                                                                <a class="d-inline p-0"
+                                                                                                    href="<?php echo site_url('product-category/' . (isset($category['category_id']) ? $category['category_id'] : '') . '#subcategory-' . (isset($subcategory['subcategory_id']) ? $subcategory['subcategory_id'] : '')); ?>">
+                                                                                                    <?php echo isset($subcategory['subcategory_name']) ? $subcategory['subcategory_name'] : 'Subcategory'; ?>
+                                                                                                </a>
+                                                                                                <i class="fa fa-caret-down arrIcon" 
+                                                                                                style="color: black;"
+                                                                                                onclick="toggleProducts(this)"></i>
                                                                                             </span>
-                                                                                            <i class="arrow-icon"></i>
+
+                                                                                            <!-- Arrow icon with dropdown toggle action -->
+                                                                                            
                                                                                         </a>
                                                                                         <?php
                                                                                         if (isset($subcategory['products']) && is_array($subcategory['products'])):
@@ -345,6 +355,7 @@
                                                         </li>
                                                     <?php endif; ?>
                                                 </div>
+
                                             </ul>
                                         </li>
 
@@ -407,17 +418,18 @@
                                                 background: #e9e9e9;
                                             }
 
-                                            .arrow-icon {
-                                                border: solid #666;
-                                                border-width: 0 2px 2px 0;
+                                            .arrIcon {
+                                                cursor: pointer;
+                                                /* border: solid #666; */
+                                                /* border-width: 0 2px 2px 0; */
                                                 display: inline-block;
                                                 padding: 3px;
-                                                transform: rotate(45deg);
-                                                transition: transform 0.3s ease;
+                                                transform: rotate(0deg);
+                                                transition: all 0.5s ease;
                                             }
 
-                                            .subcategory-link.active .arrow-icon {
-                                                transform: rotate(-135deg);
+                                            .arrIcon:hover {
+                                                transform: rotate(360deg);
                                             }
 
                                             .products {

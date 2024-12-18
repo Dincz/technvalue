@@ -98,16 +98,16 @@ class Sub_category extends CI_Controller
     }
 
     // Delete a subcategory
-    public function delete($sc_id)
+    public function delete()
     {
-        // $sc_id = trim($this->input->post('id'));
-        echo($sc_id);
+        $sc_id = trim($this->input->post('id'));
+        // echo('hello');
+        // echo($sc_id);
         // exit;
 
         // Ensure the subcategory exists before attempting to delete
         if ($this->Sub_category_model->get_by_id($sc_id)) {
-            exit;
-            // $this->Sub_category_model->delete($sc_id);
+            $this->Sub_category_model->delete($sc_id);
             $this->session->set_flashdata('success', 'Sub Category Deleted');
         } else {
             $this->session->set_flashdata('error', 'Sub Category Not Found');

@@ -133,8 +133,8 @@ $this->load->view('admin/layout/sidebar');
                     <form method="POST" action="<?php echo base_url() ?>admin/sub_category/delete"
                         enctype="multipart/form-data">
                         <div class="modal-body">
-                            <input name="id" type="text" value="" id="deleteModalId" hidden>
-                            <div class="form-group">
+                        <input name="id" type="text" value="" id="deleteModalId" hidden>
+                        <div class="form-group">
                                 <button name="submit" type="submit" class="btn btn-danger btn-block">Delete</button>
                                 <button name="submit" type="submit" class="btn btn-outline-danger btn-block"
                                     data-dismiss="modal">No</button>
@@ -249,6 +249,7 @@ $this->load->view('admin/layout/sidebar');
                                                             class="btn btn-primary shadow btn-xs sharp mr-1"><i
                                                                 class="fa fa-pencil"></i></a>
                                                         <a href="javascript:void(0)" data-toggle="modal"
+                                                             onclick="deleteIt(<?php echo $row->sc_id; ?>)" 
                                                             data-target="#deleteOrderModalside"
                                                             data-id="<?php echo $row->sc_id; ?>"
                                                             class="btn btn-danger shadow btn-xs sharp deletebtn"><i
@@ -275,7 +276,18 @@ $this->load->view('admin/layout/sidebar');
 </div>
 <!--**********************************Content body end****************************-->
 <!-- Include the script before your closing </body> tag -->
+ 
 <script>
+
+function deleteIt(id) {
+    // Set the id value in the hidden input field
+    $('#deleteModalId').val(id);
+    
+    // Show the delete modal (if it's not already shown)
+    $('#deleteOrderModalside').modal('show');
+}
+
+
     function switchProduct(id) {
         // Get the checkbox element by data-id
         var checkbox = $('[data-id="' + id + '"]');

@@ -2,18 +2,21 @@
 
 <?php
 $this->load->view('admin/layout/header');
-
 $this->load->view('admin/layout/sidebar');
 ?>
+
 <style>
     .page_type_specific {
         display: none;
     }
+    
+    /* Make all labels bold */
+    label {
+        font-weight: bold;
+    }
 </style>
 
 <!--**********************************Header & sidebar end***********************************-->
-
-
 
 <!--**********************************Content body start****************************-->
 
@@ -36,17 +39,13 @@ $this->load->view('admin/layout/sidebar');
                     <div class="alert alert-success solid alert-dismissible fade show w-100 mx-">
 
                         <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="mr-2">
-
                             <polyline points="9 11 12 14 22 4"></polyline>
-
                             <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
-
                         </svg>
 
                         <strong>Success!</strong> <?php echo $this->session->flashdata('success') ?>
 
                         <button type="button" class="close h-100" data-dismiss="alert" aria-label="Close"><span><i class="mdi mdi-close"></i></span>
-
                         </button>
 
                     </div>
@@ -54,7 +53,6 @@ $this->load->view('admin/layout/sidebar');
                 <?php
                 }
                 ?>
-
 
 
                 <?php
@@ -64,19 +62,14 @@ $this->load->view('admin/layout/sidebar');
                     <div class="alert alert-danger solid alert-dismissible fade show">
 
                         <svg viewBox="0 0 24 24" width="24 " height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="mr-2">
-
                             <polygon points="7.86 2 16.14 2 22 7.86 22 16.14 16.14 22 7.86 22 2 16.14 2 7.86 7.86 2"></polygon>
-
                             <line x1="15" y1="9" x2="9" y2="15"></line>
-
                             <line x1="9" y1="9" x2="15" y2="15"></line>
-
                         </svg>
 
                         <strong>Error!</strong> <?php echo $this->session->flashdata('error') ?>
 
                         <button type="button" class="close h-100" data-dismiss="alert" aria-label="Close"><span><i class="mdi mdi-close"></i></span>
-
                         </button>
 
                     </div>
@@ -84,9 +77,6 @@ $this->load->view('admin/layout/sidebar');
                 <?php
                 }
                 ?>
-
-
-
 
 
             </div>
@@ -148,7 +138,6 @@ $this->load->view('admin/layout/sidebar');
                                 </select>
                             </div>
 
-
                             <div class="form-group">
                                 <label for="sub_category">Sub-Category</label>
                                 <select name="sc_id" id="sub_category" class="form-control">
@@ -162,8 +151,6 @@ $this->load->view('admin/layout/sidebar');
                                 </select>
                             </div>
 
-
-
                             <!-- Product Description -->
                             <div class="form-group">
                                 <label>Product Description</label>
@@ -174,8 +161,13 @@ $this->load->view('admin/layout/sidebar');
                             <!-- Product Application -->
                             <div class="form-group">
                                 <label>Product Application</label>
-                                <input name="application" value="<?php echo htmlspecialchars($product['application'] ?? '', ENT_QUOTES, 'UTF-8'); ?>"
-                                    type="text" class="form-control editModalTitle" placeholder="Enter Product Application">
+                                <textarea name="application" class="form-control" placeholder="Enter Product Application"><?php echo htmlspecialchars($product['application'] ?? '', ENT_QUOTES, 'UTF-8'); ?></textarea>
+                            </div>
+
+                            <!-- Product Features -->
+                            <div class="form-group">
+                                <label>Product Features</label>
+                                <textarea name="features" class="form-control" placeholder="Enter Product Features"><?php echo htmlspecialchars($product['features'] ?? '', ENT_QUOTES, 'UTF-8'); ?></textarea>
                             </div>
 
                             <!-- Brand Image -->
@@ -198,38 +190,30 @@ $this->load->view('admin/layout/sidebar');
                                 </div>
                             </div>
 
-                            <!-- Product Features -->
-                            <div class="form-group">
-                                <label>Product Features</label>
-                                <input name="features" value="<?php echo htmlspecialchars($product['features'] ?? '', ENT_QUOTES, 'UTF-8'); ?>"
-                                    type="text" class="form-control" placeholder="Enter Product Features">
-                            </div>
-
-                            <!-- Video Link -->
-                            <div class="form-group">
-                                <label>Video Link</label>
-                                <input name="video_link" value="<?php echo htmlspecialchars($product['video_link'] ?? '', ENT_QUOTES, 'UTF-8'); ?>"
-                                    type="text" class="form-control" placeholder="Enter Video Link">
-                            </div>
-
                             <div class="form-group">
                                 <button name="submit" type="submit" class="btn btn-primary btn-block">Update</button>
                             </div>
                         </form>
 
+                        <!-- Load CKEditor -->
+                        <script src="https://cdn.ckeditor.com/ckeditor5/36.0.1/classic/ckeditor.js"></script>
 
                         <script>
-                            // Show file name when file is selected
-                            $('.custom-file-input').on('change', function() {
-                                let fileName = $(this).val().split('\\').pop();
-                                $(this).siblings('.custom-file-label').addClass('selected').html(fileName);
-                            });
+                            // Initialize CKEditor for Product Application and Features
+                            ClassicEditor
+                                .create(document.querySelector('textarea[name="application"]'))
+                                .catch(error => {
+                                    console.error(error);
+                                });
+
+                            ClassicEditor
+                                .create(document.querySelector('textarea[name="features"]'))
+                                .catch(error => {
+                                    console.error(error);
+                                });
                         </script>
 
-
-
                     </div>
-
 
                 </div>
 
@@ -241,29 +225,21 @@ $this->load->view('admin/layout/sidebar');
 
 </div>
 
-
-
 <!--**********************************Content body End***********************************-->
-
-
-
-
 
 <!--**********************************footer Start***********************************-->
 
 <?php $this->load->view('admin/layout/footer'); ?>
 
 <!--**********************************footer End***********************************-->
+
 <script>
     $(document).ready(function() {
-        //    console.log( "ready!" );
-        //alert();
         var id = $("#page_type").val();
         $('#page_type_' + id).css('display', 'block');
     });
 
     $("#page_type").change(function() {
-        //        alert("The text has been changed.");
         var id = $(this).val();
         $('.page_type_specific').css('display', 'none');
         $('#page_type_' + id).css('display', 'block');

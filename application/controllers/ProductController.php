@@ -17,17 +17,35 @@ class ProductController extends CI_Controller
     }
 
     // Method to display the product category page
-    public function productCategory()
+    public function productCategory($c_id)
     {
+
+        $data['category'] = $this->Product_model->get_category_by_id($c_id);
+        $data['subcategories'] = $this->Product_model->get_subcategories_by_category($c_id);
         $data['banner'] = $this->Banner_model->get_banner_by_page_name('productcategory'); // Adjust the page name as needed
+        if (isset($data['subcategories']) && !empty($data['subcategories'])) {
+            foreach ($data['subcategories'] as $subcategory) {
+                // Fetch products for each subcategory
+                $subcategory_id = $subcategory['sc_id'];  // Get the subcategory ID
+                $subcategory['products'] = $this->Product_model->get_products_by_subcategory($subcategory_id);
+            }
+        //     echo "<pre>";
+        // print_r($subcategory['products']);  // This will print the products of the current subcategory
+        // echo "</pre>";
+
+        }
+
         $data['categories'] = $this->Product_model->get_categories(); // Ensure this returns an array
         $data['products'] = $this->Product_model->get_products(); // Ensure this returns an array
         $data['sub_category'] = $this->Product_model->get_sub_category(); // Ensure this returns an array
-		$data['hierarchy'] = $this->Home_model->get_hierarchical_data();
+        $data['hierarchy'] = $this->Home_model->get_hierarchical_data();
+
 
         $this->load->view("layout/header.php", $data);
         $this->load->view("frontend/productCategory", $data);
         $this->load->view("layout/footer.php");
+        // print_r($data);
+        // exit;
     }
 
 
@@ -36,7 +54,7 @@ class ProductController extends CI_Controller
     {
         // Fetch the products from the model
         $data['banner'] = $this->Banner_model->get_banner_by_page_name('productdetail'); // Adjust the page name as needed
-		$data['hierarchy'] = $this->Home_model->get_hierarchical_data();
+        $data['hierarchy'] = $this->Home_model->get_hierarchical_data();
 
         $data['categories'] = $this->Product_model->get_categories();
         $data['products'] = $this->Product_model->get_products();
@@ -47,7 +65,7 @@ class ProductController extends CI_Controller
         // exit;
 
         // Load views after data processing
-        $this->load->view("layout/header.php",$data);
+        $this->load->view("layout/header.php", $data);
         $this->load->view("frontend/productDetail", $data);
         $this->load->view("layout/footer.php");
     }

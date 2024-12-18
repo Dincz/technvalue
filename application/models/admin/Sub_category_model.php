@@ -26,21 +26,12 @@ class Sub_category_model extends CI_Model
     // Fetch a specific subcategory by its ID
     public function get_by_id($id)
     {
-        echo($id);
+        // echo($id);
         // Fetch the record from the database
         $result = $this->db->get_where($this->_table, ['sc_id' => $id])->row();
-        echo $this->db->last_query(); // This will print the last executed query
-        exit;
+        // echo $this->db->last_query(); // This will print the last executed query
+        // exit;
 
-        // Debug the result by printing it
-        echo "<pre>";
-        var_dump($result); // You can also use print_r($result);
-        echo "</pre>";
-
-        // Optionally exit to stop further execution (for debugging purposes)
-        exit;
-
-        // Return the result (this line will not be reached if you exit above)
         return $result;
 
     }
