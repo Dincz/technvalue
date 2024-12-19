@@ -13,7 +13,6 @@ class ProductController extends CI_Controller
         $this->load->model('Home_model');
 
         $this->load->model('admin/Banner_model');
-
     }
 
     // Method to display the product category page
@@ -29,9 +28,9 @@ class ProductController extends CI_Controller
                 $subcategory_id = $subcategory['sc_id'];  // Get the subcategory ID
                 $subcategory['products'] = $this->Product_model->get_products_by_subcategory($subcategory_id);
             }
-        //     echo "<pre>";
-        // print_r($subcategory['products']);  // This will print the products of the current subcategory
-        // echo "</pre>";
+            //     echo "<pre>";
+            // print_r($subcategory['products']);  // This will print the products of the current subcategory
+            // echo "</pre>";
 
         }
 
@@ -50,22 +49,29 @@ class ProductController extends CI_Controller
 
 
     // Method to display product details
-    public function productDetail()
+    public function productDetail($p_id)
     {
         // Fetch the products from the model
         $data['banner'] = $this->Banner_model->get_banner_by_page_name('productdetail'); // Adjust the page name as needed
         $data['hierarchy'] = $this->Home_model->get_hierarchical_data();
 
         $data['categories'] = $this->Product_model->get_categories();
-        $data['products'] = $this->Product_model->get_products();
+        // $data['products'] = $this->Product_model->get_products();
         $data['sub_category'] = $this->Product_model->get_sub_category();
+        $data['product'] = $this->Product_model->get_product_by_id($p_id);
 
-        // echo '<pre>';
-        // print_r($data);
-        // exit;
+        // Check if product is found, if not, you might want to redirect or show a 404 error
+        if (!$data['product']) {
+            show_404(); // Show a 404 error if product is not found
+        }
+
+            // echo '<pre>';
+            // print_r($data['product']);
+            // exit;
 
         // Load views after data processing
         $this->load->view("layout/header.php", $data);
+
         $this->load->view("frontend/productDetail", $data);
         $this->load->view("layout/footer.php");
     }

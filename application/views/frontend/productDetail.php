@@ -1,6 +1,6 @@
-<?php if (isset($products) && count($products) > 0) : ?>
+<?php if (isset($product) && count($product) > 0) : ?>
     <?php
-    $product = $products[0]; // Select the first product
+    $product = $product; // Select the first product
     ?>
 
     <div class="breadcumb-wrapper background-image"
@@ -50,10 +50,10 @@
     </section>
 
     <blockquote>
-        <h3>Features and Benefits:</h3>
+        <!-- <h3>Features and Benefits:</h3> -->
         <br>
             <p><?php echo $product['features']; ?></p>
-            <p><strong>Applications:</strong></p>
+            <!-- <p><strong>Applications:</strong></p> -->
             <p><?php echo $product['application']; ?></p>
             <br>
     </blockquote>

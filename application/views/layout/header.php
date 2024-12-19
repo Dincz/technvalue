@@ -255,15 +255,15 @@
             <div class="sticky-active">
                 <div class="menu-area">
                     <div class="container">
-                        <div class="row align-items-center justify-content-between gx-40">
-                            <div class="col-3">
+                        <div class="row align-items-center justify-content-between">
+                            <div class="col-2 ">
                                 <div class="header-logo p-3">
                                     <a href="<?php echo base_url() ?>"><img
                                             src="<?php echo base_url() ?>assets/img/logo.png" alt="Crezvatic"
                                             class="logo"></a>
                                 </div>
                             </div>
-                            <div class="col text-end text-xl-center">
+                            <div class="col-10  text-end text-xl-center">
                                 <nav class="main-menu menu-style4 d-none d-lg-block">
                                     <ul>
                                         <li>

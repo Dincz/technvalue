@@ -117,11 +117,10 @@ $this->load->view('admin/layout/sidebar');
                             </div>
 
                             <!-- Product Features -->
-                            <div class="form-group">
+                            <!-- <div class="form-group">
                                 <label>Product Features</label>
-                                <!-- <textarea name="features" class="summernote form-control" placeholder="Enter Product Features"></textarea> -->
                                 <input name="features" type="text" class="form-control" placeholder="Enter Video Link">
-                            </div>
+                            </div> -->
 
                             <!-- Video Link -->
                             <div class="form-group">
@@ -304,19 +303,19 @@ $this->load->view('admin/layout/sidebar');
                                                 style="width: 94.2344px;"> Description</th>
                                             <th class="sorting" tabindex="0" aria-controls="example3" rowspan="1"
                                                 colspan="1" aria-label="Gender: activate to sort column ascending"
-                                                style="width: 94.2344px;"> Application</th>
-                                            <th class="sorting" tabindex="0" aria-controls="example3" rowspan="1"
+                                                style="width: 94.2344px;">Product's Other Information</th>
+                                            <!-- <th class="sorting" tabindex="0" aria-controls="example3" rowspan="1"
                                                 colspan="1" aria-label="Gender: activate to sort column ascending"
-                                                style="width: 94.2344px;"> Brand</th>
+                                                style="width: 94.2344px;"> Brand</th> -->
                                             <th class="sorting" tabindex="0" aria-controls="example3" rowspan="1"
                                                 colspan="1" aria-label="Gender: activate to sort column ascending"
                                                 style="width: 94.2344px;"> PDF</th>
-                                            <th class="sorting" tabindex="0" aria-controls="example3" rowspan="1"
+                                            <!-- <th class="sorting" tabindex="0" aria-controls="example3" rowspan="1"
                                                 colspan="1" aria-label="Gender: activate to sort column ascending"
-                                                style="width: 94.2344px;"> Feature</th>
-                                            <th class="sorting" tabindex="0" aria-controls="example3" rowspan="1"
+                                                style="width: 94.2344px;"> Feature</th> -->
+                                            <!-- <th class="sorting" tabindex="0" aria-controls="example3" rowspan="1"
                                                 colspan="1" aria-label="Gender: activate to sort column ascending"
-                                                style="width: 94.2344px;"> Video Link</th>
+                                                style="width: 94.2344px;"> Video Link</th> -->
                                             <!-- <th class="sorting" tabindex="0" aria-controls="example3" rowspan="1" colspan="1" aria-label="Gender: activate to sort column ascending" style="width: 94.2344px;"> Related Product Id</th> -->
                                             <th class="sorting" tabindex="0" aria-controls="example3" rowspan="1"
                                                 colspan="1" aria-label="Gender: activate to sort column ascending"
@@ -424,17 +423,17 @@ $this->load->view('admin/layout/sidebar');
                                                     </div>
                                                 </td>
 
-                                                <td>
+                                                <!-- <td>
                                                     <img src="<?php echo base_url('uploads/Brand/' . $row['brand']); ?>"
                                                         class="img-fluid" alt="Brand Image">
-                                                </td>
+                                                </td> -->
 
                                                 <td>
                                                     <a href="<?php echo base_url('uploads/Docs/' . $row['pdf']); ?>"
                                                         target="_blank">Download PDF</a>
                                                 </td>
 
-                                                <td>
+                                                <!-- <td>
                                                     <div
                                                         style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis;">
 
@@ -443,14 +442,14 @@ $this->load->view('admin/layout/sidebar');
                                                         echo htmlspecialchars(!empty($row['features']) ? $row['features'] : 'No features available', ENT_QUOTES, 'UTF-8');
                                                         ?>
                                                     </div>
-                                                </td>
+                                                </td> -->
 
-                                                <td>
+                                                <!-- <td>
                                                     <?php
                                                     // Check if $row['video_link'] is null or empty
                                                     echo htmlspecialchars(!empty($row['video_link']) ? $row['video_link'] : 'No video available', ENT_QUOTES, 'UTF-8');
                                                     ?>
-                                                </td>
+                                                </td> -->
 
                                                 <td>
                                                     <?php echo htmlspecialchars($row['status'], ENT_QUOTES, 'UTF-8'); ?>

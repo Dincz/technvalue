@@ -9,7 +9,7 @@ $this->load->view('admin/layout/sidebar');
     .page_type_specific {
         display: none;
     }
-    
+
     /* Make all labels bold */
     label {
         font-weight: bold;
@@ -154,31 +154,32 @@ $this->load->view('admin/layout/sidebar');
                             <!-- Product Description -->
                             <div class="form-group">
                                 <label>Product Description</label>
-                                <input name="description" value="<?php echo htmlspecialchars($product['description'] ?? '', ENT_QUOTES, 'UTF-8'); ?>"
+                                <input style="height: auto;" name="description" value="<?php echo htmlspecialchars($product['description'] ?? '', ENT_QUOTES, 'UTF-8'); ?>"
                                     type="text" class="form-control editModalTitle" placeholder="Enter Product Description">
                             </div>
 
                             <!-- Product Application -->
                             <div class="form-group">
                                 <label>Product Application</label>
-                                <textarea name="application" class="form-control" placeholder="Enter Product Application"><?php echo htmlspecialchars($product['application'] ?? '', ENT_QUOTES, 'UTF-8'); ?></textarea>
+                                <!-- Remove the display: none; from here -->
+                                <textarea name="application" class="form-control" placeholder="Enter Product Application" required></textarea>
                             </div>
 
                             <!-- Product Features -->
-                            <div class="form-group">
+                            <!-- <div class="form-group">
                                 <label>Product Features</label>
                                 <textarea name="features" class="form-control" placeholder="Enter Product Features"><?php echo htmlspecialchars($product['features'] ?? '', ENT_QUOTES, 'UTF-8'); ?></textarea>
-                            </div>
+                            </div> -->
 
                             <!-- Brand Image -->
-                            <div class="form-group">
+                            <!-- <div class="form-group">
                                 <label>Brand Image</label>
                                 <img src="<?php echo base_url('uploads/Product/' . $product['brand']); ?>" class="img-fluid" alt="Brand Image" width="200" height="auto">
                                 <div class="custom-file">
                                     <input name="brand" type="file" class="custom-file-input" id="brandImage">
                                     <label class="custom-file-label" for="brandImage">Choose File</label>
                                 </div>
-                            </div>
+                            </div> -->
 
                             <!-- PDF Upload -->
                             <div class="form-group">
@@ -243,5 +244,15 @@ $this->load->view('admin/layout/sidebar');
         var id = $(this).val();
         $('.page_type_specific').css('display', 'none');
         $('#page_type_' + id).css('display', 'block');
+    });
+</script>
+<script>
+    // Example: Show textarea when a certain condition is met (e.g., based on selection)
+    $('#category').change(function() {
+        if ($(this).val() === 'some_category_value') {
+            $('#application').show(); // Show the textarea
+        } else {
+            $('#application').hide(); // Hide the textarea
+        }
     });
 </script>
