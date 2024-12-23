@@ -7,6 +7,10 @@ $this->load->view('admin/layout/sidebar');
     .page_type_specific {
         display: none;
     }
+    label{
+        color: black;
+        font-weight: bold;
+    }
 </style>
 <!--**********************************Header & sidebar end***********************************-->
 <!--**********************************Content body start****************************-->
@@ -77,7 +81,10 @@ $this->load->view('admin/layout/sidebar');
                                 <p>No sub-categories available.</p>
                             <?php endif; ?>
 
-
+                            <div class="form-group">
+                                <label>Products Type</label>
+                                <input name="type" class="form-control" placeholder="Enter Product Type"><?php echo htmlspecialchars($product['type'] ?? '', ENT_QUOTES, 'UTF-8'); ?></input>
+                            </div>
 
 
                             <!-- Product Description -->

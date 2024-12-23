@@ -221,7 +221,7 @@
                                 <li><i class="far fa-envelope"></i><a
                                         href="mailto:sales@technovalue.in">sales@technovalue.in
                                     </a></li>
-                                <li><i class="far fa-map-marker-alt"></i>250 Main Street, 2nd Floor. USA</li>
+                                <li><i class="far fa-map-marker-alt"></i> Kopar Khairane, Navi Mumbai, Maharashtra 400709</li>
                             </ul>
                         </div>
                     </div>
@@ -292,7 +292,7 @@
                                                                 <li class="col-3">
                                                                     <!-- Update the anchor link to redirect to the category page -->
                                                                     <a href="<?php echo site_url('product-category/' . (isset($category['category_id']) ? $category['category_id'] : '')); ?>"
-                                                                        class="category-title">
+                                                                        class="category-title text-capitalize">
                                                                         <?php echo isset($category['category_name']) ? $category['category_name'] : 'Category ' . $category['category_id']; ?>
                                                                     </a>
                                                                     <div class="submenu-wrapper">
@@ -309,8 +309,8 @@
                                                                                         <a href="javascript:void(0);"
                                                                                             class="subcategory-link d-flex align-items-center justify-content-between">
                                                                                             <!-- Subcategory name with redirection -->
-                                                                                            <span class="subcategory-name d-flex justify-content-between">
-                                                                                                <a class="d-inline p-0"
+                                                                                            <span class="subcategory-name d-flex justify-content-between ">
+                                                                                                <a class="d-inline p-0 fw-bold text-capitalize"
                                                                                                     href="<?php echo site_url('product-category/' . (isset($category['category_id']) ? $category['category_id'] : '') . '#subcategory-' . (isset($subcategory['subcategory_id']) ? $subcategory['subcategory_id'] : '')); ?>">
                                                                                                     <?php echo isset($subcategory['subcategory_name']) ? $subcategory['subcategory_name'] : 'Subcategory'; ?>
                                                                                                 </a>
@@ -329,6 +329,7 @@
                                                                                                 <?php foreach ($subcategory['products'] as $product): ?>
                                                                                                     <li class="product-item">
                                                                                                         <a
+                                                                                                        class=" text-secondary text-capitalize"
                                                                                                             href="<?php echo site_url('product-detail/' . (isset($product['product_id']) ? $product['product_id'] : '')); ?>">
                                                                                                             <?php echo isset($product['product_name']) ? $product['product_name'] : 'Product'; ?>
                                                                                                         </a>

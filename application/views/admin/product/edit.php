@@ -12,6 +12,7 @@ $this->load->view('admin/layout/sidebar');
     
     /* Make all labels bold */
     label {
+        color: black;
         font-weight: bold;
     }
 </style>
@@ -149,6 +150,13 @@ $this->load->view('admin/layout/sidebar');
                                         </option>
                                     <?php endforeach; ?>
                                 </select>
+                            </div>
+
+                            <!-- Product Type -->
+                            <div class="form-group">
+                                <label>Product Type</label>
+                                <input style="height: auto;" name="type" value="<?php echo htmlspecialchars($product['type'] ?? '', ENT_QUOTES, 'UTF-8'); ?>"
+                                    type="text" class="form-control editModalTitle" placeholder="Enter Product Type">
                             </div>
 
                             <!-- Product Description -->
