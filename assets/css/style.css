@@ -18752,3 +18752,11 @@ blockquote.vs-quote .quote-author {
   border-radius: 50%;
   padding: 10px 15px;
 }
+
+
+@media (max-width: 768px) {
+  .nopaddingformobile {
+      padding: 0 !important;
+      margin-top: 5px !important;
+  }
+}
