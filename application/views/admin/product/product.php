@@ -37,7 +37,7 @@ $this->load->view('admin/layout/sidebar');
                             <div class="form-group">
                                 <label>Product Image</label>
                                 <div class="custom-file">
-                                    <input name="image" type="file" class="custom-file-input" required>
+                                    <input name="image" type="file" class="custom-file-input" >
                                     <label class="custom-file-label">Choose File</label>
                                 </div>
                             </div>
@@ -91,27 +91,24 @@ $this->load->view('admin/layout/sidebar');
 
                             <!-- Product Application -->
                             <div class="form-group">
-                                <label>Product Application</label>
-                                <!-- <textarea name="application" class="summernote form-control" placeholder="Enter Product Application"></textarea> -->
-                                <input name="application" type="text" class="form-control editModalTitle"
-                                    placeholder="Enter Product Name" required>
-
+                                <label>Products Other Information</label>
+                                <textarea name="application" class="form-control" placeholder="Enter Product Application"><?php echo htmlspecialchars($product['application'] ?? '', ENT_QUOTES, 'UTF-8'); ?></textarea>
                             </div>
 
                             <!-- Brand Image -->
-                            <div class="form-group">
+                            <!-- <div class="form-group">
                                 <label>Brand Image</label>
                                 <div class="custom-file">
                                     <input name="brand" type="file" class="custom-file-input" required>
                                     <label class="custom-file-label">Choose File</label>
                                 </div>
-                            </div>
+                            </div> -->
 
                             <!-- PDF Upload -->
                             <div class="form-group">
                                 <label>PDF</label>
                                 <div class="custom-file">
-                                    <input name="pdf" type="file" class="custom-file-input" required>
+                                    <input name="pdf" type="file" class="custom-file-input">
                                     <label class="custom-file-label">Choose File</label>
                                 </div>
                             </div>
@@ -123,11 +120,11 @@ $this->load->view('admin/layout/sidebar');
                             </div> -->
 
                             <!-- Video Link -->
-                            <div class="form-group">
+                            <!-- <div class="form-group">
                                 <label>Video Link</label>
                                 <input name="video_link" type="text" class="form-control"
                                     placeholder="Enter Video Link">
-                            </div>
+                            </div> -->
 
                             <!-- Submit Button -->
                             <div class="form-group">
@@ -135,6 +132,23 @@ $this->load->view('admin/layout/sidebar');
                                     class="btn btn-primary btn-block mt-3">Create</button>
                             </div>
                         </form>
+
+                        <script src="https://cdn.ckeditor.com/ckeditor5/36.0.1/classic/ckeditor.js"></script>
+
+                        <script>
+                            // Initialize CKEditor for Product Application and Features
+                            ClassicEditor
+                                .create(document.querySelector('textarea[name="application"]'))
+                                .catch(error => {
+                                    console.error(error);
+                                });
+
+                            ClassicEditor
+                                .create(document.querySelector('textarea[name="features"]'))
+                                .catch(error => {
+                                    console.error(error);
+                                });
+                        </script>
 
                     </div>
                 </div>
@@ -232,7 +246,7 @@ $this->load->view('admin/layout/sidebar');
             <div class="col-12">
                 <?php
                 if (!empty($this->session->flashdata('success'))) {
-                    ?>
+                ?>
                     <div class="alert alert-success solid alert-dismissible fade show w-100 mx-">
                         <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none"
                             stroke-linecap="round" stroke-linejoin="round" class="mr-2">
@@ -244,12 +258,12 @@ $this->load->view('admin/layout/sidebar');
                                     class="mdi mdi-close"></i></span>
                         </button>
                     </div>
-                    <?php
+                <?php
                 }
                 ?>
                 <?php
                 if (!empty($this->session->flashdata('error'))) {
-                    ?>
+                ?>
                     <div class="alert alert-danger solid alert-dismissible fade show">
                         <svg viewBox="0 0 24 24" width="24 " height="24" stroke="currentColor" stroke-width="2" fill="none"
                             stroke-linecap="round" stroke-linejoin="round" class="mr-2">
@@ -263,7 +277,7 @@ $this->load->view('admin/layout/sidebar');
                                     class="mdi mdi-close"></i></span>
                         </button>
                     </div>
-                    <?php
+                <?php
                 }
                 ?>
             </div>
@@ -336,7 +350,7 @@ $this->load->view('admin/layout/sidebar');
                                         <?php
                                         $i = 1;
                                         foreach ($products as $row) {
-                                            ?>
+                                        ?>
                                             <tr role="row" class="odd">
                                                 <td class="text-center">
                                                     <?php echo $i; ?>
@@ -472,7 +486,7 @@ $this->load->view('admin/layout/sidebar');
                                                     </div>
                                                 </td>
                                             </tr>
-                                            <?php
+                                        <?php
                                             $i++;
                                         }
                                         ?>
@@ -493,13 +507,13 @@ $this->load->view('admin/layout/sidebar');
 <?php $this->load->view('admin/layout/footer'); ?>
 <!--**********************************footer End***********************************-->
 <script>
-    $(document).ready(function () {
+    $(document).ready(function() {
         // console.log( "ready!" );
         //alert();
         $('#page_type_1').css('display', 'block');
     });
 
-    $("#page_type").change(function () {
+    $("#page_type").change(function() {
         // alert("The text has been changed.");
         var id = $(this).val();
         $('.page_type_specific').css('display', 'none');
@@ -510,9 +524,9 @@ $this->load->view('admin/layout/sidebar');
         // var id = $(this).attr("data-id");
         $.post(
             base_url + "admin/product/status", {
-            data: id
-        },
-            function (response) {
+                data: id
+            },
+            function(response) {
                 console.log(response);
             }
         );

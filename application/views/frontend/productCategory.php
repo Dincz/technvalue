@@ -51,7 +51,7 @@
                                                 alt="Product Image">
                                         </a>
                                     </div>
-                                    <div class="project-content">
+                                    <div class="project-content text-center px-0">
                                         <h3 class="project-title h6">
                                             <a class="text-inherit"
                                                 href="<?php echo base_url('product-detail/' . $product['p_id']); ?>">
@@ -81,7 +81,7 @@
         // Initialize Owl Carousel for each subcategory
         <?php foreach ($subcategories as $subcategory): ?>
             $('#productsubcategory<?php echo $subcategory['sc_id']; ?>').owlCarousel({
-                loop: true,  // Make the carousel loop
+                loop: false,  // Make the carousel loop
                 margin: 50,  // Space between items
                 nav: true,   // Enable next/prev buttons
                 responsive: {

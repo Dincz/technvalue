@@ -33,9 +33,9 @@
                     <p class="mb-2 mt-1 pb-1"><?php echo $product['description']; ?></p>
 
                     <div class="principal mx-4 mt-5">
-                        <h5>Brand</h5>
+                        <!-- <h5>Brand</h5> -->
                         <div class="d-flex ">
-                            <span class="logo_img"> <a><img src="<?php echo base_url('uploads/Brands/' . $product['brand']); ?>" alt="brand-logo"></a></span>
+                            <!-- <span class="logo_img"> <a><img src="<?php echo base_url('uploads/Brands/' . $product['brand']); ?>" alt="brand-logo"></a></span> -->
                             <div class="downbtn">
                                 <button class="vs-btn style5 mx-5">Download PDF</button>
                             </div>
@@ -58,13 +58,13 @@
             <br>
     </blockquote>
 
-    <div class="vs-blog blog-single">
+    <!-- <div class="vs-blog blog-single">
         <h1 class="text-center">Product Video</h1>
         <div class="blog-img text-center m-5">
             <a href="<?php echo base_url("product-category") ?>"><img src="<?php echo base_url("assets/img/blog/blog-s-1-4.png") ?>" alt="Blog Image"></a>
             <a href="<?php echo $product['video_link']; ?>" class="play-btn popup-video"><i class="fas fa-play"></i></a>
         </div>
-    </div>
+    </div> -->
 
     <div class="related-product mx-4 my-3">
         <h1 class="text-center">Related Products</h1>
@@ -74,14 +74,14 @@
             <!-- Related products can be added here similarly -->
             <?php foreach ($products as $row) { ?>
                 <div class="col-xl-4 product1">
-                    <div class="project-style1">
+                    <div class="project-style1 d-flex flex-column justify-content-center align-items-center" style="min-height:210px">
                         <div class="project-img">
                             <a href="<?php echo base_url('product-detail') ?>">
-                                <img src="<?php echo base_url('uploads/Product/' . $row['image']); ?>" class="img-fluid" alt="Product Image">
+                                <img src="<?php echo base_url('uploads/Product/' . $row['image']); ?>" class="img-fluid relatedImg" alt="Product Image">
                             </a>
                         </div>
                         <div class="project-content">
-                            <h3 class="project-title h6">
+                            <h3 class="project-title h6 text-center">
                                 <a class="text-inherit" href="#">
                                     <?php echo $row['p_name']; // Assuming 'p_name' contains the product name 
                                     ?>

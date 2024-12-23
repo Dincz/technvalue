@@ -160,6 +160,7 @@ embed,
 object,
 video {
   max-width: 100%;
+  width: 100%;
   height: auto;
 }
 
@@ -4590,6 +4591,12 @@ a.text-theme:hover,
 
 
 /* header product css  end */
+
+.owl-carousel .owl-item img, .relatedImg{
+  height: 200px !important;
+  width: auto !important;
+  margin: 0 auto;
+}
 
 
 .vs-header {

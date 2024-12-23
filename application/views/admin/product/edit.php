@@ -9,7 +9,7 @@ $this->load->view('admin/layout/sidebar');
     .page_type_specific {
         display: none;
     }
-
+    
     /* Make all labels bold */
     label {
         font-weight: bold;
@@ -160,9 +160,8 @@ $this->load->view('admin/layout/sidebar');
 
                             <!-- Product Application -->
                             <div class="form-group">
-                                <label>Product Application</label>
-                                <!-- Remove the display: none; from here -->
-                                <textarea name="application" class="form-control" placeholder="Enter Product Application" required></textarea>
+                                <label>Products Other Information</label>
+                                <textarea name="application" class="form-control" placeholder="Enter Product Application"><?php echo htmlspecialchars($product['application'] ?? '', ENT_QUOTES, 'UTF-8'); ?></textarea>
                             </div>
 
                             <!-- Product Features -->
@@ -244,15 +243,5 @@ $this->load->view('admin/layout/sidebar');
         var id = $(this).val();
         $('.page_type_specific').css('display', 'none');
         $('#page_type_' + id).css('display', 'block');
-    });
-</script>
-<script>
-    // Example: Show textarea when a certain condition is met (e.g., based on selection)
-    $('#category').change(function() {
-        if ($(this).val() === 'some_category_value') {
-            $('#application').show(); // Show the textarea
-        } else {
-            $('#application').hide(); // Hide the textarea
-        }
     });
 </script>

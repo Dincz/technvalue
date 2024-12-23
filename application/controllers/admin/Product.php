@@ -72,35 +72,51 @@ class Product extends CI_Controller
             $config['allowed_types'] = '*';  // You can restrict types if necessary
             $this->upload->initialize($config);
 
-            // Upload product image
-            if ($this->upload->do_upload('image')) {
-                $main_img_data = $this->upload->data();
-                $uploaded_files['image'] = $main_img_data['file_name'];
+            // Check if a product image file is uploaded
+            if (!empty($_FILES['image']['name'])) {
+                if ($this->upload->do_upload('image')) {
+                    // If upload succeeds, save the uploaded file name
+                    $main_img_data = $this->upload->data();
+                    $uploaded_files['image'] = $main_img_data['file_name'];
+                } else {
+                    // If there's an error during upload, capture the error message
+                    $uploaded_files['image_error'] = $this->upload->display_errors();
+                }
             } else {
-                $uploaded_files['image_error'] = $this->upload->display_errors();
+                // If no file is selected, do not set any error
+                $uploaded_files['image'] = null;  // Optionally leave it as null or set a default value if needed
             }
 
             // Brand image upload configuration
-            $config['upload_path'] = './uploads/Brand';
-            $this->upload->initialize($config);
+            // $config['upload_path'] = './uploads/Brand';
+            // $this->upload->initialize($config);
 
-            if ($this->upload->do_upload('brand')) {
-                $brand_img_data = $this->upload->data();
-                $uploaded_files['brand'] = $brand_img_data['file_name'];
-            } else {
-                $uploaded_files['brand_error'] = $this->upload->display_errors();
-            }
+            // if ($this->upload->do_upload('brand')) {
+            //     $brand_img_data = $this->upload->data();
+            //     $uploaded_files['brand'] = $brand_img_data['file_name'];
+            // } else {
+            //     $uploaded_files['brand_error'] = $this->upload->display_errors();
+            // }
 
             // PDF upload configuration
+            // Configure the upload path for the PDF
             $config['upload_path'] = './uploads/Docs';
             $this->upload->initialize($config);
 
-            if ($this->upload->do_upload('pdf')) {
-                $pdf_data = $this->upload->data();
-                $uploaded_files['pdf'] = $pdf_data['file_name'];
+            // Check if a file is uploaded
+            if (!empty($_FILES['pdf']['name'])) {
+                if ($this->upload->do_upload('pdf')) {
+                    $pdf_data = $this->upload->data();
+                    $uploaded_files['pdf'] = $pdf_data['file_name'];
+                } else {
+                    // If there's an error during upload, capture the error message
+                    $uploaded_files['pdf_error'] = $this->upload->display_errors();
+                }
             } else {
-                $uploaded_files['pdf_error'] = $this->upload->display_errors();
+                // If no file is selected, do not set any error
+                $uploaded_files['pdf'] = null;  // Optional: leave it as null or set to an existing value if needed
             }
+
 
             // Prepare product data to insert into the database
             $data = array(

@@ -35,7 +35,7 @@ class ProductController extends CI_Controller
         }
 
         $data['categories'] = $this->Product_model->get_categories(); // Ensure this returns an array
-        $data['products'] = $this->Product_model->get_products(); // Ensure this returns an array
+        $data['products'] = $this->Product_model->get_products();  // Make sure this is returning an array
         $data['sub_category'] = $this->Product_model->get_sub_category(); // Ensure this returns an array
         $data['hierarchy'] = $this->Home_model->get_hierarchical_data();
 
@@ -56,9 +56,12 @@ class ProductController extends CI_Controller
         $data['hierarchy'] = $this->Home_model->get_hierarchical_data();
 
         $data['categories'] = $this->Product_model->get_categories();
-        // $data['products'] = $this->Product_model->get_products();
+        $data['products'] = $this->Product_model->get_products();
         $data['sub_category'] = $this->Product_model->get_sub_category();
         $data['product'] = $this->Product_model->get_product_by_id($p_id);
+
+
+        
 
         // Check if product is found, if not, you might want to redirect or show a 404 error
         if (!$data['product']) {
