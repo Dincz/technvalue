@@ -18760,3 +18760,7 @@ blockquote.vs-quote .quote-author {
       margin-top: 5px !important;
   }
 }
+
+.recolor {
+  color: black;
+}
