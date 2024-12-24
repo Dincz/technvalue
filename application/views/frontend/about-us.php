@@ -78,9 +78,9 @@
             <div class="col-xl-6">
                 <div class="testi-style2">
                     <div class="testi-body">
-                        <div class="author-img"><img src="<?= base_url('uploads/about/') . $about[0]['dod_image']; ?>"
+                        <!-- <div class="author-img"><img src="<?= base_url('uploads/about/') . $about[0]['dod_image']; ?>"
                                 alt="Testimonial">
-                        </div>
+                        </div> -->
                         <div class="media-body">
                             <p class="testi-text">“<?= $about[0]['dod_comment']; ?>”</p>
                         </div>
@@ -92,9 +92,9 @@
             <div class="col-xl-6">
                 <div class="testi-style2">
                     <div class="testi-body">
-                        <div class="author-img"><img src="<?= base_url('uploads/about/') . $about[0]['dod_image_1']; ?>"
+                        <!-- <div class="author-img"><img src="<?= base_url('uploads/about/') . $about[0]['dod_image_1']; ?>"
                                 alt="Testimonial">
-                        </div>
+                        </div> -->
                         <div class="media-body">
                             <p class="testi-text">“<?= $about[0]['dod_comment_1']; ?>”</p>
                         </div>
@@ -132,7 +132,7 @@
                                 <div id="collapse<?= $index; ?>" class="accordion-collapse collapse"
                                     aria-labelledby="heading<?= $index; ?>" data-bs-parent="#faqVersion3">
                                     <div class="accordion-body">
-                                        <p><?= htmlspecialchars($chooseUs['answer']); ?></p>
+                                        <pre><?= htmlspecialchars($chooseUs['answer']); ?></pre>
                                     </div>
                                 </div>
                             </div>
@@ -285,8 +285,8 @@
                         <h3 class="team-title"><a class="text-inherit"><?= htmlspecialchars($moe['name']); ?></a></h3>
                         <p class="team-degi"><?= htmlspecialchars($moe['designation']); ?></p>
                         <div class="team-social">
-                            <a href="<?= htmlspecialchars($moe['facebook_link']); ?>"><i class="fab fa-facebook-f"></i></a>
-                            <a href="<?= htmlspecialchars($moe['twitter_link']); ?>"><i class="fab fa-twitter"></i></a>
+                            <!-- <a href="<?= htmlspecialchars($moe['facebook_link']); ?>"><i class="fab fa-facebook-f"></i></a> -->
+                            <!-- <a href="<?= htmlspecialchars($moe['twitter_link']); ?>"><i class="fab fa-twitter"></i></a> -->
                             <a href="<?= htmlspecialchars($moe['linkdln_link']); ?>"><i class="fab fa-linkedin"></i></a>
                         </div>
                     </div>
@@ -389,3 +389,17 @@
 
 
 <?php $this->load->view('layout/footer'); ?>
+
+
+
+TechnoValue serves a wide range of industries, including:
+● Pharmaceuticals and Biopharma
+● Hospitals
+● Environmental Laboratories
+● Data Centers
+● Research and Educational Institutes
+● HVAC Consultants and Contractors
+● Food Industries
+● Automobile Industries
+● Green Building Technology
+● Survey and Construction Industries
