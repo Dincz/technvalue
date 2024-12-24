@@ -267,7 +267,7 @@
         <?php if (!empty($client)): ?>
             <?php foreach ($client as $clients): ?>
                 <?php if ($clients['status'] == 1): // Check if the (client) is active ?>
-                    <div class="vs-brand1 mx-5">
+                    <div class="vs-brand1">
                         <!-- Dynamically load image from the array -->
                         <img src="<?php echo base_url('uploads/brand/' . $clients['image']); ?>" alt="Client Logo">
                     </div>
@@ -347,7 +347,7 @@
 <!--==============================
     Testimonial Area
     ==============================-->
-<section class=" space-top space-extra-bottom">
+<section class=" space-to space-extra-bottom">
     <div class="container   wow fadeInUp" data-wow-delay="0.2s">
         <div class="row justify-content-between">
             <div class="col-lg-auto text-center text-lg-start">
