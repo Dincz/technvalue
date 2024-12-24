@@ -103,7 +103,7 @@
             <button class="vs-menu-toggle"><i class="fal fa-times"></i></button>
             <div class="mobile-logo">
                 <a href="<?php echo base_url() ?>"><img src="<?php echo base_url() ?>assets/img/logo.png"
-                        alt="Crezvatic" class="logo"></a>
+                        alt="technovalue" class="logo"></a>
             </div>
             <!-- Mobile Menu -->
             <div class="vs-mobile-menu">
@@ -221,7 +221,7 @@
                                 <li><i class="far fa-envelope"></i><a
                                         href="mailto:sales@technovalue.in">sales@technovalue.in
                                     </a></li>
-                                <li><i class="far fa-map-marker-alt"></i>250 Main Street, 2nd Floor. USA</li>
+                                <li><i class="far fa-map-marker-alt"></i> Kopar Khairane, Navi Mumbai, Maharashtra 400709</li>
                             </ul>
                         </div>
                     </div>
@@ -243,9 +243,14 @@
                     </div> -->
                     <div class="col-auto">
                         <div class="header-social style-white">
-                            <a href="#"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#"><i class="fab fa-twitter"></i></a>
-                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.facebook.com/technovaluesolutions2019"><i
+                                    class="fab fa-facebook-f"></i></a>
+                            <a href="https://twitter.com/technovalue123"><i class="fab fa-twitter"></i></a>
+                            <a href="https://www.linkedin.com/company/technovaluesolutions/posts/?feedView=all&amp;viewAsMember=tr
+ue"><i class="fab fa-linkedin"></i></a>
+                            <a href="https://www.instagram.com/technovaluesolutions/"><i
+                                    class="fab fa-instagram"></i></a>
+                            <a href="https://pin.it/5a44BTUK7"><i class="fab fa-pinterest"></i></a>
                         </div>
                     </div>
                 </div>
@@ -292,7 +297,7 @@
                                                                 <li class="col-3">
                                                                     <!-- Update the anchor link to redirect to the category page -->
                                                                     <a href="<?php echo site_url('product-category/' . (isset($category['category_id']) ? $category['category_id'] : '')); ?>"
-                                                                        class="category-title">
+                                                                        class="category-title text-capitalize">
                                                                         <?php echo isset($category['category_name']) ? $category['category_name'] : 'Category ' . $category['category_id']; ?>
                                                                     </a>
                                                                     <div class="submenu-wrapper">
@@ -309,18 +314,18 @@
                                                                                         <a href="javascript:void(0);"
                                                                                             class="subcategory-link d-flex align-items-center justify-content-between">
                                                                                             <!-- Subcategory name with redirection -->
-                                                                                            <span class="subcategory-name d-flex justify-content-between">
-                                                                                                <a class="d-inline p-0"
+                                                                                            <span class="subcategory-name d-flex justify-content-between ">
+                                                                                                <a class="d-inline p-0 fw-bold text-capitalize"
                                                                                                     href="<?php echo site_url('product-category/' . (isset($category['category_id']) ? $category['category_id'] : '') . '#subcategory-' . (isset($subcategory['subcategory_id']) ? $subcategory['subcategory_id'] : '')); ?>">
                                                                                                     <?php echo isset($subcategory['subcategory_name']) ? $subcategory['subcategory_name'] : 'Subcategory'; ?>
                                                                                                 </a>
-                                                                                                <i class="fa fa-caret-down arrIcon" 
-                                                                                                style="color: black;"
-                                                                                                onclick="toggleProducts(this)"></i>
+                                                                                                <i class="fa fa-caret-down arrIcon"
+                                                                                                    style="color: black;"
+                                                                                                    onclick="toggleProducts(this)"></i>
                                                                                             </span>
 
                                                                                             <!-- Arrow icon with dropdown toggle action -->
-                                                                                            
+
                                                                                         </a>
                                                                                         <?php
                                                                                         if (isset($subcategory['products']) && is_array($subcategory['products'])):
@@ -329,6 +334,7 @@
                                                                                                 <?php foreach ($subcategory['products'] as $product): ?>
                                                                                                     <li class="product-item">
                                                                                                         <a
+                                                                                                        class=" text-secondary text-capitalize"
                                                                                                             href="<?php echo site_url('product-detail/' . (isset($product['product_id']) ? $product['product_id'] : '')); ?>">
                                                                                                             <?php echo isset($product['product_name']) ? $product['product_name'] : 'Product'; ?>
                                                                                                         </a>
@@ -636,3 +642,4 @@
             e.stopPropagation();
         });
     </script>
+

@@ -8,8 +8,9 @@
                         <div class="footer-info_icon"><i class="fal fa-map-marker-alt"></i></div>
                         <div class="media-body">
                             <span class="footer-info_label">Office Address</span>
-                            <div class="footer-info_link">Plot No. 131, Sector 4A, Sector 1A, Kopar Khairane, Navi Mumbai, Maharashtra 400709
-</div>
+                            <div class="footer-info_link">Plot No. 131, Sector 1A, Kopar Khairane, Navi Mumbai,
+                                Maharashtra 400709
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -18,7 +19,8 @@
                         <div class="footer-info_icon"><i class="fal fa-clock"></i></div>
                         <div class="media-body">
                             <span class="footer-info_label">Working Hours</span>
-                            <div class="footer-info_link">Weekdays 9:30 to 6:00 PM  2nd and 4th Saturday is off ( Sunday off ) </div>
+                            <div class="footer-info_link">Weekdays 9:30 to 6:00 PM 2nd and 4th Saturday is off ( Sunday
+                                off ) </div>
                         </div>
                     </div>
                 </div>
@@ -28,8 +30,8 @@
                         <div class="media-body">
                             <span class="footer-info_label">Contact Us</span>
                             <div class="footer-info_link"><a
-                                    href="mailto:info@technovalue.in">info@technovalue.in</a><a
-                                    href="mailto:sales@technovalue.in">sales@technovalue.in</a><br>
+                                    href="mailto:info@technovalue.in">info@technovalue.in</a>
+                                    <a href="mailto:sales@technovalue.in">sales@technovalue.in</a><br>
                                     <a href="tel:+91 88793 30481 ">+91 88793 30481 </a></div>
                         </div>
                     </div>
@@ -47,10 +49,13 @@
                             <p class="footer-text">Intrinsicly evisculate emerging cutting edge scenarios redefine
                                 future-proof e-markets demand line</p>
                             <div class="footer-social">
-                                <a href="https://www.facebook.com/technovaluesolutions2019"><i class="fab fa-facebook-f"></i></a>
+                                <a href="https://www.facebook.com/technovaluesolutions2019"><i
+                                        class="fab fa-facebook-f"></i></a>
                                 <a href="https://twitter.com/technovalue123"><i class="fab fa-twitter"></i></a>
-                                <a href="https://www.instagram.com/technovaluesolutions/"><i class="fab fa-instagram"></i></a>
-                                <a href="https://www.linkedin.com/company/103670109/admin/dashboard/"><i class="fab fa-linkedin"></i></a>
+                                <a href="https://www.instagram.com/technovaluesolutions/"><i
+                                        class="fab fa-instagram"></i></a>
+                                <a href="https://www.linkedin.com/company/103670109/admin/dashboard/"><i
+                                        class="fab fa-linkedin"></i></a>
                                 <!--<a href="#"><i class="fab fa-youtube"></i></a>-->
                             </div>
                         </div>
@@ -61,11 +66,11 @@
                         <h3 class="widget_title">Links</h3>
                         <div class="menu-all-pages-container">
                             <ul class="menu">
-                                <li><a href="#">About Us</a></li>
-                                <li><a href="#">Our Mission</a></li>
-                                <li><a href="#">Meet The Teams</a></li>
-                                <li><a href="#">Our Projects</a></li>
-                                <li><a href="#">Contact Us</a></li>
+                                <li><a href="about-us">About Us</a></li>
+                                <li><a href="about-us">Our Mission</a></li>
+                                <li><a href="about-us">Meet The Teams</a></li>
+                                <li><a href="about-us">Our Projects</a></li>
+                                <li><a href="contact">Contact Us</a></li>
                             </ul>
                         </div>
                     </div>
@@ -88,7 +93,7 @@
                         <h3 class="widget_title">Office Maps</h3>
                         <div class="footer-map">
                             <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3768.1031395347286!2d72.95026587715064!3d19.1906970020714!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b905c193fc1d%3A0xe51ccf4213ab2fff!2sCrezvatic%20Pvt.%20Ltd.!5e0!3m2!1sen!2sin!4v1726118681895!5m2!1sen!2sin"
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3770.013680791891!2d73.00552365898322!3d19.107055750925735!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c0c850b3ffff%3A0xf3e7652372200957!2sTechnoValue%20Solutions%20Private%20Limited!5e0!3m2!1sen!2sin!4v1734942791210!5m2!1sen!2sin"
                                 width="200" height="180" style="border:0;" allowfullscreen="" loading="lazy"
                                 referrerpolicy="no-referrer-when-downgrade"></iframe>
                         </div>

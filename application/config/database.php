@@ -78,7 +78,11 @@ $db['default'] = array(
 	'hostname' => 'localhost',
 	'username' => 'root',
 	'password' => '',
+<<<<<<< HEAD
 	'database' => 'technovaluesiddesh',
+=======
+	'database' => 'technovalue5',
+>>>>>>> 118ad6caf9a2b9226a4ca5b075fb51ddc0b04d7d
 
 	// 'hostname' => '97.74.80.55',
 	// 'username' => 'digitallab_technovalue',
