@@ -28,10 +28,17 @@
                         <span class="nav-text">Sub category</span>
                     </a>
                 </li>
-                <li><a href="<?php echo base_url() ?>admin/home" class="ai-icon" aria-expanded="false">
+                <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
                         <i class="fa-solid fa-chart-simple"></i>
                         <span class="nav-text">Home Page</span>
                     </a>
+                    <ul aria-expanded="false" class="mm-collapse">
+                        <li><a href="<?php echo base_url() ?>admin/home">Home page</a></li>
+                        <li><a href="<?php echo base_url() ?>admin/about_us">Whats New</a></li>
+                        <li><a href="<?php echo base_url() ?>admin/chooseus">Update</a></li>
+                        <!-- <li><a href="<?php echo base_url() ?>admin/history">History</a></li> -->
+                        <!-- <li><a href="<?php echo base_url() ?>admin/expert">Meet Our Expert</a></li> -->
+                    </ul>
                 </li>
                 <!-- <li><a href="<?php echo base_url() ?>admin/contacts" class="ai-icon" aria-expanded="false">
                         <i class="fa-solid fa-chart-simple"></i>
