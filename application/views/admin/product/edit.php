@@ -166,6 +166,15 @@ $this->load->view('admin/layout/sidebar');
                                     type="text" class="form-control editModalTitle" placeholder="Enter Product Description">
                             </div>
 
+                            <div class="form-group">
+                                <label>Is Featured Product?</label>
+                                <select name="featured" id="featured" class="form-control editModalTitle" >
+                                    <option value="1" <?php echo (isset($product['featured']) && $product['featured'] == '1') ? 'selected' : ''; ?>>True</option>
+                                    <option value="0" <?php echo (isset($product['featured']) && $product['featured'] == '0') ? 'selected' : ''; ?>>False</option>
+                                </select>
+                            </div>
+
+
                             <!-- Product Application -->
                             <div class="form-group">
                                 <label>Products Other Information</label>
