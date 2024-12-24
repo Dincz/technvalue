@@ -33,7 +33,7 @@
                 <?php foreach ($partners as $partner): ?>
                     <div class="col-sm-6 col-md-4 col-lg-3">
                         <div class="square-holder">
-                            <img alt="<?php echo $partner->name; ?>" src="<?php echo base_url('uploads/gallery/' . $partner->image); ?>" />
+                            <img alt="<?php echo $partner->name; ?>" src="<?php echo base_url('uploads/brand/' . $partner->image); ?>" />
                         </div>
                     </div>
                 <?php endforeach; ?>

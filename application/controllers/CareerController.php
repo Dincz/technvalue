@@ -19,14 +19,19 @@ class CareerController extends CI_Controller {
 
         $data['qualities'] = $this->carrier_model->get_active_qualities();
         $data['content'] = $this->carrier_model->get_content();
+        $data['title'] = $title;
+
         
         $data['all_jobs'] = $this->carrier_model->get_all_job_detail();
+        // print_r($data['all_jobs']);
+        // exit;
 
 		$data['hierarchy'] = $this->Home_model->get_hierarchical_data();
 
         $data['use_carousel'] = count($data['qualities']) > 4;
         $this->load->view("layout/header",$data);
         $this->load->view("frontend/career", $data);
+        // $this->load->view("frontend/jobDetail", $data);
         $this->load->view("layout/footer");
 
     }
@@ -48,6 +53,8 @@ class CareerController extends CI_Controller {
         $data['banner'] = $this->Banner_model->get_banner_by_page_name('jobdetail'); // Adjust the page name as needed
 		$data['hierarchy'] = $this->Home_model->get_hierarchical_data();
 
+        // print_r($data['content']);
+        // exit;
         $this->load->view("layout/header",$data);
         $this->load->view("frontend/jobDetail", $data);
         $this->load->view("layout/footer");
