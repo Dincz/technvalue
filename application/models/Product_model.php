@@ -63,6 +63,21 @@ class Product_model extends CI_Model
     }
 
 
+    // Fetch products by category ID (c_id)
+    public function get_products_by_category($c_id)
+    {
+        // Query to fetch products where the category ID matches the given c_id
+        $this->db->where('c_id', $c_id);  // Assuming 'c_id' in the products table refers to the category ID
+        $query = $this->db->get('products');  // Assuming the products table is named 'products'
+
+        // Check if products exist and return the result
+        if ($query->num_rows() > 0) {
+            return $query->result_array();  // Return the products as an array of associative arrays
+        }
+
+        return false;  // Return false if no products are found
+    }
+
     // Fetch all categories from the database
     public function get_categories()
     {

@@ -122,6 +122,7 @@ class Product extends CI_Controller
             $data = array(
                 'p_name'      => $this->input->post('p_name'),
                 'description' => $this->input->post('description'),
+                'type'        => $this->input->post('type'),
                 'application' => $this->input->post('application'),
                 'features'    => $this->input->post('features'),
                 'video_link'  => $this->input->post('video_link'),
@@ -230,6 +231,7 @@ class Product extends CI_Controller
             $update_data = array(
                 'p_name'      => $this->input->post('p_name'),
                 'description' => $this->input->post('description'),
+                'type'        => $this->input->post('type'),
                 'application' => $this->input->post('application'),
                 'features'    => $this->input->post('features'),
                 'video_link'  => $this->input->post('video_link'),

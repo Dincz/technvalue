@@ -47,18 +47,22 @@ class ProductController extends CI_Controller
         // exit;
     }
 
+    
+
+
 
     // Method to display product details
-    public function productDetail($p_id)
+    public function productDetail($p_id,)
     {
         // Fetch the products from the model
         $data['banner'] = $this->Banner_model->get_banner_by_page_name('productdetail'); // Adjust the page name as needed
         $data['hierarchy'] = $this->Home_model->get_hierarchical_data();
+        $data['product'] = $this->Product_model->get_product_by_id($p_id);
+        $c_id = $data['product']['c_id'];
 
         $data['categories'] = $this->Product_model->get_categories();
-        $data['products'] = $this->Product_model->get_products();
+        $data['products'] = $this->Product_model->get_products_by_category($c_id); // Fetch products for the specific category
         $data['sub_category'] = $this->Product_model->get_sub_category();
-        $data['product'] = $this->Product_model->get_product_by_id($p_id);
 
 
         
