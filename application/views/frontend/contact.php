@@ -1,28 +1,17 @@
-<div class="breadcumb-wrapper" data-bg-src="<?= base_url('uploads/banners/') . $banner['image']; ?>">
+<div class="breadcumb-wrapper" data-bg-src="<?= base_url('uploads/banners/banner-1.jpg'); ?>">
     <div class="container z-index-common">
         <div class="breadcumb-content">
-            <h1 class="breadcumb-title">Blog Detail</h1>
+            <h1 class="breadcumb-title">Contact</h1>
             <div class="breadcumb-menu-wrap">
                 <ul class="breadcumb-menu">
                     <li><a href="<?php echo base_url() ?>">Home</a></li>
-                    <li>Blog Detail</li>
+                    <li>Contact</li>
                 </ul>
             </div>
         </div>
     </div>
 </div>
-<div class="container z-index-common">
-        <div class="breadcumb-content">
-            <h1 class="breadcumb-title">Contact Us</h1>
-            <div class="breadcumb-menu-wrap">
-                <ul class="breadcumb-menu">
-                    <li><a href="index.html">Home</a></li>
-                    <li>Contact Us</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</div>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -65,12 +54,15 @@
         .tippy-content {
             padding: 10px;
         }
+        .map{
+            max-width: 100%!important;
+        }
     </style>
 </head>
 
 <body>
     <div class="map-container ">
-        <img src="assets/img/TechnoValueIndiaMapLocation-01.webp" alt="TechnoValue India Map" id="map-image">
+        <img class="map" src="assets/img/TechnoValueIndiaMapLocation-01.webp" alt="TechnoValue India Map" id="map-image">
     </div>
 
     <script>
@@ -505,14 +497,14 @@
       Contact Form Area
     ==============================-->
 <section class=" space-top space-extra-bottom">
-    <div class="container d-flex text-center">
-        <div class="col-lg-6 m-5">
+    <div class="d-flex justify-content-center text-center row">
+        <div class="col-lg-6 col-12 ">
             <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3769.977622978157!2d73.00683627505293!3d19.108637582102673!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c0c850b3ffff%3A0xf3e7652372200957!2sTechnoValue%20Solutions%20Pvt%20Ltd!5e0!3m2!1sen!2sin!4v1727946323847!5m2!1sen!2sin"
                 width="600" height="750" style="border:2px;" allowfullscreen="" loading="lazy"
                 referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
-        <div class="col-lg-6 m-5">
+        <div class="col-lg-5 col-12">
             <div class="contact-box">
                 <h3 class="contact-box__title h4">Leave a Message</h3>
                 <p class="contact-box__text">We’re Ready To Help You</p>

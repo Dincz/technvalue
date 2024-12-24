@@ -90,8 +90,7 @@
                         <?php else: ?>
                             <p>No updates available.</p>
                         <?php endif; ?>
-
-                        <a href="#" class="btn view-all-btn">View All</a>
+                        <a href="<?php echo base_url().'product-category/1'?>" class="btn view-all-btn">View All</a>
                     </div>
                 </div>
             </div>
@@ -110,22 +109,25 @@
                 <!-- Tab content: Aimil at Shows -->
                 <div class="middleContent position-relative card rounded">
 
-                    <div id="aimilShows" class="tabcontent p-5 ">
-                        <p class="m-0 fw-semibold">Job alerts</p>
-                        <p class="m-0"><strong>Lorem, ipsum dolor. 2024</strong><br>
-                            25/09/2024 - 27/09/2024<br>CIDCO Navi Mumbai</p>
-                        <a href="#" class="text-danger">Read More »</a>
-                        <hr>
-                        <p class="m-0 fw-semibold">Job alerts</p>
-                        <p class="m-0"><strong>Lorem, ipsum dolor. 2024</strong><br>
-                            25/09/2024 - 27/09/2024<br>CIDCO Navi Mumbai</p>
-                        <a href="#" class="text-danger">Read More »</a>
-                        <hr>
-
-                        <div class="bottom-0 position-absolute mb-4">
-                            <a href="#" class="btn view-all-btn ">View All</a>
+                    <!-- Trying to convert first for each loop -->
+                    <div id="aimilShows" class="tabcontent p-5">
+                        <?php
+                        foreach ($jobs as $job) {
+                        ?>
+                            <p class="m-0 fw-semibold recolor">Title: <?php echo $job->title; ?></p>
+                            <p class="m-0 recolor">
+                                <strong>Department: <?php echo $job->department; ?></strong><br>
+                                Experience: <?php echo $job->experience; ?><br>
+                                Location: <?php echo $job->location; ?>
+                            </p>
+                            <a href="<?php echo base_url().'job-detail/'.$job->page_name; ?>" class="text-danger">Read More »</a>
+                            <hr>
+                        <?php
+                        }
+                        ?>
+                         <div class="bottom-0 position-absolute mb-4">
+                            <a href="<?php echo base_url() ?>career" class="btn view-all-btn ">View All</a>
                         </div>
-
                     </div>
 
 
@@ -137,7 +139,7 @@
                         <a href="#" class="text-danger">Read More »</a>
                         <hr>
                         <div class="bottom-0 position-absolute mb-4">
-                            <a href="#" class="btn view-all-btn ">View All</a>
+                            <a href="<?php echo base_url() ?>career" class="btn view-all-btn ">View All</a>
                         </div>
 
                     </div>
@@ -154,7 +156,8 @@
                             <div class="swiper-wrapper">
                                 <?php if (!empty($technical_updates)): ?>
                                     <?php foreach ($technical_updates as $update): ?>
-                                        <?php if ($update['status'] == 1): // Display only active updates ?>
+                                        <?php if ($update['status'] == 1): // Display only active updates 
+                                        ?>
                                             <div class="swiper-slide">
                                                 <!-- Dynamically display the update image -->
                                                 <img src="<?php echo base_url('uploads/services/' . $update['u_image']); ?>"
@@ -402,23 +405,28 @@
             </div>
         </div>
     </div>
+
     <div class="container overflow-hidden px-xxl-0">
         <div class="row vs-carousel" data-slide-show="4" data-ml-slide-show="3" data-lg-slide-show="3"
             data-md-slide-show="2" id="projectslide1">
+
             <?php foreach ($gallery_items as $item): ?>
                 <div class="col-xl-3">
                     <div class="project-style2">
-                        <div class="project-img rounded">
-                            <img src=<?php echo base_url('assets/img/gallery/' . $item['background_image']); ?>
-                                alt="project">
+                        <div class="card h-100 shadow-sm">
+                            <div class="card-img-wrapper" style="height: 250px; overflow: hidden;">
+                                <img src="<?php echo base_url('uploads/gallery/All_images/' . $item['background_image']); ?>"
+                                    alt="project"
+                                    class="img-fluid w-100 h-100 rounded"
+                                    style="object-fit: cover;">
+                            </div>
                             <div class="project-shape"></div>
-                            <!-- <a href="assets/img/gallery/gal-1-1.png" class="popup-image icon-btn style3"><i
-                                class="far fa-search"></i></a> -->
                         </div>
                         <div class="project-content rounded">
                             <span class="project-label"><?php echo $item['title']; ?></span>
-                            <h3 class="project-title h5"><a href="<?php echo base_url($item['see_more_link']); ?>"
-                                    class="text-reset">See More</a></h3>
+                            <h3 class="project-title h5">
+                                <a href="<?php echo base_url($item['see_more_link']); ?>" class="text-reset">See More</a>
+                            </h3>
                         </div>
                     </div>
                 </div>
@@ -429,12 +437,12 @@
 
 
 <!-- <?php
-// Output the floating button
-$buttonLink = "tel:+1234567890";
-echo '<a href="' . $buttonLink . '" class="floating-button">';
-echo '<i class="fas fa-phone"></i>';
-echo '</a>';
-?> -->
+        // Output the floating button
+        $buttonLink = "tel:+1234567890";
+        echo '<a href="' . $buttonLink . '" class="floating-button">';
+        echo '<i class="fas fa-phone"></i>';
+        echo '</a>';
+        ?> -->
 
 <!--==============================
             Footer Area
@@ -449,7 +457,7 @@ echo '</a>';
         pagination: {
             el: '.swiper-pagination',
             clickable: true,
-            renderBullet: function (index, className) {
+            renderBullet: function(index, className) {
                 return '<span class="' + className + '">' + (index + 1) + '</span>'; // Show numbers
             },
         },

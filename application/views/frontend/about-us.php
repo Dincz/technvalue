@@ -1,5 +1,4 @@
 <?php $this->load->view('layout/header'); ?>
-
 <!--==============================
     Breadcumb
 ============================== -->
@@ -10,7 +9,7 @@
             <div class="breadcumb-menu-wrap">
                 <ul class="breadcumb-menu">
                     <li><a href="index.html">Home</a></li>
-                    <li>About Us</li>
+                 <li>About Us</li>
                 </ul>
             </div>
         </div>
@@ -21,41 +20,21 @@
 <!--==============================
     About Us
     ==============================-->
-<section data-bg-src="assets/img/bg/about-bg-5-1.png">
-    <div class="container container-style1">
-        <div class="row flex-row-reverse align-items-center gx-70">
-            <div class="col-lg-6 col-xl">
-                <img src="<?= base_url('uploads/about/') . $about[0]['about_us_image']; ?>" alt="about image">
-            </div>
-            <div class="col-lg-6 col-xl-auto  wow fadeInUp" data-wow-delay="0.2s">
-                <div class="about-box2">
-                    <!-- <span class="sec-subtitle"><i class="fas fa-bring-forward"></i>Get best It solution 2022</span> -->
-                    <h2 class="sec-title3 h1">About Us</h2>
-                    <p><?= $about[0]['about_us_description']; ?></p>
-                    <!-- <div
-                            class="row gx-0 align-items-center flex-row-reverse justify-content-end mt-sm-3 pt-sm-3 mb-30 pb-10">
-                            <div class="col-sm-auto">
-                                <p class="author-degi">Founder & CEO</p>
-                                <h3 class="h5 author-name">Adam Smith</h3>
-                            </div>
-                            <div class="col-sm-auto">
-                                <div class="about-call">
-                                    <div class="about-call__icon"><i class="fas fa-phone-alt"></i></div>
-                                    <div class="media-body">
-                                        <span class="about-call__label">Call To Ask Any Queary</span>
-                                        <p class="about-call__number"><a href="tel:+25821562154">+(258) 2156 2154</a>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> -->
-                    <!-- <a href="about.html" class="vs-btn">About Us<i class="far fa-long-arrow-right"></i></a> -->
+    <section class="py-5 mb-5 nopaddingformobile"></section>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="card shadow-sm">
+                        <div class="card-body">
+                            <?= $about[0]['about_us_description']; ?>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
-
+    </section>
+    <br>
+    <br>
 <!--==============================
     From the Desk of Director
     ==============================-->
@@ -78,9 +57,9 @@
             <div class="col-xl-6">
                 <div class="testi-style2">
                     <div class="testi-body">
-                        <div class="author-img"><img src="<?= base_url('uploads/about/') . $about[0]['dod_image']; ?>"
+                        <!-- <div class="author-img"><img src="<?= base_url('uploads/about/') . $about[0]['dod_image']; ?>"
                                 alt="Testimonial">
-                        </div>
+                        </div> -->
                         <div class="media-body">
                             <p class="testi-text">“<?= $about[0]['dod_comment']; ?>”</p>
                         </div>
@@ -92,9 +71,9 @@
             <div class="col-xl-6">
                 <div class="testi-style2">
                     <div class="testi-body">
-                        <div class="author-img"><img src="<?= base_url('uploads/about/') . $about[0]['dod_image_1']; ?>"
+                        <!-- <div class="author-img"><img src="<?= base_url('uploads/about/') . $about[0]['dod_image_1']; ?>"
                                 alt="Testimonial">
-                        </div>
+                        </div> -->
                         <div class="media-body">
                             <p class="testi-text">“<?= $about[0]['dod_comment_1']; ?>”</p>
                         </div>
@@ -132,7 +111,7 @@
                                 <div id="collapse<?= $index; ?>" class="accordion-collapse collapse"
                                     aria-labelledby="heading<?= $index; ?>" data-bs-parent="#faqVersion3">
                                     <div class="accordion-body">
-                                        <p><?= htmlspecialchars($chooseUs['answer']); ?></p>
+                                        <pre><?= htmlspecialchars($chooseUs['answer']); ?></pre>
                                     </div>
                                 </div>
                             </div>
@@ -285,8 +264,8 @@
                         <h3 class="team-title"><a class="text-inherit"><?= htmlspecialchars($moe['name']); ?></a></h3>
                         <p class="team-degi"><?= htmlspecialchars($moe['designation']); ?></p>
                         <div class="team-social">
-                            <a href="<?= htmlspecialchars($moe['facebook_link']); ?>"><i class="fab fa-facebook-f"></i></a>
-                            <a href="<?= htmlspecialchars($moe['twitter_link']); ?>"><i class="fab fa-twitter"></i></a>
+                            <!-- <a href="<?= htmlspecialchars($moe['facebook_link']); ?>"><i class="fab fa-facebook-f"></i></a> -->
+                            <!-- <a href="<?= htmlspecialchars($moe['twitter_link']); ?>"><i class="fab fa-twitter"></i></a> -->
                             <a href="<?= htmlspecialchars($moe['linkdln_link']); ?>"><i class="fab fa-linkedin"></i></a>
                         </div>
                     </div>
@@ -389,3 +368,17 @@
 
 
 <?php $this->load->view('layout/footer'); ?>
+
+
+
+TechnoValue serves a wide range of industries, including:
+● Pharmaceuticals and Biopharma
+● Hospitals
+● Environmental Laboratories
+● Data Centers
+● Research and Educational Institutes
+● HVAC Consultants and Contractors
+● Food Industries
+● Automobile Industries
+● Green Building Technology
+● Survey and Construction Industries

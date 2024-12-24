@@ -7,7 +7,7 @@
         <form method="post" enctype="multipart/form-data">
             <div class="form-group">
                 <label for="about_us_description">Description:</label>
-                <textarea name="about_us_description" class="form-control" style="height: 150px"
+                <textarea name="about_us_description" id="content" class="form-control" style="height: 150px"
                     required><?= $about['about_us_description']; ?></textarea>
             </div>
             <div class="form-group">
@@ -88,3 +88,20 @@
     </div>
 </div>
 <?php $this->load->view('admin/layout/footer'); ?>
+
+
+
+<script src="https://cdn.ckeditor.com/ckeditor5/36.0.1/classic/ckeditor.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    let editor;
+
+    ClassicEditor
+        .create(document.querySelector('#content'))
+        .then(newEditor => {
+            editor = newEditor;
+        })
+        .catch(error => {
+            console.error(error);
+        });
+</script>

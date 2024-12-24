@@ -8,8 +8,9 @@
                         <div class="footer-info_icon"><i class="fal fa-map-marker-alt"></i></div>
                         <div class="media-body">
                             <span class="footer-info_label">Office Address</span>
-                            <div class="footer-info_link">Plot No. 131, Sector 4A, Sector 1A, Kopar Khairane, Navi Mumbai, Maharashtra 400709
-</div>
+                            <div class="footer-info_link">Plot No. 131, Sector 1A, Kopar Khairane, Navi Mumbai,
+                                Maharashtra 400709
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -18,7 +19,8 @@
                         <div class="footer-info_icon"><i class="fal fa-clock"></i></div>
                         <div class="media-body">
                             <span class="footer-info_label">Working Hours</span>
-                            <div class="footer-info_link">Weekdays 9:30 to 6:00 PM  2nd and 4th Saturday is off ( Sunday off ) </div>
+                            <div class="footer-info_link">Weekdays 9:30 to 6:00 PM 2nd and 4th Saturday is off ( Sunday
+                                off ) </div>
                         </div>
                     </div>
                 </div>
@@ -47,10 +49,13 @@
                             <p class="footer-text">Intrinsicly evisculate emerging cutting edge scenarios redefine
                                 future-proof e-markets demand line</p>
                             <div class="footer-social">
-                                <a href="https://www.facebook.com/technovaluesolutions2019"><i class="fab fa-facebook-f"></i></a>
+                                <a href="https://www.facebook.com/technovaluesolutions2019"><i
+                                        class="fab fa-facebook-f"></i></a>
                                 <a href="https://twitter.com/technovalue123"><i class="fab fa-twitter"></i></a>
-                                <a href="https://www.instagram.com/technovaluesolutions/"><i class="fab fa-instagram"></i></a>
-                                <a href="https://www.linkedin.com/company/103670109/admin/dashboard/"><i class="fab fa-linkedin"></i></a>
+                                <a href="https://www.instagram.com/technovaluesolutions/"><i
+                                        class="fab fa-instagram"></i></a>
+                                <a href="https://www.linkedin.com/company/103670109/admin/dashboard/"><i
+                                        class="fab fa-linkedin"></i></a>
                                 <!--<a href="#"><i class="fab fa-youtube"></i></a>-->
                             </div>
                         </div>

@@ -30,6 +30,14 @@ class Carrier_model extends CI_Model {
         $query = $this->db->get();       
         return $query->result();
     }
+    public function jobs_data($id) {
+        $this->db->select('*');    
+        $this->db->from('job_postings');    
+        $this->db->where('status', 'active');      
+        $this->db->limit(2); 
+        $query = $this->db->get();       
+        return $query->result();
+    }
 
     public function get_all_job_detail() {
         $this->db->select('title, image_url, page_name');    
