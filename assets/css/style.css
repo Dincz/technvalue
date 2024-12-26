@@ -1784,6 +1784,13 @@ textarea.is-invalid {
 	width: 40px;
 }
 
+.vs-blog-wrapper .owl-nav{
+	display: flex !important;
+	justify-content: center !important;
+	gap: 10px;
+}
+
+
 /* Extra large devices */
 @media (max-width: 1500px) {
 	.slick-arrow {
@@ -1983,11 +1990,12 @@ textarea.is-invalid {
 	.mobileMenu .vs-menu-toggle {
 		top: 70px !important;
 	}
+	
 }
 
 @media (max-width: 375px) {
 	.mobileMenu .vs-menu-toggle {
-		top: 55px !important;
+		top: 60px !important;
 	}
 }
 
@@ -5801,13 +5809,19 @@ a.text-theme:hover,
 
 /* Medium devices */
 @media (max-width: 991px) {
+	.owl-carousel .owl-nav button.owl-next, 
+	.owl-carousel .owl-nav button.owl-prev,
+	 .owl-carousel button.owl-dot{
+		font-size: 50px !important;
+
+	}
 	.header-links li {
 		padding-right: 15px;
 		margin-right: 10px;
 	}
 
 	.header-logo {
-		padding: 15px 0;
+		padding: 15px 0 !important;
 	}
 
 	.logo-style1 {
@@ -6878,8 +6892,8 @@ blockquote.vs-quote .quote-author {
 
 .blog-style1 {
 	background-color: var(--white-color);
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  	border-radius: 5px;
+	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+	border-radius: 5px;
 }
 
 .blog-style1 .blog-meta {
@@ -17345,6 +17359,9 @@ blockquote.vs-quote .quote-author {
 	.header-top.style8 {
 		padding: 15px;
 	}
+	.header-top .container .row{
+		justify-content: end !important;
+	}
 }
 
 .header-wrap8 {
@@ -18839,6 +18856,12 @@ blockquote.vs-quote .quote-author {
 }
 
 @media (max-width: 991px) {
+
+  .contactus_detail .footer-info{
+    display: flex !important;
+    align-items: center;
+  }
+
 	.newsletter-wrap8 .newsletter-img {
 		position: relative;
 		bottom: 0;
@@ -18893,7 +18916,24 @@ blockquote.vs-quote .quote-author {
 	padding: 10px 15px;
 }
 
-@media (min-width: 768px) {
+@media (max-width: 768px) {
+	blockquote {
+		padding: 5px !important;
+	}
+	.principal,
+	.principal .downbtn .vs-btn {
+		margin: 0 !important;
+	}
+  .principal .downbtn .vs-btn{
+    padding: 11px 11px !important;
+  }
+  .principal .d-flex{
+    justify-content: space-between !important;
+  }
+  .cta-Banner {
+    margin: 3rem 2px !important;
+  }
+
 }
 
 @media (max-width: 555px) {

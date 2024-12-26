@@ -24,13 +24,13 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-6 footer-info_group">
+                <div class="col-lg-4 col-6 footer-info_group contactus_detail">
                     <div class="footer-info">
                         <div class="footer-info_icon"><i class="fal fa-phone-volume"></i></div>
                         <div class="media-body">
                             <span class="footer-info_label">Contact Us</span>
-                            <div class="footer-info_link"><a
-                                    href="mailto:info@technovalue.in">info@technovalue.in</a>
+                            <div class="footer-info_link">
+                                <a href="mailto:info@technovalue.in">info@technovalue.in</a>
                                 <a href="mailto:sales@technovalue.in">sales@technovalue.in</a><br>
                                 <a href="tel:+91 88793 30481 ">+91 88793 30481 </a>
                             </div>
