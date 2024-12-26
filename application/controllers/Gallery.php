@@ -25,6 +25,7 @@ class Gallery extends CI_Controller
             $data['title'] = 'default-title';  // Provide a default title to avoid null
         } else {
             $data['title'] = $title;
+            $data['titletodisplay'] = urldecode($title);
         }
 
 

@@ -164,7 +164,7 @@
             <div class="col-xl-12">
                 <div class="title-area">
                     <!-- <span class="sec-subtitle">Great Team Members</span> -->
-                    <h2 class="sec-title3 h1">Expertise Or Achievements</h2>
+                    <h2 class="sec-title3 h1">Expertise</h2>
                 </div>
             </div>
         </div>

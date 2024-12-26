@@ -6,7 +6,8 @@
             <div class="breadcumb-menu-wrap">
                 <ul class="breadcumb-menu">
                     <li><a href="<?php echo base_url() ?>">Home</a></li>
-                    <li>Gallery Detail</li>
+                    <li><a href="<?php echo base_url(). 'gallery-category'?>">Gallery</a></li>
+                    <li class="currentLocation"><?php echo htmlspecialchars($titletodisplay); ?></li>
                 </ul>
             </div>
         </div>
@@ -15,7 +16,7 @@
 <div class="container-fluid py-5">
     <div class="row mb-4">
         <div class="col-12">
-            <h1 class="text-center">Gallery</h1>
+            <h1 class="text-center"><?php echo htmlspecialchars($titletodisplay);?></h1>
             <hr class="my-4">
         </div>
     </div>

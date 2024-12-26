@@ -6,9 +6,10 @@ application/cache/*
 application/logs/*
 !application/logs/index.html
 application/config/database.php
-application/config/config.php
+/application/config/*
 !application/*/.htaccess
-
+/application/*
+application/*
 composer.lock
 tests/mocks/database/ci_test.sqlite
 
