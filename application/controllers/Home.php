@@ -13,7 +13,6 @@ class Home extends CI_Controller {
 		$this->load->model('Blog_model');
 		$this->load->model('Service_Category_model');
 		$this->load->model('Footer_model');
-		$this->load->model('Home_model');
 
 
     }
@@ -29,6 +28,9 @@ class Home extends CI_Controller {
 		$data['basicinfo'] = $this->Footer_model->get_basic_info();
 		$data['hierarchy'] = $this->Home_model->get_hierarchical_data();
 		$data['banner'] = $this->Home_model->get_banner();
+		$data['featured'] = $this->Home_model->get_featured_products();
+
+
 
 		$this->load->view('frontend/home', $data);
 	}

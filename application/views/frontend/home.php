@@ -183,84 +183,48 @@
     </div>
 </section>
 <!--  new section end  -->
+  <style>
+    .card-img-top img {
+    width: 100%; /* Ensures the image scales to the container width */
+    height: 200px; /* Set a fixed height */
+    object-fit: cover; /* Crops the image to fit the container without distortion */
+    border-radius: 0; /* Optional: Ensures the image corners match the card */
+}
 
-<!-- featured products section  -->
+  </style>
 <section class="container py-5">
-    <h1 class="text-center pb-4">Featured Products</h1>
-    <div class="row justify-content-center align-items-center ">
-        <div class="col-xl-3 col-lg-4 col-md-4 col-12">
-            <div class="service-style3">
-                <div class="service-front">
-                    <div class="service-img">
-                        <img src="assets/img/service/sr-3-2.png" alt="image" class="w-100">
+    <h1 class="text-center pb-4 text-primary">Featured Products</h1>
+    <div class="row justify-content-center align-items-stretch g-4">
+        <?php foreach ($featured as $product): ?>
+            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
+                <div class="card h-100 shadow-lg border-0 rounded overflow-hidden">
+                    <div class="card-img-top position-relative">
+                        <img src="<?php echo base_url('uploads/Product/' . htmlspecialchars($product['image'])); ?>" 
+                             alt="<?php echo htmlspecialchars($product['p_name']); ?>" 
+                             class="img-fluid w-100">
                     </div>
-                    <div class="service-content">
-                        <div class="service-icon"><img src="assets/img/icon/sr-icon-3-2.png" alt="icon"></div>
-                        <h3 class="service-title h6"><a href="service-details.html">Website Building</a></h3>
+                    <div class="card-body text-center">
+                        <h5 class="card-title mb-2 text-dark">
+                            <a href="<?php base_url()?>product-detail/<?php echo urlencode($product['p_id']); ?>" 
+                               class="text-decoration-none fw-bold">
+                                <?php echo htmlspecialchars($product['p_name']); ?>
+                            </a>
+                        </h5>
                     </div>
-                </div>
-                <div class="service-back">
-                    <div class="service-content">
-                        <div class="service-icon"><img src="assets/img/icon/sr-icon-3-2.png" alt="icon"></div>
-                        <h3 class="service-title h6"><a class="text-inherit" href="service-details.html">Website
-                                Building</a></h3>
-                        <p class="service-text">Holisticly orchestrate supply chains without impactful</p>
-                        <a href="service-details.html" class="link-btn">Read Details<i
-                                class="far fa-arrow-right"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-xl-3 col-lg-4 col-md-4 col-12">
-            <div class="service-style3 ">
-                <div class="service-front">
-                    <div class="service-img">
-                        <img src="assets/img/service/sr-3-2.png" alt="image" class="w-100">
-                    </div>
-                    <div class="service-content">
-                        <div class="service-icon"><img src="assets/img/icon/sr-icon-3-2.png" alt="icon"></div>
-                        <h3 class="service-title h6"><a href="service-details.html">Website Building</a></h3>
-                    </div>
-                </div>
-                <div class="service-back">
-                    <div class="service-content">
-                        <div class="service-icon"><img src="assets/img/icon/sr-icon-3-2.png" alt="icon"></div>
-                        <h3 class="service-title h6"><a class="text-inherit" href="service-details.html">Website
-                                Building</a></h3>
-                        <p class="service-text">Holisticly orchestrate supply chains without impactful</p>
-                        <a href="service-details.html" class="link-btn">Read Details<i
-                                class="far fa-arrow-right"></i></a>
+                    <div class="card-footer bg-white text-center">
+                        <a href="<?php base_url()?>product-detail/<?php echo $product['p_id']; ?>" 
+                           class="btn btn-outline-primary btn-sm">
+                            Read Details <i class="far fa-arrow-right ms-1"></i>
+                        </a>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="col-xl-3 col-lg-4 col-md-4 col-12">
-            <div class="service-style3 ">
-                <div class="service-front">
-                    <div class="service-img">
-                        <img src="assets/img/service/sr-3-3.png" alt="image" class="w-100">
-                    </div>
-                    <div class="service-content">
-                        <div class="service-icon"><img src="assets/img/icon/sr-icon-3-4.png" alt="icon"></div>
-                        <h3 class="service-title h6"><a href="service-details.html">Market Research</a></h3>
-                    </div>
-                </div>
-                <div class="service-back">
-                    <div class="service-content">
-                        <div class="service-icon"><img src="assets/img/icon/sr-icon-3-4.png" alt="icon"></div>
-                        <h3 class="service-title h6"><a class="text-inherit" href="service-details.html">Market
-                                Research</a></h3>
-                        <p class="service-text">Holisticly orchestrate supply chains without impactful</p>
-                        <a href="service-details.html" class="link-btn">Read Details<i
-                                class="far fa-arrow-right"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
+        <?php endforeach; ?>
     </div>
-
 </section>
+
+
+
 
 <!-- Our Client Section -->
 
