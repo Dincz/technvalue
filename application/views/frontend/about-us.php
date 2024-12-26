@@ -21,7 +21,7 @@
     About Us
     ==============================-->
     <section class="py-5 mb-5 nopaddingformobile"></section>
-        <div class="container">
+        <div class="container" id="ourstory">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="card shadow-sm">
@@ -127,7 +127,7 @@
 
 <!-- Vision, Mission and Values -->
 
-<div class="container space-top space-extra-bottom d-flex">
+<div class="container space-top space-extra-bottom d-flex" id="mission-vision">
     <div class="row">
         <div class="col-xl-4">
             <div class="testi-style1">
@@ -164,7 +164,7 @@
             <div class="col-xl-12">
                 <div class="title-area">
                     <!-- <span class="sec-subtitle">Great Team Members</span> -->
-                    <h2 class="sec-title3 h1">Expertise Or Achievements</h2>
+                    <h2 class="sec-title3 h1">Expertise</h2>
                 </div>
             </div>
         </div>
@@ -246,7 +246,7 @@
 <!--==============================
     Team Area
     ==============================-->
-<section class=" space-top space-extra-bottom" data-bg-src="assets/img/bg/team-bg-5-1.png">
+<section class=" space-top space-extra-bottom" data-bg-src="assets/img/bg/team-bg-5-1.png" id="moe">
     <div class="container  wow fadeInUp" data-wow-delay="0.2s">
         <div class="title-area text-center">
             <h2 class="sec-title4">Meet Our Experts</h2>

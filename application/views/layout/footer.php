@@ -67,11 +67,11 @@
                         <h3 class="widget_title">Links</h3>
                         <div class="menu-all-pages-container">
                             <ul class="menu">
-                                <li><a href="about-us">About Us</a></li>
-                                <li><a href="about-us">Our Mission</a></li>
-                                <li><a href="about-us">Meet The Teams</a></li>
-                                <li><a href="about-us">Our Projects</a></li>
-                                <li><a href="contact">Contact Us</a></li>
+                                <li><a href="<?php echo site_url('about-us'); ?>">About Us</a></li>
+                                <li><a href="<?php echo site_url('about-us#mission-vision'); ?>">Our Mission</a></li>
+                                <li><a href="<?php echo site_url('about-us#moe'); ?>">Meet The Teams</a></li>
+                                <li><a href="<?php echo site_url('service-category'); ?>">Our Services</a></li>
+                                <li><a href="<?php echo site_url('contact'); ?>">Contact Us</a></li>
                             </ul>
                         </div>
                     </div>
@@ -81,10 +81,10 @@
                         <h3 class="widget_title">Explore</h3>
                         <div class="menu-all-pages-container">
                             <ul class="menu">
-                                <li><a href="service-category">What we Offer</a></li>
-                                <li><a href="about-us">Our Story</a></li>
-                                <li><a href="blog">Latest Posts</a></li>
-                                <li><a href="contact">Help Center</a></li>
+                                <li><a href="<?php echo site_url('about-us#weoffer'); ?>">What we Offer</a></li>
+                                <li><a href="<?php echo site_url('about-us#ourstory'); ?>">Our Story</a></li>
+                                <li><a href="<?php echo site_url('#latest'); ?>">Latest Posts</a></li>
+                                <li><a href="<?php echo site_url('contact#helpcenter'); ?>">Help Center</a></li>
                             </ul>
                         </div>
                     </div>
@@ -106,8 +106,8 @@
     <div class="copyright-wrap">
         <div class="container">
             <p class="copyright-text">Copyright <i class="fal fa-copyright"></i> 2024 <a class="text-white"
-                    href="index.html">Crezvatic</a>. All rights reserved by <a class="text-white"
-                    href="#">Crezvatic</a>.</p>
+                    href="index.html">TechnoValue</a>. All rights reserved by <a class="text-white"
+                    href="#">TechnoValue</a>.</p>
         </div>
     </div>
 </footer>

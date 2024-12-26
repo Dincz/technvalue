@@ -2585,7 +2585,7 @@ textarea.is-invalid {
 	}
 
 	.scrollToTop.show {
-		bottom: 20px;
+		bottom: 100px;
 	}
 }
 
@@ -18962,8 +18962,12 @@ blockquote.vs-quote .quote-author {
 	}
 
 	.floating-button {
-		right: 60% !important;
+		right: 65% !important;
 		padding: 0.375rem 0.75rem !important;
+		bottom: 33%!important;
+	}
+	.square-holder{
+		margin-bottom: 20%!important;
 	}
 }
 
@@ -18972,4 +18976,9 @@ blockquote.vs-quote .quote-author {
   height: 200px; /* Set a fixed height */
   object-fit: cover; /* Crops the image to fit the container without distortion */
   border-radius: 0; /* Optional: Ensures the image corners match the card */
+}
+
+
+.currentLocation {
+ 	color:	#fdc900 !important;
 }
