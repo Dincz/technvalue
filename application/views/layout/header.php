@@ -299,9 +299,16 @@
                     </div> -->
                     <div class="col-auto">
                         <div class="header-social style-white">
-                            <a href="#"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#"><i class="fab fa-twitter"></i></a>
-                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.facebook.com/technovaluesolutions2019">
+                                <i class="fab fa-facebook-f"></i></a>
+                            <a href="https://twitter.com/technovalue123">
+                                <i class="fab fa-twitter"></i></a>
+                            <a href="https://www.linkedin.com/company/technovaluesolutions/posts/?feedView=all&amp;viewAsMember=true">
+                                <i class="fab fa-linkedin"></i></a>
+                            <a href="https://www.instagram.com/technovaluesolutions/">
+                                <i class="fab fa-instagram"></i></a>
+                            <a href="https://pin.it/5a44BTUK7">
+                                <i class="fab fa-pinterest"></i></a>
                         </div>
                     </div>
                 </div>

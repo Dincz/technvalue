@@ -2013,7 +2013,7 @@ textarea.is-invalid {
 
     @media (max-width: 375px) {
         .mobileMenu .vs-menu-toggle {
-            top: 60px !important;
+            top: 50px !important;
         }
     }
 
@@ -14346,6 +14346,8 @@ blockquote.vs-quote .quote-author {
 }
 
 .floating-button {
+  background-color: #0037ff !important;
+  border-color: #0037ff !important;
   position: fixed;
   bottom: 20px;
   right: 20px;
