@@ -226,4 +226,9 @@ $route['admin/technovalue/create'] = 'admin/technovalue/create'; // Show form to
 $route['admin/technovalue/edit/(:num)'] = 'admin/technovalue/edit/$1'; // Show form to edit an existing update
 $route['admin/technovalue/delete/(:num)'] = 'admin/technovalue/delete/$1'; // Delete an update
 
+// Routes for whatsnew section in homepage
+$route['admin/whatsnew'] = 'admin/WhatsNew/index'; // View all items
+$route['admin/whatsnew/create'] = 'admin/WhatsNew/create'; // Create a new item
+$route['admin/whatsnew/edit/(:num)'] = 'admin/WhatsNew/edit/$1'; // Edit an existing item
+$route['admin/whatsnew/delete/(:num)'] = 'admin/WhatsNew/delete/$1'; // Delete an item
 

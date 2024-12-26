@@ -32,6 +32,15 @@ class Home_model extends CI_Model {
         $result = $query->result_array();
         return $result;
     }
+    public function get_featured_products()
+    {
+        $this->db->select('p_id, p_name, image');
+        $this->db->from('products');
+        $this->db->where('featured', 1);
+        $query = $this->db->get();
+        return $query->result_array();
+    }
+    
 
     public function get_banner(){
         $query = $this->db->query("SELECT * FROM home_table");
