@@ -12,7 +12,7 @@
         <div class="mb-3">
             <label for="w_image" class="form-label">Image</label><br>
             <?php if (!empty($whats_new['w_image'])): ?>
-                <img src="<?= base_url('uploads/whats_new/' . $whats_new['w_image']); ?>" alt="Image" style="max-width: 200px; max-height: 150px; display: block; margin-bottom: 10px;">
+                <img src="<?= base_url('uploads/services/' . $whats_new['w_image']); ?>" alt="Image" style="max-width: 200px; max-height: 150px; display: block; margin-bottom: 10px;">
             <?php endif; ?>
             <input type="file" name="w_image" id="w_image">
         </div>
@@ -37,11 +37,11 @@
 
 <?php $this->load->view('admin/layout/footer'); ?>
 
-<script src="https://cdn.ckeditor.com/ckeditor5/36.0.1/classic/ckeditor.js"></script>
+<!-- <script src="https://cdn.ckeditor.com/ckeditor5/36.0.1/classic/ckeditor.js"></script>
 <script>
     ClassicEditor
         .create(document.querySelector('#description'))
         .catch(error => {
             console.error(error);
         });
-</script>
+</script> -->

@@ -12,9 +12,9 @@
         <div class="mb-3">
             <label for="u_image" class="form-label">Image</label>
             <?php if ($update['u_image']): ?>
-                <img src="<?= base_url('uploads/technovalue_updates/' . $update['u_image']); ?>" alt="Image" style="max-width: 200px; display: block;">
+                <img src="<?= base_url('uploads/services/' . $update['u_image']); ?>" alt="Image" style="max-width: 200px; display: block;">
             <?php endif; ?>
-            <input type="file" name="u_image" id="u_image">
+            <input type="file" name="u_image" id="u_image" class="file-form-control">
         </div>
 
         <div class="mb-3">
