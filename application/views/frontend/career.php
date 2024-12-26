@@ -63,7 +63,7 @@
         people to “be yourself at work” and recognize that diversity of thought is critical to success. We believe in
         cross-learning opportunities and make a real contribution to developing the business.
     </p>
-    <div class="mb-5">
+    <div class="mb-5" id="weoffer">
         <div class="space-top space-extra-bottom background-image"
             style="background-image: url('assets/img/bg/process-bg-1-1.png');">
             <div class="container">

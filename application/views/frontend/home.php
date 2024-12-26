@@ -69,7 +69,7 @@
 
 <!-- whats new section  -->
 
-<section>
+<section id="latest">
     <div class="container mt-5">
         <div class="row whatsNew">
             <!-- Section 1: What's New -->
