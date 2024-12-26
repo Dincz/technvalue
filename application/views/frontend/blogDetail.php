@@ -62,7 +62,7 @@
                                 </div>
                             </div> -->
                             <div class="col-auto text-end">
-                                <span class="share-links-title">Social Icon</span>
+                                <span class="share-links-title">Social Links</span>
                                 <ul class="social-links">
                                     <li><a href="<?= $blog['facebook_link']; ?>" target="_blank"><i
                                                 class="fab fa-facebook-f"></i></a></li>
@@ -71,7 +71,7 @@
                                     <li><a href="<?= $blog['instagram_link']; ?>" target="_blank"><i
                                                 class="fab fa-instagram"></i></a></li>
                                     <li><a href="<?= $blog['linkdln_link']; ?>" target="_blank"><i
-                                                class="fab fa-dribbble"></i></a></li>
+                                                class="fab fa-linkedin"></i></a></li>
                                 </ul><!-- End Social Share -->
                             </div><!-- Share Links Area end -->
                         </div>
