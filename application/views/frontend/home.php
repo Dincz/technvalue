@@ -90,7 +90,7 @@
                         <?php else: ?>
                             <p>No updates available.</p>
                         <?php endif; ?>
-                        <a href="<?php echo base_url().'product-category/1'?>" class="btn view-all-btn">View All</a>
+                        <!-- <a href="<?php echo base_url().'product-category/1'?>" class="btn view-all-btn">View All</a> -->
                     </div>
                 </div>
             </div>
@@ -183,45 +183,95 @@
     </div>
 </section>
 <!--  new section end  -->
-  <style>
-    .card-img-top img {
-    width: 100%; /* Ensures the image scales to the container width */
-    height: 200px; /* Set a fixed height */
-    object-fit: cover; /* Crops the image to fit the container without distortion */
-    border-radius: 0; /* Optional: Ensures the image corners match the card */
-}
 
-  </style>
 <section class="container py-5">
-    <h1 class="text-center pb-4 text-primary">Featured Products</h1>
-    <div class="row justify-content-center align-items-stretch g-4">
-        <?php foreach ($featured as $product): ?>
-            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
-                <div class="card h-100 shadow-lg border-0 rounded overflow-hidden">
-                    <div class="card-img-top position-relative">
-                        <img src="<?php echo base_url('uploads/Product/' . htmlspecialchars($product['image'])); ?>" 
-                             alt="<?php echo htmlspecialchars($product['p_name']); ?>" 
-                             class="img-fluid w-100">
-                    </div>
-                    <div class="card-body text-center">
-                        <h5 class="card-title mb-2 text-dark">
-                            <a href="<?php base_url()?>product-detail/<?php echo urlencode($product['p_id']); ?>" 
-                               class="text-decoration-none fw-bold">
-                                <?php echo htmlspecialchars($product['p_name']); ?>
+    <h1 class="text-center pb-4">Featured Products</h1>
+
+    <!-- Desktop View - Grid Layout -->
+    <div class="d-none d-md-block">
+        <div class="row justify-content-center align-items-stretch g-4">
+            <?php foreach ($featured as $product): ?>
+                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
+                    <div class="card h-100 shadow-lg border-0 rounded overflow-hidden">
+                        <div class="card-img-top position-relative">
+                            <img src="<?php echo base_url('uploads/Product/' . htmlspecialchars($product['image'])); ?>" 
+                                 alt="<?php echo htmlspecialchars($product['p_name']); ?>" 
+                                 class="img-fluid w-100">
+                        </div>
+                        <div class="card-body text-center">
+                            <h5 class="card-title mb-2 text-dark">
+                                <a href="<?php base_url()?>product-detail/<?php echo urlencode($product['p_id']); ?>" 
+                                   class="text-decoration-none fw-bold">
+                                    <?php echo htmlspecialchars($product['p_name']); ?>
+                                </a>
+                            </h5>
+                        </div>
+                        <div class="card-footer bg-white text-center">
+                            <a href="<?php base_url()?>product-detail/<?php echo $product['p_id']; ?>" 
+                               class="btn btn-outline-primary btn-sm">
+                                Read Details <i class="far fa-arrow-right ms-1"></i>
                             </a>
-                        </h5>
-                    </div>
-                    <div class="card-footer bg-white text-center">
-                        <a href="<?php base_url()?>product-detail/<?php echo $product['p_id']; ?>" 
-                           class="btn btn-outline-primary btn-sm">
-                            Read Details <i class="far fa-arrow-right ms-1"></i>
-                        </a>
+                        </div>
                     </div>
                 </div>
-            </div>
-        <?php endforeach; ?>
+            <?php endforeach; ?>
+        </div>
+    </div>
+
+    <!-- Mobile View - Slider -->
+    <div class="d-block d-md-none">
+        <div class="owl-carousel owl-theme">
+            <?php foreach ($featured as $product): ?>
+                <div class="item">
+                    <div class="card h-100 shadow-lg border-0 rounded overflow-hidden">
+                        <div class="card-img-top position-relative">
+                            <img src="<?php echo base_url('uploads/Product/' . htmlspecialchars($product['image'])); ?>" 
+                                 alt="<?php echo htmlspecialchars($product['p_name']); ?>" 
+                                 class="img-fluid w-100">
+                        </div>
+                        <div class="card-body text-center">
+                            <h5 class="card-title mb-2 text-dark">
+                                <a href="<?php base_url()?>product-detail/<?php echo urlencode($product['p_id']); ?>" 
+                                   class="text-decoration-none fw-bold">
+                                    <?php echo htmlspecialchars($product['p_name']); ?>
+                                </a>
+                            </h5>
+                        </div>
+                        <div class="card-footer bg-white text-center">
+                            <a href="<?php base_url()?>product-detail/<?php echo $product['p_id']; ?>" 
+                               class="btn btn-outline-primary btn-sm">
+                                Read Details <i class="far fa-arrow-right ms-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            <?php endforeach; ?>
+        </div>
     </div>
 </section>
+
+<!-- Owl Carousel Initialization -->
+<script>
+    $(document).ready(function(){
+        $(".owl-carousel").owlCarousel({
+            loop: true,
+            margin: 15,
+            nav: true,
+            dots: false,
+            responsive: {
+                0: {
+                    items: 1
+                },
+                600: {
+                    items: 2
+                },
+                1000: {
+                    items: 3
+                }
+            }
+        });
+    });
+</script>
 
 
 

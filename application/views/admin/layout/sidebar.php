@@ -36,6 +36,8 @@
                         <li><a href="<?php echo base_url() ?>admin/home">Home page</a></li>
                         <li><a href="<?php echo base_url() ?>admin/about_us">Whats New</a></li>
                         <li><a href="<?php echo base_url() ?>admin/chooseus">Update</a></li>
+                        <li><a href="<?php echo base_url() ?>admin/whatsnew">Whats New section</a></li>
+                        <li><a href="<?php echo base_url() ?>admin/technovalueupdates">Technovalue Updates section</a></li>
                         <!-- <li><a href="<?php echo base_url() ?>admin/history">History</a></li> -->
                         <!-- <li><a href="<?php echo base_url() ?>admin/expert">Meet Our Expert</a></li> -->
                     </ul>

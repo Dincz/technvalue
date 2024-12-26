@@ -3,7 +3,7 @@
 
 <div class="content-body">
     <h1>What's New</h1>
-    <a href="<?= site_url('admin/whatsnew/create'); ?>" class="btn btn-primary">Add New Item</a>
+    <!-- <a href="<?= site_url('admin/whatsnew/create'); ?>" class="btn btn-primary">Add New Item</a> -->
 
     <table class="table table-bordered mt-4">
         <thead>
