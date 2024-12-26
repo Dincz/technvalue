@@ -80,10 +80,10 @@
                         <h3 class="widget_title">Explore</h3>
                         <div class="menu-all-pages-container">
                             <ul class="menu">
-                                <li><a href="#">What we Offer</a></li>
-                                <li><a href="#">Our Story</a></li>
-                                <li><a href="#">Latest Posts</a></li>
-                                <li><a href="#">Help Center</a></li>
+                                <li><a href="service-category">What we Offer</a></li>
+                                <li><a href="about-us">Our Story</a></li>
+                                <li><a href="blog">Latest Posts</a></li>
+                                <li><a href="contact">Help Center</a></li>
                             </ul>
                         </div>
                     </div>
