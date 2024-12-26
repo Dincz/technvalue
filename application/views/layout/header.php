@@ -303,7 +303,8 @@
                                 <i class="fab fa-facebook-f"></i></a>
                             <a href="https://twitter.com/technovalue123">
                                 <i class="fab fa-twitter"></i></a>
-                            <a href="https://www.linkedin.com/company/technovaluesolutions/posts/?feedView=all&amp;viewAsMember=true">
+                            <!-- <a href="https://www.linkedin.com/company/technovaluesolutions/posts/?feedView=all&amp;viewAsMember=true"> -->
+                            <a href="https://www.linkedin.com/company/18785771/admin/dashboard/">
                                 <i class="fab fa-linkedin"></i></a>
                             <a href="https://www.instagram.com/technovaluesolutions/">
                                 <i class="fab fa-instagram"></i></a>

@@ -34,8 +34,8 @@
                     <div class="col-md-6 col-lg-4">
                         <div class="service-style1 layout2">
                             <div class="service-bg" data-bg-src="assets/img/bg/sr-box-bg-1.png"></div>
-                            <div class="service-icon"><img src="<?= base_url('uploads/icons/') . $service['service_icon']; ?>"
-                                    alt="service-icon"></div>
+                            <div class="service-icon"><img  src="<?= base_url('uploads/icons/') . $service['service_icon'];  ?>"
+                                    alt="service-icon" style="max-width: 73%;"></div>
                             <h3 class="service-title h5"><a
                                     href="<?= base_url('service-details/' . $service['s_id']); ?>"><?= $service['service_title']; ?></a>
                             </h3>
