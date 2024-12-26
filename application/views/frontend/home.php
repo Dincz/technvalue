@@ -90,7 +90,7 @@
                         <?php else: ?>
                             <p>No updates available.</p>
                         <?php endif; ?>
-                        <a href="<?php echo base_url().'product-category/1'?>" class="btn view-all-btn">View All</a>
+                        <!-- <a href="<?php echo base_url().'product-category/1'?>" class="btn view-all-btn">View All</a> -->
                     </div>
                 </div>
             </div>

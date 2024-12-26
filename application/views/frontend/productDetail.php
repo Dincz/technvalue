@@ -21,10 +21,10 @@
     <section class="position-relative space-bottom" style="background-image: url(assets/img/bg/ab-bg-1-1.jpg);">
         <div class="container z-index-common">
             <div class="row gx-60">
-                <div class="col-lg-6 col-xl-5 mb-50 mb-lg-0 wow fadeInUp wow-animated" data-wow-delay="0.2s">
+                <div class="col-lg-6 col-xl-5 mb-50 mb-lg-0 wow fadeInUp wow-animated m-0" data-wow-delay="0.2s">
                     <div class="img-box1">
                         <div class="img-1 mt-5">
-                            <img src="<?php echo base_url('uploads/Product/' . $product['image']); ?>" class="img-fluid" alt="Product Image">
+                            <img src="<?php echo base_url('uploads/Product/' . $product['image']); ?>" class="img-fluid mt-0" alt="Product Image">
                         </div>
                     </div>
                 </div>
@@ -98,7 +98,7 @@
         </div>
     </div>
 
-    <section class="z-index-common space background-image m-5"
+    <section class="cta-Banner z-index-common space background-image m-5"
         style="background-image: url('<?php echo base_url('assets/img/bg/cta-bg-1-1.png'); ?>');">
 
         <div class="container">

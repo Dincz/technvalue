@@ -6878,8 +6878,8 @@ blockquote.vs-quote .quote-author {
 
 .blog-style1 {
 	background-color: var(--white-color);
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  	border-radius: 5px;
+	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+	border-radius: 5px;
 }
 
 .blog-style1 .blog-meta {
@@ -18839,6 +18839,12 @@ blockquote.vs-quote .quote-author {
 }
 
 @media (max-width: 991px) {
+
+  .contactus_detail .footer-info{
+    display: flex !important;
+    align-items: center;
+  }
+
 	.newsletter-wrap8 .newsletter-img {
 		position: relative;
 		bottom: 0;
@@ -18893,7 +18899,24 @@ blockquote.vs-quote .quote-author {
 	padding: 10px 15px;
 }
 
-@media (min-width: 768px) {
+@media (max-width: 768px) {
+	blockquote {
+		padding: 5px !important;
+	}
+	.principal,
+	.principal .downbtn .vs-btn {
+		margin: 0 !important;
+	}
+  .principal .downbtn .vs-btn{
+    padding: 11px 11px !important;
+  }
+  .principal .d-flex{
+    justify-content: space-between !important;
+  }
+  .cta-Banner {
+    margin: 3rem 2px !important;
+  }
+
 }
 
 @media (max-width: 555px) {
