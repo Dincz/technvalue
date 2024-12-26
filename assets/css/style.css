@@ -116,7 +116,163 @@ body {
   -webkit-font-smoothing: antialiased;
   /* Small devices */
 }
+/* header css  */
+.mega-menu {
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+}
 
+.category-title {
+    font-weight: bold;
+    display: block;
+    padding: 10px 0;
+    border-bottom: 2px solid #eee;
+    margin-bottom: 10px;
+    color: #333;
+    text-decoration: none;
+}
+
+.submenu-wrapper {
+    position: relative;
+    padding-bottom: 20px;
+}
+
+.submenu {
+    max-height: 300px;
+    overflow-y: auto;
+    padding-right: 10px;
+    margin: 0;
+    list-style: none;
+    position: relative;
+}
+
+.subcategory-item {
+    margin: 5px 0;
+    transition: opacity 0.3s ease;
+}
+
+.subcategory-item.initially-hidden {
+    opacity: 0.6;
+}
+
+.submenu:hover .subcategory-item.initially-hidden {
+    opacity: 1;
+}
+
+.subcategory-link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 10px;
+    color: #333;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.subcategory-link:hover {
+    background: #e9e9e9;
+}
+
+.arrIcon {
+    cursor: pointer;
+    /* border: solid #666; */
+    /* border-width: 0 2px 2px 0; */
+    display: inline-block;
+    padding: 3px;
+    transform: rotate(0deg);
+    transition: all 0.5s ease;
+}
+
+.arrIcon:hover {
+    transform: rotate(360deg);
+}
+
+.products {
+    display: none;
+    max-height: 200px;
+    overflow-y: auto;
+    margin: 0;
+    padding: 8px 0 8px 20px;
+    list-style: none;
+    background: #fff;
+    border-left: 2px solid #e0e0e0;
+}
+
+.products.show {
+    display: block;
+    animation: slideDown 0.3s ease-out;
+}
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 10px;
+    background: linear-gradient(transparent, #fff);
+    padding: 5px;
+    text-align: center;
+    font-size: 12px;
+    color: #666;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.scroll-arrow {
+    border: solid #666;
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 3px;
+    transform: rotate(45deg);
+    animation: bounce 1s infinite;
+}
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(45deg);
+    }
+
+    50% {
+        transform: translateY(3px) rotate(45deg);
+    }
+}
+
+/* Scrollbar Styling */
+.custom-scrollbar::-webkit-scrollbar {
+    width: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* header css end */
 
 
 
@@ -160,7 +316,7 @@ embed,
 object,
 video {
   max-width: 100%;
-
+  width: 100%;
   height: auto;
 }
 
@@ -1009,6 +1165,11 @@ ul.wp-block-rss a {
 }
 
 @media (max-width: 767px) {
+  .floating-button{
+    right: 80% !important;
+    padding: .375rem .75rem !important;
+  }
+
   .vs-search .search-grid-content {
     padding: 20px;
   }
@@ -1662,6 +1823,9 @@ textarea.is-invalid {
 
 /* Medium devices */
 @media (max-width: 991px) {
+  .vs-blog-wrapper {
+    padding-top: 0 !important;
+  }
   .slick-arrow {
     --icon-size: 40px;
     margin-right: 40px;
@@ -1678,210 +1842,184 @@ textarea.is-invalid {
 }
 
 /*------------------- 2.5. Mobile Menu -------------------*/
-.vs-menu-wrapper {
-  position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.6);
-  z-index: 999999;
-  width: 0;
-  width: 100%;
-  height: 100%;
-  transition: all ease 0.8s;
-  opacity: 0;
-  visibility: hidden;
-}
+/* Ensure that when the vs-body-visible class is added, the menu appears */
 
-.vs-menu-wrapper .mobile-logo {
-  padding-bottom: 30px;
-  padding-top: 40px;
-  display: block;
-  text-align: center;
-  background-color: rgba(28, 185, 200, 0.1);
-}
 
-.vs-menu-wrapper .mobile-logo svg {
-  max-width: 185px;
-}
+       /* Initially hide the mobile menu on larger screens */
+     .vs-menu-wrapper {
+        display: none;
+    }
 
-.vs-menu-wrapper .vs-menu-toggle {
-  border: none;
-  font-size: 22px;
-  position: absolute;
-  right: 10px;
-  top: 10px;
-  padding: 0;
-  line-height: 1;
-  width: 33px;
-  height: 33px;
-  line-height: 33px;
-  font-size: 18px;
-  z-index: 1;
-  border-radius: 50%;
-}
 
-.vs-menu-wrapper .vs-menu-toggle:hover {
-  background-color: var(--title-color);
-  color: var(--white-color);
-}
 
-.vs-menu-wrapper .vs-menu-area {
-  width: 100%;
-  max-width: 310px;
-  background-color: #fff;
-  border-right: 3px solid var(--theme-color);
-  height: 100%;
-  position: relative;
-  left: -110%;
-  opacity: 0;
-  visibility: hidden;
-  transition: all ease 1s;
-  z-index: 1;
-}
+    /* Mobile Menu Styling */
+    /* Initially hide mega menu */
+    .mobileMenu .mega-menu {
+        display: none;
+        position: relative !important;
+        /* Hidden by default */
+    }
 
-.vs-menu-wrapper.vs-body-visible {
-  opacity: 1;
-  visibility: visible;
-}
+    /* Show mega menu when 'open' class is added */
+    .mobileMenu .mega-menu.open {
+        display: block !important;
+        /* Display the menu when 'open' class is added */
+    }
 
-.vs-menu-wrapper.vs-body-visible .vs-menu-area {
-  left: 0;
-  opacity: 1;
-  visibility: visible;
-}
+    /* Show subcategories when the parent category is open */
+    .mobileMenu .subcategories {
+        display: none;
+        text-align: left;
+    }
 
-.vs-mobile-menu {
-  overflow-y: scroll;
-  max-height: calc(100vh - 200px);
-  padding-bottom: 40px;
-  margin-top: 33px;
-  text-align: left;
-}
+    .mobileMenu .category-item.open>.subcategories {
+        display: block !important;
+    }
 
-.vs-mobile-menu .new-label {
-  margin-left: 5px;
-  text-transform: capitalize;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-}
+    .mobileMenu .products-list {
+        display: none;
+    }
 
-.vs-mobile-menu ul {
-  margin: 0;
-  padding: 0 0;
-}
+    .mobileMenu .subcategory-item.open>.products-list {
+        display: block !important;
+    }
 
-.vs-mobile-menu ul li {
-  border-bottom: 1px solid #fdedf1;
-  list-style-type: none;
-}
+    /* Ensure mega-menu is mobile-friendly */
 
-.vs-mobile-menu ul li li:first-child {
-  border-top: 1px solid #fdedf1;
-}
+    /* Show the mobile menu only on mobile devices */
+    @media (max-width: 992px) {
+        .mobileMenu .customCont {
+            margin-left: 0 !important;
+        }
 
-.vs-mobile-menu ul li a {
-  display: block;
-  position: relative;
-  padding: 12px 0;
-  line-height: 1;
-  font-size: 16px;
-  text-transform: capitalize;
-  color: var(--title-color);
-}
+        .vs-menu-wrapper {
+            display: block;
+            /* Show the menu wrapper on mobile */
+        }
 
-.vs-mobile-menu ul li a:before {
-  content: "\f105";
-  font-family: var(--icon-font);
-  position: relative;
-  left: 0;
-  top: 0;
-  margin-right: 10px;
-  display: inline-block;
-}
+        /* Mobile menu styling */
+        .mobileMenu .vs-mobile-menu {
+            position: fixed;
+            /* Fix the menu to the screen */
+            top: 0;
+            left: 0;
+            width: 250px;
+            /* Adjust width of the menu */
+            height: 100%;
+            background-color: #fff;
+            z-index: 999;
+            overflow-y: auto;
+            transform: translateX(-100%);
+            /* Initially hide off-screen */
+            opacity: 0;
+            /* Initially hidden */
+            transition: transform 0.5s ease, opacity 0.5s ease;
+            /* Smooth transition for both sliding and fading */
+        }
 
-.vs-mobile-menu ul li.vs-active>a {
-  color: var(--theme-color);
-}
+        /* Menu is open: slide in and fade in */
+        .mobileMenu .vs-mobile-menu.open {
+            transform: translateX(0);
+            /* Slide in */
+            opacity: 1;
+            /* Fade in */
+        }
 
-.vs-mobile-menu ul li.vs-active>a:before {
-  transform: rotate(90deg);
-}
+        /* Toggle button (hamburger icon) styling */
+        .mobileMenu .vs-menu-toggle {
+            border: 2px solid #0037FF;
+            border-radius: 5px;
+            background-color: #0037FF !important;
+            font-size: 30px;
+            /* background: none; */
+            /* border: none; */
+            color: white;
+            position: absolute;
+            top: 100px;
+            right: 20px;
+            z-index: 1000;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            /* Smooth transition for button icon */
+        }
 
-.vs-mobile-menu ul li ul li {
-  padding-left: 10px;
-}
+        /* Hamburger icon animation when clicked */
+        .mobileMenu .vs-menu-toggle i {
+            font-size: 30px;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+            /* Smooth transition for rotating the icon */
+        }
 
-.vs-mobile-menu ul li ul li:last-child {
-  border-bottom: none;
-}
+        /* Rotate the hamburger to form a cross when the menu is open */
+        .mobileMenu .vs-menu-toggle.open i {
+            transform: rotate(180deg);
+            /* Rotate the icon 180 degrees */
+        }
 
-.vs-mobile-menu ul .vs-item-has-children>a .vs-mean-expand {
-  position: absolute;
-  right: 0;
-  top: 50%;
-  font-weight: 400;
-  font-size: 12px;
-  width: 25px;
-  height: 25px;
-  line-height: 25px;
-  margin-top: -12.5px;
-  display: inline-block;
-  text-align: center;
-  background-color: var(--smoke-color);
-  color: var(--title-color);
-  box-shadow: 0 0 20px -8px rgba(173, 136, 88, 0.5);
-  border-radius: 50%;
-}
+        /* Add some transition effects for the submenu items */
+        .mobileMenu .vs-mobile-menu ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
 
-.vs-mobile-menu ul .vs-item-has-children>a .vs-mean-expand:before {
-  content: "\f067";
-  font-family: var(--icon-font);
-}
+        .mobileMenu .vs-mobile-menu li {
+            padding: 10px 20px;
+            transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+            /* Animate list items */
+            opacity: 0;
+            /* Initially hide menu items */
+            transform: translateY(20px);
+            /* Slide in the menu items */
+        }
 
-.vs-mobile-menu ul .vs-item-has-children.vs-active>a .vs-mean-expand:before {
-  content: "\f068";
-}
+        /* Show the menu items with animation when the menu is open */
+        .mobileMenu .vs-mobile-menu.open li {
+            opacity: 1;
+            /* Make them visible */
+            transform: translateY(0);
+            /* Slide in from below */
+        }
 
-.vs-mobile-menu>ul {
-  padding: 0 40px;
-}
+        /* Optional: Add some animation delay to stagger the appearance of menu items */
+        .mobileMenu .vs-mobile-menu li:nth-child(1) {
+            transition-delay: 0.1s;
+        }
 
-.vs-mobile-menu>ul>li:last-child {
-  border-bottom: none;
-}
+        .mobileMenu .vs-mobile-menu li:nth-child(2) {
+            transition-delay: 0.2s;
+        }
 
-.vs-menu-toggle {
-  width: 50px;
-  height: 50px;
-  padding: 0;
-  font-size: 24px;
-  border: none;
-  display: inline-block;
-  background-color: #F2F6FF;
-  color: var(--theme-color);
-  border-radius: 5px;
-}
+        .mobileMenu .vs-mobile-menu li:nth-child(3) {
+            transition-delay: 0.3s;
+        }
 
-.vs-menu-toggle.style2 {
-  background-color: var(--theme-color);
-  border-radius: 50%;
-  color: var(--white-color);
-  width: 55px;
-  height: 55px;
-}
+        .mobileMenu .vs-mobile-menu li:nth-child(4) {
+            transition-delay: 0.4s;
+        }
 
-@media (max-width: 400px) {
-  .vs-menu-wrapper .vs-menu-area {
-    width: 100%;
-    max-width: 270px;
-  }
+        .mobileMenu .vs-mobile-menu li:nth-child(5) {
+            transition-delay: 0.5s;
+        }
 
-  .vs-mobile-menu>ul {
-    padding: 0 20px;
-  }
-}
+        /* More items can follow the same pattern */
+    }
+
+    @media (max-width: 768px) {
+        .mobileMenu .vs-menu-toggle {
+            top: 70px !important;
+        }
+    }
+
+    @media (max-width: 375px) {
+        .mobileMenu .vs-menu-toggle {
+            top: 50px !important;
+        }
+    }
+
+
+
+
 
 /*=================================
     03. Utilities
@@ -4592,12 +4730,17 @@ a.text-theme:hover,
 
 /* header product css  end */
 
-.owl-carousel .owl-item img, .relatedImg{
+ .relatedImg{
   height: 200px !important;
   width: auto !important;
   margin: 0 auto;
 }
 
+.owl-carousel .owl-item img{
+  width: auto !important;
+  height: 200px ;
+  margin: 0 auto !important;
+}
 
 .vs-header {
   position: relative;
@@ -6139,6 +6282,9 @@ a.text-theme:hover,
 
 /* Small devices */
 @media (max-width: 767px) {
+  .copyright-text {
+   font-size : 10px ;
+  }
   .footer-layout2 .footer-social {
     text-align: center;
   }
@@ -10331,7 +10477,7 @@ blockquote.vs-quote .quote-author {
   transform-style: preserve-3d;
   backface-visibility: hidden;
   transition: all 0.4s ease-in-out;
-  z-index: 900;
+  /* z-index: 900; */
   position: absolute;
   top: 0;
   height: 100%;
@@ -14200,6 +14346,8 @@ blockquote.vs-quote .quote-author {
 }
 
 .floating-button {
+  background-color: #0037ff !important;
+  border-color: #0037ff !important;
   position: fixed;
   bottom: 20px;
   right: 20px;
@@ -15793,6 +15941,10 @@ blockquote.vs-quote .quote-author {
 }
 
 @media (max-width: 767px) {
+    .space-top {
+      padding-top: 0 !important;
+    }
+
   .hero-content.tb7 {
     text-align: center;
   }
@@ -18718,9 +18870,9 @@ blockquote.vs-quote .quote-author {
   background-image: url(assets\img\bg\faq-bg-1-1.jpg) !important;
 }
 
-.fal {
+/* .fal {
   margin-right: 22px;
-}
+} */
 
 #gender {
   width: 93%;
@@ -18754,13 +18906,27 @@ blockquote.vs-quote .quote-author {
 }
 
 
-@media (max-width: 768px) {
-  .nopaddingformobile {
-      padding: 0 !important;
-      margin-top: 5px !important;
-  }
+@media (min-width: 768px) {
+  
 }
 
-.recolor {
-  color: black;
+@media (max-width: 555px) {
+
+  .floating-button{
+    right: 70% !important;
+    padding: .375rem .75rem !important;
+  }
+  
 }
+@media (max-width: 425px) {
+  .h1, h1{
+    font-size: 20px !important; 
+  }
+
+  .floating-button{
+    right: 60% !important;
+    padding: .375rem .75rem !important;
+  }
+  
+}
+
