@@ -368,17 +368,3 @@
 
 
 <?php $this->load->view('layout/footer'); ?>
-
-
-
-TechnoValue serves a wide range of industries, including:
-● Pharmaceuticals and Biopharma
-● Hospitals
-● Environmental Laboratories
-● Data Centers
-● Research and Educational Institutes
-● HVAC Consultants and Contractors
-● Food Industries
-● Automobile Industries
-● Green Building Technology
-● Survey and Construction Industries

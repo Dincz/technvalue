@@ -2,8 +2,8 @@
     style="background-image: url(<?php echo base_url() ?>&quot;assets/img/shape/bg-footer-1-1.png&quot;);">
     <div class="footer-top">
         <div class="container">
-            <div class="row">
-                <div class="col-sm footer-info_group">
+            <div class="row justify-content-center">
+                <div class="col-lg-4 col-6 footer-info_group">
                     <div class="footer-info">
                         <div class="footer-info_icon"><i class="fal fa-map-marker-alt"></i></div>
                         <div class="media-body">
@@ -14,7 +14,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-sm footer-info_group">
+                <div class="col-lg-4 col-6 footer-info_group">
                     <div class="footer-info">
                         <div class="footer-info_icon"><i class="fal fa-clock"></i></div>
                         <div class="media-body">
@@ -24,15 +24,16 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-sm footer-info_group">
+                <div class="col-lg-4 col-6 footer-info_group">
                     <div class="footer-info">
                         <div class="footer-info_icon"><i class="fal fa-phone-volume"></i></div>
                         <div class="media-body">
                             <span class="footer-info_label">Contact Us</span>
                             <div class="footer-info_link"><a
                                     href="mailto:info@technovalue.in">info@technovalue.in</a>
-                                    <a href="mailto:sales@technovalue.in">sales@technovalue.in</a><br>
-                                    <a href="tel:+91 88793 30481 ">+91 88793 30481 </a></div>
+                                <a href="mailto:sales@technovalue.in">sales@technovalue.in</a><br>
+                                <a href="tel:+91 88793 30481 ">+91 88793 30481 </a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -238,10 +239,9 @@
             productsList.style.display = "block";
         }
     }
-
 </script>
 <script>
-    $(document).ready(function () {
+    $(document).ready(function() {
         $('#brandslide1').owlCarousel({
             items: 5, // Number of items visible
             loop: true, // Infinite loop
@@ -262,10 +262,9 @@
             }
         });
     });
-
 </script>
 <script>
-    $(document).ready(function () {
+    $(document).ready(function() {
         $('#productsubcategory').owlCarousel({
             items: 3, // Adjust the number of visible items
             loop: true, // Infinite loop
@@ -289,7 +288,7 @@
     });
 </script>
 <script>
-    $(document).ready(function () {
+    $(document).ready(function() {
         $('#productsubcategory1').owlCarousel({
             items: 3, // Adjust the number of visible items
             loop: true, // Infinite loop
@@ -315,23 +314,22 @@
 <!-- Quote Form Pop up -->
 
 <script>
-    document.addEventListener('DOMContentLoaded', function () {
+    document.addEventListener('DOMContentLoaded', function() {
         var quoteBtn = document.getElementById('quoteBtn');
         var quoteModal = new bootstrap.Modal(document.getElementById('quoteModal'));
 
-        quoteBtn.addEventListener('click', function (e) {
+        quoteBtn.addEventListener('click', function(e) {
             e.preventDefault();
             quoteModal.show();
         });
 
-        document.getElementById('quoteForm').addEventListener('submit', function (e) {
+        document.getElementById('quoteForm').addEventListener('submit', function(e) {
             e.preventDefault();
             // Here you would typically send the form data to the server
             alert('Form submitted! We will get back to you soon.');
             quoteModal.hide();
         });
     });
-
 </script>
 
 
@@ -339,97 +337,97 @@
 
 
 <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Toggle Products dropdown
-            const productsDropdown = document.querySelector('.products-dropdown-toggle');
-            productsDropdown.addEventListener('click', function() {
-                const megaMenu = productsDropdown.closest('li').querySelector('.mega-menu');
-                megaMenu.classList.toggle('open'); // Toggle mega menu visibility
-                const icon = productsDropdown.querySelector('.arrIcon');
+    document.addEventListener('DOMContentLoaded', function() {
+        // Toggle Products dropdown
+        const productsDropdown = document.querySelector('.products-dropdown-toggle');
+        productsDropdown.addEventListener('click', function() {
+            const megaMenu = productsDropdown.closest('li').querySelector('.mega-menu');
+            megaMenu.classList.toggle('open'); // Toggle mega menu visibility
+            const icon = productsDropdown.querySelector('.arrIcon');
+            icon.classList.toggle('fa-caret-up');
+            icon.classList.toggle('fa-caret-down');
+        });
+
+        // Toggle category submenus (for Products dropdown)
+        const categoryTitles = document.querySelectorAll('.category-title');
+
+        categoryTitles.forEach(function(title) {
+            title.addEventListener('click', function() {
+                const categoryItem = title.closest('.category-item');
+                const subcategories = categoryItem.querySelector('.subcategories');
+
+                // Toggle the 'open' class to show or hide the subcategories
+                categoryItem.classList.toggle('open');
+
+                // Rotate the arrow icon for category
+                const icon = title.querySelector('.arrIcon');
                 icon.classList.toggle('fa-caret-up');
                 icon.classList.toggle('fa-caret-down');
-            });
 
-            // Toggle category submenus (for Products dropdown)
-            const categoryTitles = document.querySelectorAll('.category-title');
-
-            categoryTitles.forEach(function(title) {
-                title.addEventListener('click', function() {
-                    const categoryItem = title.closest('.category-item');
-                    const subcategories = categoryItem.querySelector('.subcategories');
-
-                    // Toggle the 'open' class to show or hide the subcategories
-                    categoryItem.classList.toggle('open');
-
-                    // Rotate the arrow icon for category
-                    const icon = title.querySelector('.arrIcon');
-                    icon.classList.toggle('fa-caret-up');
-                    icon.classList.toggle('fa-caret-down');
-
-                    // Show or hide subcategories by toggling 'open' class on subcategories
-                    if (categoryItem.classList.contains('open')) {
-                        subcategories.style.display = 'block'; // Show subcategories
-                    } else {
-                        subcategories.style.display = 'none'; // Hide subcategories
-                    }
-                });
-            });
-
-            // Toggle subcategory products
-            const subcategoryTitles = document.querySelectorAll('.subcategory-title');
-
-            subcategoryTitles.forEach(function(title) {
-                title.addEventListener('click', function() {
-                    const subcategoryItem = title.closest('.subcategory-item');
-                    const productsList = subcategoryItem.querySelector('.products-list');
-
-                    // Toggle the 'open' class to show or hide the product list
-                    subcategoryItem.classList.toggle('open');
-
-                    // Rotate the arrow icon for subcategory
-                    const icon = title.querySelector('.arrIcon');
-                    icon.classList.toggle('fa-caret-up');
-                    icon.classList.toggle('fa-caret-down');
-
-                    // Show or hide the products list based on the 'open' class
-                    if (subcategoryItem.classList.contains('open')) {
-                        productsList.style.display = 'block'; // Show products
-                    } else {
-                        productsList.style.display = 'none'; // Hide products
-                    }
-                });
-            });
-        });
-    </script>
-
-
-
-
-
-
-
-
-    <script>
-        // Wait for the document to be ready
-        document.addEventListener("DOMContentLoaded", function() {
-            // Select the toggle button and the menu
-            const toggleButton = document.querySelector(".vs-menu-toggle");
-            const mobileMenu = document.querySelector(".vs-mobile-menu");
-
-            // Add click event to toggle the menu
-            toggleButton.addEventListener("click", function() {
-                // Toggle the "open" class to show or hide the mobile menu
-                mobileMenu.classList.toggle("open");
-
-                // Change the icon based on whether the menu is open or closed
-                if (mobileMenu.classList.contains("open")) {
-                    toggleButton.innerHTML = '<i class="fal fa-times"></i>'; // Close icon
+                // Show or hide subcategories by toggling 'open' class on subcategories
+                if (categoryItem.classList.contains('open')) {
+                    subcategories.style.display = 'block'; // Show subcategories
                 } else {
-                    toggleButton.innerHTML = '<i class="fal fa-bars"></i>'; // Open (hamburger) icon
+                    subcategories.style.display = 'none'; // Hide subcategories
                 }
             });
         });
-    </script>
+
+        // Toggle subcategory products
+        const subcategoryTitles = document.querySelectorAll('.subcategory-title');
+
+        subcategoryTitles.forEach(function(title) {
+            title.addEventListener('click', function() {
+                const subcategoryItem = title.closest('.subcategory-item');
+                const productsList = subcategoryItem.querySelector('.products-list');
+
+                // Toggle the 'open' class to show or hide the product list
+                subcategoryItem.classList.toggle('open');
+
+                // Rotate the arrow icon for subcategory
+                const icon = title.querySelector('.arrIcon');
+                icon.classList.toggle('fa-caret-up');
+                icon.classList.toggle('fa-caret-down');
+
+                // Show or hide the products list based on the 'open' class
+                if (subcategoryItem.classList.contains('open')) {
+                    productsList.style.display = 'block'; // Show products
+                } else {
+                    productsList.style.display = 'none'; // Hide products
+                }
+            });
+        });
+    });
+</script>
+
+
+
+
+
+
+
+
+<script>
+    // Wait for the document to be ready
+    document.addEventListener("DOMContentLoaded", function() {
+        // Select the toggle button and the menu
+        const toggleButton = document.querySelector(".vs-menu-toggle");
+        const mobileMenu = document.querySelector(".vs-mobile-menu");
+
+        // Add click event to toggle the menu
+        toggleButton.addEventListener("click", function() {
+            // Toggle the "open" class to show or hide the mobile menu
+            mobileMenu.classList.toggle("open");
+
+            // Change the icon based on whether the menu is open or closed
+            if (mobileMenu.classList.contains("open")) {
+                toggleButton.innerHTML = '<i class="fal fa-times"></i>'; // Close icon
+            } else {
+                toggleButton.innerHTML = '<i class="fal fa-bars"></i>'; // Open (hamburger) icon
+            }
+        });
+    });
+</script>
 
 
 <!-- header menu bar scripts  end-->
