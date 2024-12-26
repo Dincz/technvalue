@@ -496,7 +496,7 @@
 <!--==============================
       Contact Form Area
     ==============================-->
-<section class=" space-top space-extra-bottom">
+<section class=" space-top space-extra-bottom" id="helpcenter">
     <div class="d-flex justify-content-center text-center row">
         <div class="col-lg-6 col-12 ">
             <iframe

@@ -69,7 +69,7 @@
 
 <!-- whats new section  -->
 
-<section>
+<section id="latest">
     <div class="container mt-5">
         <div class="row whatsNew">
             <!-- Section 1: What's New -->
@@ -333,7 +333,7 @@
             <!-- <span class="sec-subtitle2">Blog & News</span> -->
             <h2 class="sec-title4">Blog</h2>
         </div>
-        <div class="row vs-carousel wow fadeInUp" data-wow-delay="0.4s" data-slide-show="3" data-md-slide-show="2">
+        <div class="row  vs-carousel wow fadeInUp" data-wow-delay="0.4s" data-slide-show="3" data-md-slide-show="2">
             <?php foreach ($blog as $blog): ?>
                 <div class="col-md-6 col-lg-4">
                     <div class="vs-blog blog-style1">
