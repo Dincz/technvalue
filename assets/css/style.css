@@ -18966,6 +18966,9 @@ blockquote.vs-quote .quote-author {
 		padding: 0.375rem 0.75rem !important;
 		bottom: 33%!important;
 	}
+	.square-holder{
+		margin-bottom: 20%!important;
+	}
 }
 
 .card-img-top img {
