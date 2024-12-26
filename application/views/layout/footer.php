@@ -61,7 +61,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-2 col-xl-auto">
+                <div class="col-md-6 col-6 col-lg-2 col-xl-auto">
                     <div class="widget widget_nav_menu  footer-widget">
                         <h3 class="widget_title">Links</h3>
                         <div class="menu-all-pages-container">
@@ -75,15 +75,15 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-2 col-xl-auto">
+                <div class="col-md-6 col-6 col-lg-2 col-xl-auto">
                     <div class="widget widget_nav_menu  footer-widget">
                         <h3 class="widget_title">Explore</h3>
                         <div class="menu-all-pages-container">
                             <ul class="menu">
-                                <li><a href="#">What we Offer</a></li>
-                                <li><a href="#">Our Story</a></li>
-                                <li><a href="#">Latest Posts</a></li>
-                                <li><a href="#">Help Center</a></li>
+                                <li><a href="service-category">What we Offer</a></li>
+                                <li><a href="about-us">Our Story</a></li>
+                                <li><a href="blog">Latest Posts</a></li>
+                                <li><a href="contact">Help Center</a></li>
                             </ul>
                         </div>
                     </div>
@@ -333,6 +333,106 @@
     });
 
 </script>
+
+
+<!-- header menu bar scripts  -->
+
+
+<script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Toggle Products dropdown
+            const productsDropdown = document.querySelector('.products-dropdown-toggle');
+            productsDropdown.addEventListener('click', function() {
+                const megaMenu = productsDropdown.closest('li').querySelector('.mega-menu');
+                megaMenu.classList.toggle('open'); // Toggle mega menu visibility
+                const icon = productsDropdown.querySelector('.arrIcon');
+                icon.classList.toggle('fa-caret-up');
+                icon.classList.toggle('fa-caret-down');
+            });
+
+            // Toggle category submenus (for Products dropdown)
+            const categoryTitles = document.querySelectorAll('.category-title');
+
+            categoryTitles.forEach(function(title) {
+                title.addEventListener('click', function() {
+                    const categoryItem = title.closest('.category-item');
+                    const subcategories = categoryItem.querySelector('.subcategories');
+
+                    // Toggle the 'open' class to show or hide the subcategories
+                    categoryItem.classList.toggle('open');
+
+                    // Rotate the arrow icon for category
+                    const icon = title.querySelector('.arrIcon');
+                    icon.classList.toggle('fa-caret-up');
+                    icon.classList.toggle('fa-caret-down');
+
+                    // Show or hide subcategories by toggling 'open' class on subcategories
+                    if (categoryItem.classList.contains('open')) {
+                        subcategories.style.display = 'block'; // Show subcategories
+                    } else {
+                        subcategories.style.display = 'none'; // Hide subcategories
+                    }
+                });
+            });
+
+            // Toggle subcategory products
+            const subcategoryTitles = document.querySelectorAll('.subcategory-title');
+
+            subcategoryTitles.forEach(function(title) {
+                title.addEventListener('click', function() {
+                    const subcategoryItem = title.closest('.subcategory-item');
+                    const productsList = subcategoryItem.querySelector('.products-list');
+
+                    // Toggle the 'open' class to show or hide the product list
+                    subcategoryItem.classList.toggle('open');
+
+                    // Rotate the arrow icon for subcategory
+                    const icon = title.querySelector('.arrIcon');
+                    icon.classList.toggle('fa-caret-up');
+                    icon.classList.toggle('fa-caret-down');
+
+                    // Show or hide the products list based on the 'open' class
+                    if (subcategoryItem.classList.contains('open')) {
+                        productsList.style.display = 'block'; // Show products
+                    } else {
+                        productsList.style.display = 'none'; // Hide products
+                    }
+                });
+            });
+        });
+    </script>
+
+
+
+
+
+
+
+
+    <script>
+        // Wait for the document to be ready
+        document.addEventListener("DOMContentLoaded", function() {
+            // Select the toggle button and the menu
+            const toggleButton = document.querySelector(".vs-menu-toggle");
+            const mobileMenu = document.querySelector(".vs-mobile-menu");
+
+            // Add click event to toggle the menu
+            toggleButton.addEventListener("click", function() {
+                // Toggle the "open" class to show or hide the mobile menu
+                mobileMenu.classList.toggle("open");
+
+                // Change the icon based on whether the menu is open or closed
+                if (mobileMenu.classList.contains("open")) {
+                    toggleButton.innerHTML = '<i class="fal fa-times"></i>'; // Close icon
+                } else {
+                    toggleButton.innerHTML = '<i class="fal fa-bars"></i>'; // Open (hamburger) icon
+                }
+            });
+        });
+    </script>
+
+
+<!-- header menu bar scripts  end-->
 
 
 </body>

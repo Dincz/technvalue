@@ -30,6 +30,7 @@
                 <label for="service_full_description">Full Description:</label>
                 <textarea id="content" style="height:150px;" name="service_full_description"
                     class="form-control"><?php echo $service->service_full_description; ?></textarea>
+                    
             </div>
             <div class="form-group">
                 <label for="service_image">Service Image:</label>

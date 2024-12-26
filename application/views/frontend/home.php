@@ -90,8 +90,7 @@
                         <?php else: ?>
                             <p>No updates available.</p>
                         <?php endif; ?>
-
-                        <a href="#" class="btn view-all-btn">View All</a>
+                        <a href="<?php echo base_url().'product-category/1'?>" class="btn view-all-btn">View All</a>
                     </div>
                 </div>
             </div>
@@ -110,22 +109,25 @@
                 <!-- Tab content: Aimil at Shows -->
                 <div class="middleContent position-relative card rounded">
 
-                    <div id="aimilShows" class="tabcontent p-5 ">
-                        <p class="m-0 fw-semibold">Job alerts</p>
-                        <p class="m-0"><strong>Lorem, ipsum dolor. 2024</strong><br>
-                            25/09/2024 - 27/09/2024<br>CIDCO Navi Mumbai</p>
-                        <a href="#" class="text-danger">Read More »</a>
-                        <hr>
-                        <p class="m-0 fw-semibold">Job alerts</p>
-                        <p class="m-0"><strong>Lorem, ipsum dolor. 2024</strong><br>
-                            25/09/2024 - 27/09/2024<br>CIDCO Navi Mumbai</p>
-                        <a href="#" class="text-danger">Read More »</a>
-                        <hr>
-
-                        <div class="bottom-0 position-absolute mb-4">
-                            <a href="#" class="btn view-all-btn ">View All</a>
+                    <!-- Trying to convert first for each loop -->
+                    <div id="aimilShows" class="tabcontent p-5">
+                        <?php
+                        foreach ($jobs as $job) {
+                        ?>
+                            <p class="m-0 fw-semibold recolor">Title: <?php echo $job->title; ?></p>
+                            <p class="m-0 recolor">
+                                <strong>Department: <?php echo $job->department; ?></strong><br>
+                                Experience: <?php echo $job->experience; ?><br>
+                                Location: <?php echo $job->location; ?>
+                            </p>
+                            <a href="<?php echo base_url().'job-detail/'.$job->page_name; ?>" class="text-danger">Read More »</a>
+                            <hr>
+                        <?php
+                        }
+                        ?>
+                         <div class="bottom-0 position-absolute mb-4">
+                            <a href="<?php echo base_url() ?>career" class="btn view-all-btn ">View All</a>
                         </div>
-
                     </div>
 
 
@@ -137,7 +139,7 @@
                         <a href="#" class="text-danger">Read More »</a>
                         <hr>
                         <div class="bottom-0 position-absolute mb-4">
-                            <a href="#" class="btn view-all-btn ">View All</a>
+                            <a href="<?php echo base_url() ?>career" class="btn view-all-btn ">View All</a>
                         </div>
 
                     </div>
@@ -154,7 +156,8 @@
                             <div class="swiper-wrapper">
                                 <?php if (!empty($technical_updates)): ?>
                                     <?php foreach ($technical_updates as $update): ?>
-                                        <?php if ($update['status'] == 1): // Display only active updates ?>
+                                        <?php if ($update['status'] == 1): // Display only active updates 
+                                        ?>
                                             <div class="swiper-slide">
                                                 <!-- Dynamically display the update image -->
                                                 <img src="<?php echo base_url('uploads/services/' . $update['u_image']); ?>"
@@ -180,84 +183,48 @@
     </div>
 </section>
 <!--  new section end  -->
+  <style>
+    .card-img-top img {
+    width: 100%; /* Ensures the image scales to the container width */
+    height: 200px; /* Set a fixed height */
+    object-fit: cover; /* Crops the image to fit the container without distortion */
+    border-radius: 0; /* Optional: Ensures the image corners match the card */
+}
 
-<!-- featured products section  -->
+  </style>
 <section class="container py-5">
-    <h1 class="text-center pb-4">Featured Products</h1>
-    <div class="row justify-content-center align-items-center ">
-        <div class="col-xl-3 col-lg-4 col-md-4 col-12">
-            <div class="service-style3">
-                <div class="service-front">
-                    <div class="service-img">
-                        <img src="assets/img/service/sr-3-2.png" alt="image" class="w-100">
+    <h1 class="text-center pb-4 text-primary">Featured Products</h1>
+    <div class="row justify-content-center align-items-stretch g-4">
+        <?php foreach ($featured as $product): ?>
+            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
+                <div class="card h-100 shadow-lg border-0 rounded overflow-hidden">
+                    <div class="card-img-top position-relative">
+                        <img src="<?php echo base_url('uploads/Product/' . htmlspecialchars($product['image'])); ?>" 
+                             alt="<?php echo htmlspecialchars($product['p_name']); ?>" 
+                             class="img-fluid w-100">
                     </div>
-                    <div class="service-content">
-                        <div class="service-icon"><img src="assets/img/icon/sr-icon-3-2.png" alt="icon"></div>
-                        <h3 class="service-title h6"><a href="service-details.html">Website Building</a></h3>
+                    <div class="card-body text-center">
+                        <h5 class="card-title mb-2 text-dark">
+                            <a href="<?php base_url()?>product-detail/<?php echo urlencode($product['p_id']); ?>" 
+                               class="text-decoration-none fw-bold">
+                                <?php echo htmlspecialchars($product['p_name']); ?>
+                            </a>
+                        </h5>
                     </div>
-                </div>
-                <div class="service-back">
-                    <div class="service-content">
-                        <div class="service-icon"><img src="assets/img/icon/sr-icon-3-2.png" alt="icon"></div>
-                        <h3 class="service-title h6"><a class="text-inherit" href="service-details.html">Website
-                                Building</a></h3>
-                        <p class="service-text">Holisticly orchestrate supply chains without impactful</p>
-                        <a href="service-details.html" class="link-btn">Read Details<i
-                                class="far fa-arrow-right"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-xl-3 col-lg-4 col-md-4 col-12">
-            <div class="service-style3 ">
-                <div class="service-front">
-                    <div class="service-img">
-                        <img src="assets/img/service/sr-3-2.png" alt="image" class="w-100">
-                    </div>
-                    <div class="service-content">
-                        <div class="service-icon"><img src="assets/img/icon/sr-icon-3-2.png" alt="icon"></div>
-                        <h3 class="service-title h6"><a href="service-details.html">Website Building</a></h3>
-                    </div>
-                </div>
-                <div class="service-back">
-                    <div class="service-content">
-                        <div class="service-icon"><img src="assets/img/icon/sr-icon-3-2.png" alt="icon"></div>
-                        <h3 class="service-title h6"><a class="text-inherit" href="service-details.html">Website
-                                Building</a></h3>
-                        <p class="service-text">Holisticly orchestrate supply chains without impactful</p>
-                        <a href="service-details.html" class="link-btn">Read Details<i
-                                class="far fa-arrow-right"></i></a>
+                    <div class="card-footer bg-white text-center">
+                        <a href="<?php base_url()?>product-detail/<?php echo $product['p_id']; ?>" 
+                           class="btn btn-outline-primary btn-sm">
+                            Read Details <i class="far fa-arrow-right ms-1"></i>
+                        </a>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="col-xl-3 col-lg-4 col-md-4 col-12">
-            <div class="service-style3 ">
-                <div class="service-front">
-                    <div class="service-img">
-                        <img src="assets/img/service/sr-3-3.png" alt="image" class="w-100">
-                    </div>
-                    <div class="service-content">
-                        <div class="service-icon"><img src="assets/img/icon/sr-icon-3-4.png" alt="icon"></div>
-                        <h3 class="service-title h6"><a href="service-details.html">Market Research</a></h3>
-                    </div>
-                </div>
-                <div class="service-back">
-                    <div class="service-content">
-                        <div class="service-icon"><img src="assets/img/icon/sr-icon-3-4.png" alt="icon"></div>
-                        <h3 class="service-title h6"><a class="text-inherit" href="service-details.html">Market
-                                Research</a></h3>
-                        <p class="service-text">Holisticly orchestrate supply chains without impactful</p>
-                        <a href="service-details.html" class="link-btn">Read Details<i
-                                class="far fa-arrow-right"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
+        <?php endforeach; ?>
     </div>
-
 </section>
+
+
+
 
 <!-- Our Client Section -->
 
@@ -267,7 +234,7 @@
         <?php if (!empty($client)): ?>
             <?php foreach ($client as $clients): ?>
                 <?php if ($clients['status'] == 1): // Check if the (client) is active ?>
-                    <div class="vs-brand1 mx-5">
+                    <div class="vs-brand1">
                         <!-- Dynamically load image from the array -->
                         <img src="<?php echo base_url('uploads/brand/' . $clients['image']); ?>" alt="Client Logo">
                     </div>
@@ -347,7 +314,7 @@
 <!--==============================
     Testimonial Area
     ==============================-->
-<section class=" space-top space-extra-bottom">
+<section class=" space-to space-extra-bottom">
     <div class="container   wow fadeInUp" data-wow-delay="0.2s">
         <div class="row justify-content-between">
             <div class="col-lg-auto text-center text-lg-start">
@@ -402,23 +369,28 @@
             </div>
         </div>
     </div>
+
     <div class="container overflow-hidden px-xxl-0">
         <div class="row vs-carousel" data-slide-show="4" data-ml-slide-show="3" data-lg-slide-show="3"
             data-md-slide-show="2" id="projectslide1">
+
             <?php foreach ($gallery_items as $item): ?>
                 <div class="col-xl-3">
                     <div class="project-style2">
-                        <div class="project-img rounded">
-                            <img src=<?php echo base_url('assets/img/gallery/' . $item['background_image']); ?>
-                                alt="project">
+                        <div class="card h-100 shadow-sm">
+                            <div class="card-img-wrapper" style="height: 250px; overflow: hidden;">
+                                <img src="<?php echo base_url('uploads/gallery/All_images/' . $item['background_image']); ?>"
+                                    alt="project"
+                                    class="img-fluid w-100 h-100 rounded"
+                                    style="object-fit: cover;">
+                            </div>
                             <div class="project-shape"></div>
-                            <!-- <a href="assets/img/gallery/gal-1-1.png" class="popup-image icon-btn style3"><i
-                                class="far fa-search"></i></a> -->
                         </div>
                         <div class="project-content rounded">
                             <span class="project-label"><?php echo $item['title']; ?></span>
-                            <h3 class="project-title h5"><a href="<?php echo base_url($item['see_more_link']); ?>"
-                                    class="text-reset">See More</a></h3>
+                            <h3 class="project-title h5">
+                                <a href="<?php echo base_url($item['see_more_link']); ?>" class="text-reset">See More</a>
+                            </h3>
                         </div>
                     </div>
                 </div>
@@ -429,12 +401,12 @@
 
 
 <!-- <?php
-// Output the floating button
-$buttonLink = "tel:+1234567890";
-echo '<a href="' . $buttonLink . '" class="floating-button">';
-echo '<i class="fas fa-phone"></i>';
-echo '</a>';
-?> -->
+        // Output the floating button
+        $buttonLink = "tel:+1234567890";
+        echo '<a href="' . $buttonLink . '" class="floating-button">';
+        echo '<i class="fas fa-phone"></i>';
+        echo '</a>';
+        ?> -->
 
 <!--==============================
             Footer Area
@@ -449,7 +421,7 @@ echo '</a>';
         pagination: {
             el: '.swiper-pagination',
             clickable: true,
-            renderBullet: function (index, className) {
+            renderBullet: function(index, className) {
                 return '<span class="' + className + '">' + (index + 1) + '</span>'; // Show numbers
             },
         },

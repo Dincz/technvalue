@@ -7,7 +7,8 @@ $this->load->view('admin/layout/sidebar');
     .page_type_specific {
         display: none;
     }
-    label{
+
+    label {
         color: black;
         font-weight: bold;
     }
@@ -41,7 +42,7 @@ $this->load->view('admin/layout/sidebar');
                             <div class="form-group">
                                 <label>Product Image</label>
                                 <div class="custom-file">
-                                    <input name="image" type="file" class="custom-file-input" >
+                                    <input name="image" type="file" class="custom-file-input">
                                     <label class="custom-file-label">Choose File</label>
                                 </div>
                             </div>
@@ -85,6 +86,14 @@ $this->load->view('admin/layout/sidebar');
                                 <label>Products Type</label>
                                 <input name="type" class="form-control" placeholder="Enter Product Type"><?php echo htmlspecialchars($product['type'] ?? '', ENT_QUOTES, 'UTF-8'); ?></input>
                             </div>
+                            <div class="form-group">
+                                <label>Is Featured Product?</label>
+                                <select name="type" class="form-control">
+                                    <option value="1" <?php echo (isset($product['featured']) && $product['featured'] == '1') ? 'selected' : ''; ?>>True</option>
+                                    <option value="0" <?php echo (isset($product['featured']) && $product['featured'] == '0') ? 'selected' : ''; ?>>False</option>
+                                </select>
+                            </div>
+
 
 
                             <!-- Product Description -->
@@ -342,6 +351,10 @@ $this->load->view('admin/layout/sidebar');
                                                 colspan="1" aria-label="Gender: activate to sort column ascending"
                                                 style="width: 94.2344px;"> status</th>
                                             <th class="sorting" tabindex="0" aria-controls="example3" rowspan="1"
+                                                colspan="1" aria-label="Featured: activate to sort column ascending"
+                                                style="width: 94.2344px;">Featured</th>
+
+                                            <th class="sorting" tabindex="0" aria-controls="example3" rowspan="1"
                                                 colspan="1" aria-label="Gender: activate to sort column ascending"
                                                 style="width: 94.2344px;"> created date</th>
 
@@ -475,6 +488,14 @@ $this->load->view('admin/layout/sidebar');
                                                 <td>
                                                     <?php echo htmlspecialchars($row['status'], ENT_QUOTES, 'UTF-8'); ?>
                                                 </td>
+                                                <td>
+                                                    <div class="d-flex justify-content-center align-items-center">
+                                                        <span class="ms-2">
+                                                            <?php echo ($row['featured'] == 1) ? 'True' : 'False'; ?>
+                                                        </span>
+                                                    </div>
+                                                </td>
+
 
                                                 <td>
                                                     <?php echo htmlspecialchars($row['created_date'], ENT_QUOTES, 'UTF-8'); ?>

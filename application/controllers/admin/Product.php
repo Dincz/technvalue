@@ -100,22 +100,22 @@ class Product extends CI_Controller
 
             // PDF upload configuration
             // Configure the upload path for the PDF
-            $config['upload_path'] = './uploads/Docs';
-            $this->upload->initialize($config);
+            // $config['upload_path'] = './uploads/Docs';
+            // $this->upload->initialize($config);
 
-            // Check if a file is uploaded
-            if (!empty($_FILES['pdf']['name'])) {
-                if ($this->upload->do_upload('pdf')) {
-                    $pdf_data = $this->upload->data();
-                    $uploaded_files['pdf'] = $pdf_data['file_name'];
-                } else {
-                    // If there's an error during upload, capture the error message
-                    $uploaded_files['pdf_error'] = $this->upload->display_errors();
-                }
-            } else {
-                // If no file is selected, do not set any error
-                $uploaded_files['pdf'] = null;  // Optional: leave it as null or set to an existing value if needed
-            }
+            // // Check if a file is uploaded
+            // if (!empty($_FILES['pdf']['name'])) {
+            //     if ($this->upload->do_upload('pdf')) {
+            //         $pdf_data = $this->upload->data();
+            //         $uploaded_files['pdf'] = $pdf_data['file_name'];
+            //     } else {
+            //         // If there's an error during upload, capture the error message
+            //         $uploaded_files['pdf_error'] = $this->upload->display_errors();
+            //     }
+            // } else {
+            //     // If no file is selected, do not set any error
+            //     $uploaded_files['pdf'] = null;  // Optional: leave it as null or set to an existing value if needed
+            // }
 
 
             // Prepare product data to insert into the database
@@ -131,6 +131,7 @@ class Product extends CI_Controller
                 'pdf'         => $uploaded_files['pdf'] ?? null,
                 'c_id'        => $this->input->post('c_id'),
                 'sc_id'       => $this->input->post('sc_id'),
+                'featured'    => $this->input->post('featured') ?? 0,
             );
 
             if (!empty($uploaded_files['image_error']) || !empty($uploaded_files['brand_error']) || !empty($uploaded_files['pdf_error'])) {
@@ -175,7 +176,8 @@ class Product extends CI_Controller
         $data['sub_categories'] = $this->Product_model->get_sub_category();
 
         // echo '<pre>';
-        // print_r($data);
+        // print_r($this->input->post());
+        // echo '</pre>';
         // exit();
 
         // Check if the product exists
@@ -240,6 +242,7 @@ class Product extends CI_Controller
                 'pdf'         => $uploaded_files['pdf'] ?? null,
                 'c_id'        => $this->input->post('c_id'),
                 'sc_id'       => $this->input->post('sc_id'),
+                'featured'    => $this->input->post('featured') ?? 0,
             );
 
             // Check for upload errors
@@ -299,6 +302,8 @@ class Product extends CI_Controller
         // Redirect to the product list or display page
         redirect('admin/product'); // Ensure you uncomment this
     }
+
+    
 }
 
 /* End of file Index.php */
