@@ -2585,7 +2585,7 @@ textarea.is-invalid {
 	}
 
 	.scrollToTop.show {
-		bottom: 20px;
+		bottom: 100px;
 	}
 }
 
@@ -18962,8 +18962,12 @@ blockquote.vs-quote .quote-author {
 	}
 
 	.floating-button {
-		right: 60% !important;
+		right: 65% !important;
 		padding: 0.375rem 0.75rem !important;
+		bottom: 33%!important;
+	}
+	.square-holder{
+		margin-bottom: 20%!important;
 	}
 }
 

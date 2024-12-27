@@ -106,8 +106,8 @@
     <div class="copyright-wrap">
         <div class="container">
             <p class="copyright-text">Copyright <i class="fal fa-copyright"></i> 2024 <a class="text-white"
-                    href="index.html">Crezvatic</a>. All rights reserved by <a class="text-white"
-                    href="#">Crezvatic</a>.</p>
+                    href="index.html">TechnoValue</a>. All rights reserved by <a class="text-white"
+                    href="#">TechnoValue</a>.</p>
         </div>
     </div>
 </footer>
