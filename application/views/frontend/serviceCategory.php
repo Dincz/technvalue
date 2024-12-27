@@ -9,8 +9,8 @@
             <h1 class="breadcumb-title">Services</h1>
             <div class="breadcumb-menu-wrap">
                 <ul class="breadcumb-menu">
-                    <li><a href="<?php echo site_url(); ?>">Home</a></li>
-                    <li>Services</li>
+                    <li><a href="<?php echo base_url(); ?>">Home</a></li>
+                    <li class="currentLocation">Services</li>
                 </ul>
             </div>
         </div>

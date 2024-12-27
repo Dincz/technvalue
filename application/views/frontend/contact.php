@@ -62,8 +62,8 @@
 </head>
 
 <body>
-    <div class="map-container ">
-        <img class="map" src="assets/img/TechnoValueIndiaMapLocation-01.webp" alt="TechnoValue India Map" id="map-image">
+    <div class="map-container pt-5 ">
+        <img class="map" src="assets/img/map_image.jpg" alt="TechnoValue India Map" id="map-image">
     </div>
 
     <script>
@@ -433,7 +433,6 @@
 
 
 
-
 <!-- PHP View File (contact.php) -->
 <div class="container mt-4">
     <div class="row">
@@ -519,9 +518,10 @@
     ==============================-->
 <section class=" space-top space-extra-bottom" id="helpcenter">
     <div class="d-flex justify-content-center text-center row">
-        <div class="col-lg-6 col-12 ">
+        <div class="col-lg-6 col-12">
             <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3769.977622978157!2d73.00683627505293!3d19.108637582102673!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c0c850b3ffff%3A0xf3e7652372200957!2sTechnoValue%20Solutions%20Pvt%20Ltd!5e0!3m2!1sen!2sin!4v1727946323847!5m2!1sen!2sin"
+                class="responsive-map"
                 width="600" height="750" style="border:2px;" allowfullscreen="" loading="lazy"
                 referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>

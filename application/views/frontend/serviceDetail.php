@@ -9,16 +9,19 @@
 
     <div class="container z-index-common">
         <div class="breadcumb-content">
-            <h1 class="breadcumb-title"><?= htmlspecialchars($service['service_title']) ?></h1>
-            <div class="breadcumb-menu-wrap">
-                <ul class="breadcumb-menu">
-                    <li><a href="<?= base_url() ?>">Home</a></li>
-                    <li>Service Details</li>
+        <h1 class="breadcumb-title">Service Details</h1>
+            <div class="breadcumb-menu-wrap ">
+                <ul class="breadcumb-menu lessing-margin">
+                    <li><a href="<?= base_url()?>">Home</a></li>
+                    <li><a href="<?= base_url(). 'service-category'?>">Services</a></li>
+                    <li class="currentLocation"><?php echo htmlspecialchars($services['service_title']); ?></li>
                 </ul>
             </div>
         </div>
     </div>
 </div>
+
+
 
 <!--==============================
     Service Area

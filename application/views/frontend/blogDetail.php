@@ -8,7 +8,7 @@
             <div class="breadcumb-menu-wrap">
                 <ul class="breadcumb-menu">
                     <li><a href="<?php echo base_url() ?>">Home</a></li>
-                    <li>Blog Detail</li>
+                    <li class="currentLocation">Blog Detail</li>
                 </ul>
             </div>
         </div>

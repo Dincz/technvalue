@@ -29,6 +29,8 @@ class CareerController extends CI_Controller {
 		$data['hierarchy'] = $this->Home_model->get_hierarchical_data();
 
         $data['use_carousel'] = count($data['qualities']) > 4;
+
+
         $this->load->view("layout/header",$data);
         $this->load->view("frontend/career", $data);
         // $this->load->view("frontend/jobDetail", $data);
