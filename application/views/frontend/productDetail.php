@@ -29,8 +29,8 @@
                     </div>
                 </div>
                 <div class="col-lg-6 col-xl-7 align-self-center wow fadeInUp wow-animated mt-5" data-wow-delay="0.3s">
-                    <h2 class="sec-title h1"><?php echo $product['p_name']; ?></h2>
-                    <p class="mb-2 mt-1 pb-1"><?php echo $product['description']; ?></p>
+                    <h2 class="sec-title4 text-center"><?php echo $product['p_name']; ?></h2>
+                    <p class="mb-2 mt-1 pb-1 "><?php echo $product['description']; ?></p>
 
                     <div class="principal mx-4 mt-5">
                         <!-- <h5>Brand</h5> -->
@@ -66,11 +66,12 @@
         </div>
     </div> -->
 
-    <div class="related-product mx-4 my-3">
+    <div class="related-product mx-4 my-3 space-top">
         <h1 class="text-center">Related Products</h1>
     </div>
-    <div class="container space-extra-bottom">
-        <div class="row vs-carousel" data-slide-show="3" data-lg-slide-show="3" data-md-slide-show="2">
+    <div class="container space-top">
+        <div class="row vs-carousel" data-slide-show="3" data-lg-slide-show="3" data-md-slide-show="2"
+        data-xs-arrows="true" data-sm-arrows="true">
             <!-- Related products can be added here similarly -->
             <?php foreach ($products as $row) { ?>
                 <div class="col-xl-4 product1">

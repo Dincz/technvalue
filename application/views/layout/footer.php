@@ -26,7 +26,7 @@
                 </div>
                 <div class="col-lg-4 col-6 footer-info_group contactus_detail">
                     <div class="footer-info">
-                        <div class="footer-info_icon"><i class="fal fa-phone-volume"></i></div>
+                        <div class="footer-info_icon noneinphone"><i class="fal fa-phone-volume "></i></div>
                         <div class="media-body">
                             <span class="footer-info_label">Contact Us</span>
                             <div class="footer-info_link">

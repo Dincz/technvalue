@@ -256,8 +256,8 @@
         $(".owl-carousel").owlCarousel({
             loop: true,
             margin: 15,
-            nav: true,
-            dots: false,
+            nav: false,
+            dots: true,
             responsive: {
                 0: {
                     items: 1
@@ -333,7 +333,7 @@
             <!-- <span class="sec-subtitle2">Blog & News</span> -->
             <h2 class="sec-title4">Blogs</h2>
         </div>
-        <div class="row  vs-carousel wow fadeInUp" data-wow-delay="0.4s" data-slide-show="3" data-md-slide-show="2">
+        <div class="row  vs-carousel wow fadeInUp" data-wow-delay="0.4s" data-slide-show="3" data-md-slide-show="2"    data-xs-dots="true" data-sm-dots="true">
             <?php foreach ($blog as $blog): ?>
                 <div class="col-md-6 col-lg-4">
                     <div class="vs-blog blog-style1">
@@ -369,15 +369,7 @@
         <div class="row justify-content-between">
             <div class="col-lg-auto text-center text-lg-start">
                 <div class="title-area">
-                    <h2 class="sec-title3 h1">Customer’s Feedback</h2>
-                </div>
-            </div>
-            <div class="col-auto d-none d-lg-block">
-                <div class="sec-btns">
-                    <button class="vs-btn style4" data-slick-prev="#testislide1"><i
-                            class="far fa-arrow-left"></i>Prev</button>
-                    <button class="vs-btn style4" data-slick-next="#testislide1">Next<i
-                            class="far fa-arrow-right"></i></button>
+                    <h2 class="sec-title4">Customer’s Feedback</h2>
                 </div>
             </div>
         </div>
@@ -399,14 +391,14 @@
 
 <!-- gallery section  -->
 <section class="space-extra-bottom">
-    <h2 class="sec-title3 h1 text-center">Gallery</h2>
+    <h2 class="sec-title4 text-center">Gallery</h2>
 
     <div class="container wow fadeInUp" data-wow-delay="0.2s">
         <div class="row justify-content-between align-items-end mb-3">
             <div class="col-lg-auto text-center text-lg-start">
                 <div class="title-area">
                     <!-- <span class="sec-subtitle"><i class="fas fa-bring-forward"></i>Our LATEST PROJECTS</span> -->
-                    <!-- <h2 class="sec-title3 h1 ">Gallery</h2> -->
+                    <!-- <h2 class="sec-title4 ">Gallery</h2> -->
                 </div>
             </div>
             <div class="col-auto d-none d-lg-block">
@@ -422,7 +414,7 @@
 
     <div class="container overflow-hidden px-xxl-0">
         <div class="row vs-carousel" data-slide-show="4" data-ml-slide-show="3" data-lg-slide-show="3"
-            data-md-slide-show="2" id="projectslide1">
+            data-md-slide-show="2" id="projectslide1"    data-xs-dots="true" data-sm-dots="true">
 
             <?php foreach ($gallery_items as $item): ?>
                 <div class="col-xl-3">

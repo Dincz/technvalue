@@ -76,7 +76,7 @@
             <div class="col-xl-6">
                 <div class="title-area">
                     <span class="sec-subtitle">What We Do For You</span>
-                    <h2 class="sec-title3 h1">Our Specialization</h2>
+                    <h2 class="sec-title4">Our Specialization</h2>
                 </div>
             </div>
         </div>
@@ -113,7 +113,7 @@
             <div class="col-lg-auto text-center text-lg-start">
                 <div class="title-area">
                     <span class="sec-subtitle"><i class="fas fa-bring-forward"></i>Our Best Review’s</span>
-                    <h2 class="sec-title3 h1">Customer’s Feedback</h2>
+                    <h2 class="sec-title4">Customer’s Feedback</h2>
                 </div>
             </div>
             <div class="col-auto d-none d-lg-block">

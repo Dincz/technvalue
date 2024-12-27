@@ -2581,11 +2581,11 @@ textarea.is-invalid {
 	}
 
 	.scrollToTop {
-		right: 20px;
+		right: 311px;
 	}
 
 	.scrollToTop.show {
-		bottom: 100px;
+		bottom: 58px;
 	}
 }
 
@@ -15947,7 +15947,7 @@ blockquote.vs-quote .quote-author {
 
 @media (max-width: 767px) {
 	.space-top {
-		padding-top: 0 !important;
+		padding-top: 35px !important;
 	}
 
 	.hero-content.tb7 {
@@ -18962,9 +18962,9 @@ blockquote.vs-quote .quote-author {
 	}
 
 	.floating-button {
-		right: 65% !important;
+		right: 8% !important;
 		padding: 0.375rem 0.75rem !important;
-		bottom: 33%!important;
+		bottom: 8%!important;
 	}
 	.square-holder{
 		margin-bottom: 20%!important;
@@ -19005,3 +19005,17 @@ blockquote.vs-quote .quote-author {
         font-size: 2rem; /* Further reduce size for very small screens */
     }
 }
+
+/* CSS FOR SLIDERS */
+@media (max-width: 1222px) {
+    .nopaddingformobile {
+        padding: 0 !important;
+    }
+}
+@media (max-width: 768px) {
+	.noneinphone {
+		display: none;
+	}
+
+}
+ 
