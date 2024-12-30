@@ -237,3 +237,9 @@ $route['admin/technovalueupdates'] = 'admin/TechnovalueUpdates/index';
 $route['admin/technovalueupdates/create'] = 'admin/TechnovalueUpdates/create';
 $route['admin/technovalueupdates/edit/(:num)'] = 'admin/TechnovalueUpdates/edit/$1';
 $route['admin/technovalueupdates/delete/(:num)'] = 'admin/TechnovalueUpdates/delete/$1';
+
+//Route for work culture description section at career page
+$route['admin/workculturedesc'] = 'admin/WorkCultureDesc/index';
+$route['admin/workculturedesc/create'] = 'admin/WorkCultureDesc/create';
+$route['admin/workculturedesc/edit/(:num)'] = 'admin/WorkCultureDesc/edit/$1';
+$route['admin/workculturedesc/delete/(:num)'] = 'admin/WorkCultureDesc/delete/$1';

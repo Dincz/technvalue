@@ -46,4 +46,12 @@ class Carrier_model extends CI_Model {
         $query = $this->db->get();       
         return $query->result();
     }
+    public function get_work_culture_desc() {
+        $this->db->select('desc_1, desc_2');
+        $this->db->from('work_culture_desc');
+        $this->db->where('status', '1');
+        $query = $this->db->get();
+        return $query->row(); // Assuming there's only one active row
+    }
+    
 }

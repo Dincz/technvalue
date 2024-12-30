@@ -75,6 +75,7 @@
                     <ul aria-expanded="false" class="mm-collapse">
                         <li><a href="<?php echo base_url() ?>admin/Carrier_Content">HR Philosophy</a></li>
                         <li><a href="<?php echo base_url() ?>admin/TeamQualities">Work Culture</a></li>
+                        <li><a href="<?php echo base_url() ?>admin/workculturedesc">Work Culture Description</a></li>
                         <li><a href="<?php echo base_url() ?>admin/jobs">Job openings</a></li>
 
                     </ul>
