@@ -6,7 +6,7 @@
             <div class="breadcumb-menu-wrap">
                 <ul class="breadcumb-menu">
                     <li><a href="<?php echo base_url() ?>">Home</a></li>
-                    <li>Career</li>
+                    <li class="currentLocation">Career</li>
                 </ul>
             </div>
         </div>

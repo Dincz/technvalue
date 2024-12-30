@@ -184,12 +184,6 @@
                             </div>
                         </ul>
                     </li>
-
-
-
-
-
-
                     <li><a href="<?php echo base_url('gallery-category') ?>">Gallery</a></li>
                     <li><a href="<?php echo base_url('partners') ?>">Partners</a></li>
                     <li><a href="<?php echo base_url('blog') ?>">Blog</a></li>
@@ -281,22 +275,6 @@
                             </ul>
                         </div>
                     </div>
-                    <!-- <div class="col-auto">
-                        <div class="header-dropdown style-white">
-                            <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink1"
-                                data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-globe"></i>English</a>
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink1">
-                                <li>
-                                    <a href="#">German</a>
-                                    <a href="#">French</a>
-                                    <a href="#">Italian</a>
-                                    <a href="#">Latvian</a>
-                                    <a href="#">Spanish</a>
-                                    <a href="#">Greek</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div> -->
                     <div class="col-auto">
                         <div class="header-social style-white">
                             <a href="https://www.facebook.com/technovaluesolutions2019">

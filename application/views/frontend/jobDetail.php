@@ -2,12 +2,12 @@
 
     <div class="container z-index-common">
         <div class="breadcumb-content">
-            <h1 class="breadcumb-title">Career</h1>
+            <h1 class="breadcumb-title">JOB DETAILS</h1>
             <div class="breadcumb-menu-wrap">
                 <ul class="breadcumb-menu">
                     <li><a href="index.html">Home</a></li>
-                    <li>Career - Job Detail </li>
-                    <li><?php echo $content[0]->title; ?></li>
+                    <li>Career</li>
+                    <li class="currentLocation"><?php echo $content[0]->title; ?></li>
                 </ul>
             </div>
         </div>

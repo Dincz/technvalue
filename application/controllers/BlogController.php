@@ -27,7 +27,11 @@ class BlogController extends CI_Controller {
 
         $data['banner'] = $this->Banner_model->get_banner_by_page_name('blogdetail'); // Adjust the page name as needed
 		$data['blog'] = $this->Blog_model->getBlogById($id);
-
+        
+        echo "<pre>";
+        print_r($data['blog']);
+        echo "</pre>";
+        exit;
         $this->load->view("frontend/blogDetail", $data);
     }
 
