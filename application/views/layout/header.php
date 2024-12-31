@@ -102,7 +102,7 @@
 
 
     <div class="vs-menu-wrapper mobileMenu">
-        
+
         <div class="vs-menu-area text-center">
             <!-- Toggle button with an initial "hamburger" icon -->
             <button class="vs-menu-toggle"><i class="fal fa-bars"></i></button>
@@ -119,7 +119,8 @@
                     </li>
                     <li class="menu-item-has-children mega-menu-wrap px-0">
                         <!-- Products Dropdown Toggle -->
-                        <div class="products-dropdown-toggle d-flex justify-content-center " onclick="toggleProductsDropdown(this)">
+                        <div class="products-dropdown-toggle d-flex justify-content-center "
+                            onclick="toggleProductsDropdown(this)">
                             <span class="products-title text-primary">Products</span>
                             <i class="fa fa-caret-down arrIcon"></i>
                         </div>
@@ -131,10 +132,11 @@
                                 if (isset($hierarchy) && is_array($hierarchy) && !empty($hierarchy)):
                                     foreach ($hierarchy as $category):
                                         if (isset($category['category_name']) || isset($category['category_id'])):
-                                ?>
+                                            ?>
                                             <li class="col-12 category-item">
                                                 <!-- Category Title -->
-                                                <div class="category-title d-flex justify-content-between" onclick="toggleCategoryDropdown(this)">
+                                                <div class="category-title d-flex justify-content-between"
+                                                    onclick="toggleCategoryDropdown(this)">
                                                     <span class="category-name text-left">
                                                         <?php echo isset($category['category_name']) ? $category['category_name'] : 'Category ' . $category['category_id']; ?>
                                                     </span>
@@ -146,9 +148,10 @@
                                                     <?php
                                                     if (isset($category['subcategories']) && is_array($category['subcategories'])):
                                                         foreach ($category['subcategories'] as $subcategory):
-                                                    ?>
+                                                            ?>
                                                             <div class="subcategory-item">
-                                                                <div class="subcategory-title d-flex justify-content-between" onclick="toggleSubcategoryDropdown(this)">
+                                                                <div class="subcategory-title d-flex justify-content-between"
+                                                                    onclick="toggleSubcategoryDropdown(this)">
                                                                     <span class="subcategory-name border-bottom">
                                                                         <?php echo isset($subcategory['subcategory_name']) ? $subcategory['subcategory_name'] : 'Subcategory'; ?>
                                                                     </span>
@@ -173,7 +176,7 @@
                                                     <?php endif; ?>
                                                 </div>
                                             </li>
-                                    <?php
+                                            <?php
                                         endif;
                                     endforeach;
                                 else:
@@ -269,17 +272,18 @@
                     <div class="col-auto">
                         <div class="col-auto header-links style-white">
 
-                                <li class="emai"><i class="far fa-envelope"></i><a
-                                        href="mailto:sales@technovalue.in">sales@technovalue.in
-                                    </a></li>
-                                
+                            <li class="emai"><i class="far fa-envelope"></i><a
+                                    href="mailto:sales@technovalue.in">sales@technovalue.in
+                                </a></li>
+
                         </div>
                     </div>
                     <div class="col d-none d-md-block">
                         <div class="header-links style-white">
-                            
-                                <li><i class="far fa-map-marker-alt"></i> Kopar Khairane, Navi Mumbai, Maharashtra 400709</li>
-                    
+
+                            <li><i class="far fa-map-marker-alt"></i> Kopar Khairane, Navi Mumbai, Maharashtra 400709
+                            </li>
+
                         </div>
                     </div>
                     <div class="col-auto">
@@ -337,7 +341,7 @@
                                                     if (isset($hierarchy) && is_array($hierarchy) && !empty($hierarchy)):
                                                         foreach ($hierarchy as $category):
                                                             if (isset($category['category_name']) || isset($category['category_id'])):
-                                                    ?>
+                                                                ?>
                                                                 <li class="col-3 ">
                                                                     <!-- Update the anchor link to redirect to the category page -->
                                                                     <a href="<?php echo site_url('product-category/' . (isset($category['category_id']) ? $category['category_id'] : '')); ?>"
@@ -352,13 +356,14 @@
                                                                                 foreach ($category['subcategories'] as $subcategory):
                                                                                     $visibility_class = $count >= 5 ? 'initially-hidden' : '';
                                                                                     $count++;
-                                                                            ?>
+                                                                                    ?>
                                                                                     <li
                                                                                         class="subcategory-item <?php echo $visibility_class; ?>">
                                                                                         <a href="javascript:void(0);"
                                                                                             class="subcategory-link d-flex align-items-center justify-content-between">
                                                                                             <!-- Subcategory name with redirection -->
-                                                                                            <span class="subcategory-name d-flex justify-content-between ">
+                                                                                            <span
+                                                                                                class="subcategory-name d-flex justify-content-between ">
                                                                                                 <a class="d-inline p-0 fw-bold text-capitalize"
                                                                                                     href="<?php echo site_url('product-category/' . (isset($category['category_id']) ? $category['category_id'] : '') . '#subcategory-' . (isset($subcategory['subcategory_id']) ? $subcategory['subcategory_id'] : '')); ?>">
                                                                                                     <?php echo isset($subcategory['subcategory_name']) ? $subcategory['subcategory_name'] : 'Subcategory'; ?>
@@ -373,12 +378,11 @@
                                                                                         </a>
                                                                                         <?php
                                                                                         if (isset($subcategory['products']) && is_array($subcategory['products'])):
-                                                                                        ?>
+                                                                                            ?>
                                                                                             <ul class="products custom-scrollbar">
                                                                                                 <?php foreach ($subcategory['products'] as $product): ?>
                                                                                                     <li class="product-item">
-                                                                                                        <a
-                                                                                                            class=" text-secondary text-capitalize"
+                                                                                                        <a class=" text-secondary text-capitalize"
                                                                                                             href="<?php echo site_url('product-detail/' . (isset($product['product_id']) ? $product['product_id'] : '')); ?>">
                                                                                                             <?php echo isset($product['product_name']) ? $product['product_name'] : 'Product'; ?>
                                                                                                         </a>
@@ -387,7 +391,7 @@
                                                                                             </ul>
                                                                                         <?php endif; ?>
                                                                                     </li>
-                                                                            <?php
+                                                                                    <?php
                                                                                 endforeach;
                                                                             endif;
                                                                             ?>
@@ -395,7 +399,7 @@
 
                                                                     </div>
                                                                 </li>
-                                                        <?php
+                                                                <?php
                                                             endif;
                                                         endforeach;
                                                     else:
@@ -493,7 +497,7 @@
 
         // Handle scroll indicator visibility
         document.querySelectorAll('.submenu').forEach(submenu => {
-            submenu.addEventListener('scroll', function() {
+            submenu.addEventListener('scroll', function () {
                 const scrollIndicator = this.parentElement.querySelector('.scroll-indicator');
                 if (scrollIndicator) {
                     if (this.scrollHeight - this.scrollTop === this.clientHeight) {
@@ -506,7 +510,7 @@
         });
 
         // Close products when clicking outside menu
-        document.addEventListener('click', function(e) {
+        document.addEventListener('click', function (e) {
             if (!e.target.closest('.mega-menu')) {
                 document.querySelectorAll('.products.show').forEach(product => {
                     product.classList.remove('show');
@@ -518,7 +522,7 @@
         });
 
         // Prevent menu from closing when clicking inside
-        document.querySelector('.mega-menu').addEventListener('click', function(e) {
+        document.querySelector('.mega-menu').addEventListener('click', function (e) {
             e.stopPropagation();
         });
     </script>
