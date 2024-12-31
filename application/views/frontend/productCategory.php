@@ -12,7 +12,7 @@
             <div class="breadcumb-menu-wrap">
                 <ul class="breadcumb-menu">
                     <li><a href="<?php echo base_url() ?>">Home</a></li>
-                    <li><?php echo isset($category['c_name']) ? $category['c_name'] : 'Product Category'; ?></li>
+                    <li class="currentLocation"><?php echo isset($category['c_name']) ? $category['c_name'] : 'Product Category'; ?></li>
                 </ul>
             </div>
         </div>
@@ -122,10 +122,10 @@
                 var sanitizedType = "<?php echo strtolower(substr($type, 0, 1)) . $subcategory['sc_id']; ?>";
 
                 $('#productsubcategory-<?php echo strtolower(substr($type, 0, 1)) . $subcategory['sc_id']; ?>').owlCarousel({
-                    loop: false,
-                    margin: 50,
-                    nav: true,
-                    dots: true,
+                    loop: false, 
+                    margin: 50, 
+                    nav: false, 
+                    dots: true, 
                     responsive: {
                         0: {
                             items: 1

@@ -132,7 +132,6 @@ class Product_model extends CI_Model
         }
         return false;
     }
-
     // Update product details
     public function update_product($id, $data)
     {
@@ -152,4 +151,5 @@ class Product_model extends CI_Model
         $this->db->where('p_id', $id);
         return $this->db->delete('products');
     }
+    
 }

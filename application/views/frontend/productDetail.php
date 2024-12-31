@@ -11,7 +11,11 @@
                 <div class="breadcumb-menu-wrap">
                     <ul class="breadcumb-menu">
                         <li><a href="<?php echo base_url() ?>">Home</a></li>
-                        <li>Product Detail</li>
+                        <li><a href="<?php echo base_url() . 'product-category/' . $product['c_id']; ?>"><?php echo $product['category_name'] ?></a></li>
+                        <!-- /product-category/3#subcategory-12 -->
+                        <li><a href="<?php echo base_url() . 'product-category/' . $product['c_id'] . '#subcategory-'  . $product['sc_id']; ?>"><?php echo $product['subcategory_name'] ?></a></li>
+
+                        <li class="currentLocation"><?php echo $product['p_name'] ?></li>
                     </ul>
                 </div>
             </div>
@@ -49,14 +53,10 @@
         </div>
     </section>
 
-    <blockquote>
-        <!-- <h3>Features and Benefits:</h3> -->
-        <br>
-        <p><?php echo $product['features']; ?></p>
-        <!-- <p><strong>Applications:</strong></p> -->
-        <p><?php echo $product['application']; ?></p>
-        <br>
-    </blockquote>
+    <blockquote class="blockquote p-4 bg-light border rounded">
+    <p class="mb-0"><?php echo $product['application']; ?></p>
+</blockquote>
+
 
     <!-- <div class="vs-blog blog-single">
         <h1 class="text-center">Product Video</h1>

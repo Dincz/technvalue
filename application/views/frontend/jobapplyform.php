@@ -1,102 +1,250 @@
-<div class="col-lg-8 mb-30 formdiv">
+<style>
+    .form-control:focus {
+        box-shadow: none;
+        border-color: #0d6efd;
+    }
 
-    <div class="contact-box">
-        <h3 class="contact-box__title h4">Apply Now</h3>
-        <!-- <p class="contact-box__text">We’re Ready To Help You</p> -->
-        <form class="contact-box__form ajax-contact" action="mail.php" method="POST">
-            <div class="row gx-20 form-main">
-                <!-- <div class=" col-12 bgformimg mx-0">
-                <img src="assets\img\bg\formbg.webp" class="w-100 pb-3" alt="Form Background">
-            </div> -->
-                <div class="col-md-6 form-group">
-                    <input type="text" name="position" id="position" placeholder="Position Applied For" required>
-                    <i class="fal fa-briefcase  "></i>
-                </div>
-                <div class="col-md-6 form-group">
-                    <input type="text" name="name" id="name" placeholder="Enter Your Full Name" required>
-                    <i class="fal fa-user"></i>
-                </div>
-                <div class="col-md-6 form-group">
-                    <input type="date" name="dob" id="dob" placeholder="Enter Your Date of Birth" required>
-                    <!-- <i class="fal fa-time"></i> -->
-                </div>
-                <div class="col-6 form-group">
-                    <select name="gender" id="gender">
-                        <option selected disabled hidden>Gender</option>
-                        <option value="male">Male</option>
-                        <option value="female">Female</option>
-                        <option value="female">Other</option>
+    .input-group-text {
+        background: none;
+        border-right: none;
+    }
 
-                    </select>
-                </div>
-                <div class="col-md-6 form-group">
-                    <input type="number" name="phoneno" id="phoneno" placeholder="Enter Your Mob No." required>
-                    <i class="fal fa-phone"></i>
-                </div>
+    .form-control {
+        border-left: none;
+    }
 
-                <div class="col-md-6 form-group">
-                    <input type="email" name="email" id="email" placeholder="Email Address" required>
-                    <i class="fal fa-envelope"></i>
-                </div>
-                <div class="col-md-6 form-group">
-                    <input type="text" name="Qualification" id="Qualification" placeholder="Enter Your Qualifications"
-                        required>
-                    <i class="fal fa-graduation-cap"></i></i>
-                </div>
-                <div class="col-md-6 form-group">
-                    <input type="number" name="experience" id="experience"
-                        placeholder="Enter Your Total Experience in Yrs" required>
-                    <i class="fal fa-briefcase"></i>
-                </div>
-                <div class="col-md-6 form-group">
-                    <input type="text" name="currentcompany" id="currentcompany" placeholder="Current Company" required>
-                    <i class="fal fa-briefcase"></i>
-                </div>
-                <div class="col-md-6 form-group">
-                    <input type="text" name="designation" id="designation" placeholder="Designation" required>
-                    <i class="fal fa-briefcase"></i>
-                </div>
-                <div class="col-md-6 form-group">
-                    <input type="address" name="department" id="department" placeholder="Enter Your Department">
-                    <i class="fal fa-briefcase"></i>
-                </div>
-                <div class="col-md-6 form-group">
-                    <input type="text" name="country" id="country" placeholder="Enter Your Country">
-                    <i class="fal fa-globe"></i>
-                </div>
-                <div class="col-md-6 form-group">
-                    <input type="address" name="location" id="location" placeholder="Enter Your Location">
-                    <i class="fal fa-location"></i>
-                </div>
-                <div class="col-md-6 form-group">
-                    <input type="number" name="currentctc" id="currentctc" placeholder="Enter Your Current CTC"
-                        required>
-                    <i class="fal fa-dollar-sign"></i>
-                </div>
-                <div class="col-md-6 form-group">
-                    <input type="number" name="expectedctc" id="expectedctc" placeholder="Enter Your Expected CTC"
-                        required>
-                    <i class="fal fa-dollar-sign"></i>
-                </div>
-                <div class="col-md-6 form-group">
-                    <input type="number" name="noticeperiod" id="noticeperiod"
-                        placeholder="Enter Your Notice Period (Days)" required>
-                    <i class="fal fa-calendar-day"></i>
-                </div>
-                <div class="col-md-6 form-group resupload mt-3">
-                    <label for="resume">Upload your Resume:</label>
-                    <input type="file" class="mt-3" name="resume" id="resume" required>
-                    <!-- <i class="fal fa-coin"></i> -->
-                </div>
+    .card-title {
+        color: #fff;
+    }
 
-                <div class="col-12">
-                    <button class="vs-btn">Apply Now<i class="far fa-arrow-right"></i></button>
-                </div>
-                <!-- <div class="bgformimg mx-0 pb-4">
-                <img src="assets\img\bg\formbg.webp" class="w-100 h-50" alt="Form Background">
-            </div> -->
+    .card {
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .input-group {
+        max-width: 300px;
+        margin: 0 auto;
+    }
+
+    .form-label {
+        margin-bottom: 0.2rem;
+        font-weight: 500;
+    }
+
+    .input-container {
+        margin-bottom: 1rem;
+    }
+
+    .input-container input {
+        height: 35px !important;
+    }
+</style>
+</head>
+
+<body class="bg-light">
+    <div class="container py-5">
+        <div class="card">
+            <div class="card-header bg-primary text-white">
+                <h3 class="card-title text-center mb-0">Job Application Form</h3>
+                <?php if (!empty($title)): ?>
+                    <p class="text-center mb-0 mt-2">Position: <?php echo html_escape($title); ?></p>
+                <?php endif; ?>
             </div>
-        </form>
-        <p class="form-messages mb-0 mt-3"></p>
+            <div class="card-body">
+                <?php if ($this->session->flashdata('success')): ?>
+                    <div class="alert alert-success">
+                        <?php echo $this->session->flashdata('success'); ?>
+                    </div>
+                <?php endif; ?>
+
+                <?php if (isset($validation_errors) && $validation_errors): ?>
+                    <div class="alert alert-danger">
+                        <?php echo $validation_errors; ?>
+                    </div>
+                <?php endif; ?>
+
+                <?php if (isset($upload_error) && $upload_error): ?>
+                    <div class="alert alert-danger">
+                        <?php echo $upload_error; ?>
+                    </div>
+                <?php endif; ?>
+
+                <?php echo form_open_multipart('careers/apply', ['class' => 'needs-validation']); ?>
+                <div class="row justify-content-center">
+                    <!-- Position Applied For -->
+                    <div class="col-md-6 input-container">
+                        <label class="form-label">Position Applied For</label>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="fas fa-briefcase"></i></span>
+                            <input type="text" class="form-control" name="position"
+                                value="<?php echo isset($title) ? html_escape($title) : ''; ?>" readonly>
+                        </div>
+                    </div>
+
+                    <!-- Full Name -->
+                    <div class="col-md-6 input-container">
+                        <label class="form-label">Full Name</label>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="fas fa-user"></i></span>
+                            <input type="text" class="form-control" name="name" value="<?php echo set_value('name'); ?>"
+                                required>
+                        </div>
+                    </div>
+
+                    <!-- Date of Birth -->
+                    <div class="col-md-6 input-container">
+                        <label class="form-label">Date of Birth</label>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="fas fa-calendar"></i></span>
+                            <input type="date" class="form-control" name="dob" value="<?php echo set_value('dob'); ?>"
+                                required>
+                        </div>
+                    </div>
+
+                    <!-- Gender -->
+                    <div class="col-md-6 input-container">
+                        <label class="form-label">Gender</label>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="fas fa-venus-mars"></i></span>
+                            <select class="form-select" name="gender" required>
+                                <option value="">Select Gender</option>
+                                <option value="male" <?php echo set_select('gender', 'male'); ?>>Male</option>
+                                <option value="female" <?php echo set_select('gender', 'female'); ?>>Female</option>
+                                <option value="other" <?php echo set_select('gender', 'other'); ?>>Other</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Phone -->
+                    <div class="col-md-6 input-container">
+                        <label class="form-label">Phone Number</label>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="fas fa-phone"></i></span>
+                            <input type="tel" class="form-control" name="phone"
+                                value="<?php echo set_value('phone'); ?>" required>
+                        </div>
+                    </div>
+
+                    <!-- Email -->
+                    <div class="col-md-6 input-container">
+                        <label class="form-label">Email Address</label>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                            <input type="email" class="form-control" name="email"
+                                value="<?php echo set_value('email'); ?>" required>
+                        </div>
+                    </div>
+
+                    <!-- Qualification -->
+                    <div class="col-md-6 input-container">
+                        <label class="form-label">Qualification</label>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="fas fa-graduation-cap"></i></span>
+                            <input type="text" class="form-control" name="qualification"
+                                value="<?php echo set_value('qualification'); ?>" required>
+                        </div>
+                    </div>
+
+                    <!-- Experience -->
+                    <div class="col-md-6 input-container">
+                        <label class="form-label">Total Experience (Years)</label>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="fas fa-briefcase"></i></span>
+                            <input type="number" class="form-control" name="experience"
+                                value="<?php echo set_value('experience'); ?>" required>
+                        </div>
+                    </div>
+
+                    <!-- Current Company -->
+                    <div class="col-md-6 input-container">
+                        <label class="form-label">Current Company</label>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="fas fa-building"></i></span>
+                            <input type="text" class="form-control" name="current_company"
+                                value="<?php echo set_value('current_company'); ?>" required>
+                        </div>
+                    </div>
+
+                    <!-- Designation -->
+                    <div class="col-md-6 input-container">
+                        <label class="form-label">Current Designation</label>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="fas fa-id-badge"></i></span>
+                            <input type="text" class="form-control" name="designation"
+                                value="<?php echo set_value('designation'); ?>" required>
+                        </div>
+                    </div>
+
+                    <!-- Department -->
+                    <div class="col-md-6 input-container">
+                        <label class="form-label">Department</label>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="fas fa-sitemap"></i></span>
+                            <input type="text" class="form-control" name="department"
+                                value="<?php echo set_value('department'); ?>">
+                        </div>
+                    </div>
+
+                    <!-- Location -->
+                    <div class="col-md-6 input-container">
+                        <label class="form-label">Current Location</label>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="fas fa-map-marker-alt"></i></span>
+                            <input type="text" class="form-control" name="location"
+                                value="<?php echo set_value('location'); ?>">
+                        </div>
+                    </div>
+
+                    <!-- Current CTC -->
+                    <div class="col-md-6 input-container">
+                        <label class="form-label">Current CTC</label>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="fas fa-dollar-sign"></i></span>
+                            <input type="number" class="form-control" name="current_ctc"
+                                value="<?php echo set_value('current_ctc'); ?>" required>
+                        </div>
+                    </div>
+
+                    <!-- Expected CTC -->
+                    <div class="col-md-6 input-container">
+                        <label class="form-label">Expected CTC</label>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="fas fa-dollar-sign"></i></span>
+                            <input type="number" class="form-control" name="expected_ctc"
+                                value="<?php echo set_value('expected_ctc'); ?>" required>
+                        </div>
+                    </div>
+
+                    <!-- Notice Period -->
+                    <div class="col-md-6 input-container">
+                        <label class="form-label">Notice Period (Days)</label>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="fas fa-clock"></i></span>
+                            <input type="number" class="form-control" name="notice_period"
+                                value="<?php echo set_value('notice_period'); ?>" required>
+                        </div>
+                    </div>
+
+                    <!-- Resume Upload -->
+                    <div class="col-md-6 input-container">
+                        <label class="form-label">Upload Resume</label>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="fas fa-file-upload"></i></span>
+                            <input type="file" class="form-control" name="resume" accept=".pdf,.doc,.docx" required>
+                        </div>
+                        <small class="text-muted">Accepted formats: PDF, DOC, DOCX (Max size: 5MB)</small>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div class="col-12 text-center mt-4">
+                        <button type="submit" class="btn btn-primary px-5">
+                            Submit Application <i class="fas fa-paper-plane ms-2"></i>
+                        </button>
+                    </div>
+                </div>
+                <?php echo form_close(); ?>
+            </div>
+        </div>
     </div>
-</div>

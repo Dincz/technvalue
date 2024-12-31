@@ -1,3 +1,6 @@
+<?php $this->load->view('layout/header') ?>
+
+
 <div class="breadcumb-wrapper" data-bg-src="<?= base_url('uploads/banners/') . $banner['image']; ?>">
 
     <div class="container z-index-common">
@@ -5,8 +8,8 @@
             <h1 class="breadcumb-title">JOB DETAILS</h1>
             <div class="breadcumb-menu-wrap">
                 <ul class="breadcumb-menu">
-                    <li><a href="index.html">Home</a></li>
-                    <li>Career</li>
+                    <li><a href="<?php echo base_url() ?>"></a>Home</></li>
+                    <li><a href="<?php echo base_url() . 'career' ?>">Career</li>
                     <li class="currentLocation"><?php echo $content[0]->title; ?></li>
                 </ul>
             </div>
@@ -45,11 +48,16 @@
                     <p><strong>Experience:</strong> <?php echo $content[0]->experience; ?></p>
                     <p><strong>Qualification:</strong> <?php echo $content[0]->qualification; ?></p>
                 </div>
-                <a href="<?php echo base_url('apply/' . $content[0]->id); ?>" class="vs-btn style3">Apply Now</a>
+                <a href="<?php echo base_url('CareerController/jobApplyForm/'.$content[0]->title) ?>"
+                    class="btn btn-primary">Apply Now</a>
             </div>
         </div>
+
         <div class="col-12 col-md-6 ">
-            <img src="<?php echo base_url('uploads/career/' . $content[0]->image_url); ?>" alt="<?php echo $content[0]->title; ?>" class="w-100">
+            <img src="<?php echo base_url('uploads/career/'.$content[0]->image_url); ?>"
+                alt="<?php echo $content[0]->title; ?>" class="w-100">
         </div>
     </div>
 </div>
+
+<?php $this->load->view('layout/footer') ?>

@@ -14,24 +14,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Favicons - Place favicon.ico in the root directory -->
-    <link rel="apple-touch-icon" sizes="57x57" href="assets/img/favicons/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="assets/img/favicons/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="assets/img/favicons/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="assets/img/favicons/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="assets/img/favicons/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="assets/img/favicons/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="assets/img/favicons/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="assets/img/favicons/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicons/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="assets/img/favicons/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="assets/img/favicons/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicons/favicon-16x16.png">
-    <link rel="manifest" href="assets/img/favicons/manifest.json">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@latest/swiper-bundle.min.css" />
-
+    <link rel="apple-touch-icon" sizes="57x57" href=" <?php echo base_url() ?>assets/img/favicons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href=" <?php echo base_url() ?>assets/img/favicons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href=" <?php echo base_url() ?>assets/img/favicons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href=" <?php echo base_url() ?>assets/img/favicons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href=" <?php echo base_url() ?>assets/img/favicons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href=" <?php echo base_url() ?>assets/img/favicons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href=" <?php echo base_url() ?>assets/img/favicons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href=" <?php echo base_url() ?>assets/img/favicons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href=" <?php echo base_url() ?>assets/img/favicons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href=" <?php echo base_url() ?>assets/img/favicons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href=" <?php echo base_url() ?>assets/img/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href=" <?php echo base_url() ?>assets/img/favicons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="<?php echo base_url() ?>assets/img/favicons/favicon-16x16.png">
+    <link rel="manifest" href="<?php echo base_url() ?>assets/img/favicons/manifest.json">
     <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="assets/img/favicons/ms-icon-144x144.png">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
 
     <!--==============================
@@ -102,7 +100,7 @@
 
 
     <div class="vs-menu-wrapper mobileMenu">
-        
+
         <div class="vs-menu-area text-center">
             <!-- Toggle button with an initial "hamburger" icon -->
             <button class="vs-menu-toggle"><i class="fal fa-bars"></i></button>
@@ -119,7 +117,8 @@
                     </li>
                     <li class="menu-item-has-children mega-menu-wrap px-0">
                         <!-- Products Dropdown Toggle -->
-                        <div class="products-dropdown-toggle d-flex justify-content-center " onclick="toggleProductsDropdown(this)">
+                        <div class="products-dropdown-toggle d-flex justify-content-center "
+                            onclick="toggleProductsDropdown(this)">
                             <span class="products-title text-primary">Products</span>
                             <i class="fa fa-caret-down arrIcon"></i>
                         </div>
@@ -134,7 +133,8 @@
                                 ?>
                                             <li class="col-12 category-item">
                                                 <!-- Category Title -->
-                                                <div class="category-title d-flex justify-content-between" onclick="toggleCategoryDropdown(this)">
+                                                <div class="category-title d-flex justify-content-between"
+                                                    onclick="toggleCategoryDropdown(this)">
                                                     <span class="category-name text-left">
                                                         <?php echo isset($category['category_name']) ? $category['category_name'] : 'Category ' . $category['category_seo_url']; ?>
                                                     </span>
@@ -146,9 +146,10 @@
                                                     <?php
                                                     if (isset($category['subcategories']) && is_array($category['subcategories'])):
                                                         foreach ($category['subcategories'] as $subcategory):
-                                                    ?>
+                                                            ?>
                                                             <div class="subcategory-item">
-                                                                <div class="subcategory-title d-flex justify-content-between" onclick="toggleSubcategoryDropdown(this)">
+                                                                <div class="subcategory-title d-flex justify-content-between"
+                                                                    onclick="toggleSubcategoryDropdown(this)">
                                                                     <span class="subcategory-name border-bottom">
                                                                         <?php echo isset($subcategory['subcategory_name']) ? $subcategory['subcategory_name'] : 'Subcategory'; ?>
                                                                     </span>
@@ -173,7 +174,7 @@
                                                     <?php endif; ?>
                                                 </div>
                                             </li>
-                                    <?php
+                                            <?php
                                         endif;
                                     endforeach;
                                 else:
@@ -269,17 +270,18 @@
                     <div class="col-auto">
                         <div class="col-auto header-links style-white">
 
-                                <li class="emai"><i class="far fa-envelope"></i><a
-                                        href="mailto:sales@technovalue.in">sales@technovalue.in
-                                    </a></li>
-                                
+                            <li class="emai"><i class="far fa-envelope"></i><a
+                                    href="mailto:sales@technovalue.in">sales@technovalue.in
+                                </a></li>
+
                         </div>
                     </div>
                     <div class="col d-none d-md-block">
                         <div class="header-links style-white">
-                            
-                                <li><i class="far fa-map-marker-alt"></i> Kopar Khairane, Navi Mumbai, Maharashtra 400709</li>
-                    
+
+                            <li><i class="far fa-map-marker-alt"></i> Kopar Khairane, Navi Mumbai, Maharashtra 400709
+                            </li>
+
                         </div>
                     </div>
                     <div class="col-auto">
@@ -352,13 +354,14 @@
                                                                                 foreach ($category['subcategories'] as $subcategory):
                                                                                     $visibility_class = $count >= 5 ? 'initially-hidden' : '';
                                                                                     $count++;
-                                                                            ?>
+                                                                                    ?>
                                                                                     <li
                                                                                         class="subcategory-item <?php echo $visibility_class; ?>">
                                                                                         <a href="javascript:void(0);"
                                                                                             class="subcategory-link d-flex align-items-center justify-content-between">
                                                                                             <!-- Subcategory name with redirection -->
-                                                                                            <span class="subcategory-name d-flex justify-content-between ">
+                                                                                            <span
+                                                                                                class="subcategory-name d-flex justify-content-between ">
                                                                                                 <a class="d-inline p-0 fw-bold text-capitalize"
                                                                                                     href="<?php echo site_url('product-category/' . (isset($category['category_seo_url']) ? $category['category_seo_url'] : '') .'#subcategory-' . substr(preg_replace('/[^a-zA-Z0-9_-]/', '', strtolower(str_replace(' ', '-', $subcategory['subcategory_seo_url']))), 0, 10)); ?>">
                                                                                                     <?php echo isset($subcategory['subcategory_name']) ? $subcategory['subcategory_name'] : 'Subcategory'; ?>
@@ -373,7 +376,7 @@
                                                                                         </a>
                                                                                         <?php
                                                                                         if (isset($subcategory['products']) && is_array($subcategory['products'])):
-                                                                                        ?>
+                                                                                            ?>
                                                                                             <ul class="products custom-scrollbar">
                                                                                                 <?php foreach ($subcategory['products'] as $product): ?>
                                                                                                     <li class="product-item">
@@ -387,7 +390,7 @@
                                                                                             </ul>
                                                                                         <?php endif; ?>
                                                                                     </li>
-                                                                            <?php
+                                                                                    <?php
                                                                                 endforeach;
                                                                             endif;
                                                                             ?>
@@ -395,7 +398,7 @@
 
                                                                     </div>
                                                                 </li>
-                                                        <?php
+                                                                <?php
                                                             endif;
                                                         endforeach;
                                                     else:
@@ -493,7 +496,7 @@
 
         // Handle scroll indicator visibility
         document.querySelectorAll('.submenu').forEach(submenu => {
-            submenu.addEventListener('scroll', function() {
+            submenu.addEventListener('scroll', function () {
                 const scrollIndicator = this.parentElement.querySelector('.scroll-indicator');
                 if (scrollIndicator) {
                     if (this.scrollHeight - this.scrollTop === this.clientHeight) {
@@ -506,7 +509,7 @@
         });
 
         // Close products when clicking outside menu
-        document.addEventListener('click', function(e) {
+        document.addEventListener('click', function (e) {
             if (!e.target.closest('.mega-menu')) {
                 document.querySelectorAll('.products.show').forEach(product => {
                     product.classList.remove('show');
@@ -518,7 +521,7 @@
         });
 
         // Prevent menu from closing when clicking inside
-        document.querySelector('.mega-menu').addEventListener('click', function(e) {
+        document.querySelector('.mega-menu').addEventListener('click', function (e) {
             e.stopPropagation();
         });
     </script>
