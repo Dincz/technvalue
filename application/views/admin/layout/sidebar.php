@@ -18,7 +18,7 @@
             if ($userData['type'] == 1) {
                 ?>
 
-                <li><a href="<?php echo base_url() ?>admin/category" class="ai-icon" aria-expanded="false">
+                <!-- <li><a href="<?php echo base_url() ?>admin/category" class="ai-icon" aria-expanded="false">
                         <i class="fa-solid fa-chart-simple"></i>
                         <span class="nav-text">Category</span>
                     </a>
@@ -27,7 +27,7 @@
                         <i class="fa-solid fa-chart-simple"></i>
                         <span class="nav-text">Sub category</span>
                     </a>
-                </li>
+                </li> -->
                 <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
                         <i class="fa-solid fa-chart-simple"></i>
                         <span class="nav-text">Home Page</span>
@@ -59,6 +59,17 @@
                         <li><a href="<?php echo base_url() ?>admin/expert">Meet Our Expert</a></li>
                     </ul>
                 </li>
+                <li><a href="javascript:void()" class="has-arrow ai-icon" aria-expanded="false">
+                        <i class="fa-solid fa-chart-simple"></i>
+                        <span class="nav-text">Product</span>
+                    </a>
+                    <ul aria-expanded="false" class="mm-collapse">
+                        <li><a href="<?php echo base_url() ?>admin/product">Product</a></li>
+                        <li><a href="<?php echo base_url() ?>admin/category">Product Category</a></li>
+                        <li><a href="<?php echo base_url() ?>admin/Sub_category">Product Sub Category</a></li>
+                        <!-- <li><a href="<?php echo base_url() ?>admin/faq">FAQs</a></li> -->
+                    </ul>
+                </li>
                 <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
                         <i class="fa-solid fa-chart-simple"></i>
                         <span class="nav-text">Gallery</span>
@@ -70,7 +81,7 @@
                 </li>
                 <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
                         <i class="fa-solid fa-chart-simple"></i>
-                        <span class="nav-text">Carrer Page</span>
+                        <span class="nav-text">Career</span>
                     </a>
                     <ul aria-expanded="false" class="mm-collapse">
                         <li><a href="<?php echo base_url() ?>admin/Carrier_Content">HR Philosophy</a></li>
@@ -91,9 +102,14 @@
                         <li><a href="<?php echo base_url() ?>admin/faq">FAQs</a></li>
                     </ul>
                 </li>
+                <li><a href="<?php echo base_url() ?>admin/blog" aria-expanded="false">
+                        <i class="fa-solid fa-chart-simple"></i>
+                        <span class="nav-text">Blogs</span>
+                    </a>
+                </li>
                 <li><a href="<?php echo base_url() ?>admin/partners" class="ai-icon" aria-expanded="false">
                         <i class="fa-solid fa-chart-simple"></i>
-                        <span class="nav-text">partners</span>
+                        <span class="nav-text">Partners</span>
                     </a>
                 </li>
                 <li><a href="<?php echo base_url() ?>admin/clientele" class="ai-icon" aria-expanded="false">
@@ -101,16 +117,8 @@
                         <span class="nav-text">Clients</span>
                     </a>
                 </li>
-                <li><a href="<?php echo base_url() ?>admin/product" class="ai-icon" aria-expanded="false">
-                        <i class="fa-solid fa-chart-simple"></i>
-                        <span class="nav-text">Product</span>
-                    </a>
-                </li>
-                <li><a href="<?php echo base_url() ?>admin/blog" aria-expanded="false">
-                        <i class="fa-solid fa-chart-simple"></i>
-                        <span class="nav-text">Blogs</span>
-                    </a>
-                </li>
+
+                
                 <!-- <li><a href="<?php echo base_url() ?>admin/faq" aria-expanded="false">
                         <i class="fa-solid fa-chart-simple"></i>
                         <span class="nav-text">Faqs</span>
@@ -130,7 +138,7 @@
 
         </ul>
         <div class="copyright">
-            <p><strong>Crezvatic CRM Dashboard</strong> © 2024 All Rights Reserved</p>
+            <p><strong>Crezvatic CRM Dashboard</strong> ©2024 All Rights Reserved</p>
             <p>Made with <span class="heart"></span> by Team <a href="http://crezvatic.com/"
                     target="blank">Crezvatic</a></p>
         </div>
