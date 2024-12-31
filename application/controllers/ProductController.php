@@ -47,7 +47,7 @@ class ProductController extends CI_Controller
         // exit;
     }
 
-    
+
 
 
 
@@ -58,6 +58,7 @@ class ProductController extends CI_Controller
         $data['banner'] = $this->Banner_model->get_banner_by_page_name('productdetail'); // Adjust the page name as needed
         $data['hierarchy'] = $this->Home_model->get_hierarchical_data();
         $data['product'] = $this->Product_model->get_product_by_id($p_id);
+  
         $c_id = $data['product']['c_id'];
 
         $data['categories'] = $this->Product_model->get_categories();
@@ -65,16 +66,32 @@ class ProductController extends CI_Controller
         $data['sub_category'] = $this->Product_model->get_sub_category();
 
 
-        
+        $productData = $data['product'];
+        $data['$productName'] = $productData['p_name'];
+        $data['$categories_name'] = $productData['category_name'];
+        $data['$sub_category_name'] = $productData['subcategory_name'];
+
+        // echo '<pre>';
+        // print_r($productData['application'] );
+        // echo '<br>';
+        // echo '<br>';
+        // echo '<br> DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDddd';
+        // echo '<br>';
+
+        // print_r($productData['features'] );
+
+        // echo '</pre>';
+        // exit;
+ 
+
+
 
         // Check if product is found, if not, you might want to redirect or show a 404 error
         if (!$data['product']) {
             show_404(); // Show a 404 error if product is not found
         }
 
-            // echo '<pre>';
-            // print_r($data['product']);
-            // exit;
+
 
         // Load views after data processing
         $this->load->view("layout/header.php", $data);

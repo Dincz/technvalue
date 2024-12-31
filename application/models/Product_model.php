@@ -91,18 +91,21 @@ class Product_model extends CI_Model
         return $query->result_array();
     }
 
-    // Fetch product by ID
-    public function get_product_by_id($id)
-    {
-        $this->db->where('p_id', $id);
-        $query = $this->db->get('products');
-
+    // Fetch product by ID  `
+    public function get_product_by_id($id) {
+        $this->db->select('products.*, category.c_name as category_name, subcategory.sc_name as subcategory_name');
+        $this->db->from('products');
+        $this->db->join('category', 'category.c_id = products.c_id', 'left');
+        $this->db->join('subcategory', 'subcategory.sc_id = products.sc_id', 'left');
+        $this->db->where('products.p_id', $id);
+        
+        $query = $this->db->get();
+        
         if ($query->num_rows() > 0) {
             return $query->row_array();
         }
         return false;
     }
-
     // Update product details
     public function update_product($id, $data)
     {
@@ -122,4 +125,5 @@ class Product_model extends CI_Model
         $this->db->where('p_id', $id);
         return $this->db->delete('products');
     }
+    
 }
