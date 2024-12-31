@@ -26,7 +26,8 @@
                     <div class="project-bottom">
                         <div class="media-body">
                             <h3 class="project-title"><a href="<?php echo base_url('job-detail/' . $job->page_name); ?>"
-                                     style="font-size:17px; color:white"><?php echo htmlspecialchars($job->title); ?></a></h3>
+                                    style="font-size:17px; color:white"><?php echo htmlspecialchars($job->title); ?></a>
+                            </h3>
                             <p style="color:white;">(<?php echo $job->location; ?>)</p>
                         </div>
                         <a href="<?php echo base_url('job-detail/' . $job->page_name); ?>" class="icon-btn style4"><i
@@ -54,20 +55,33 @@
 
 <section class="team-qualities">
     <h1 class="text-center mx-4 my-4">Work Culture</h1>
+    <!-- <div class="about-section">
+        <p>
+            TechnoValue’s culture is based on Creativity and Innovation. We endeavor to practice “something new,
+            something better, something different” every day. Change is constant. Together, we turn everyday
+            change into progress. A strategic vision does define a company’s success – its people who do. Our
+            people are the growth engine of this organization and have helped define what TechnoValue is today.
+        </p>
+        <p>
+            At TechnoValue, we provide our people a creative, collaborative environment that encourages
+            initiative, drive, and a sense of professional fulfillment. We want our people to “be yourself at work”
+            and recognize that diversity of thought is critical to success. We believe in cross-learning opportunities
+            and make a real contribution to developing the business.
+        </p>
+    </div> -->
+
     <div class="about-section">
-    <p>
-        TechnoValue’s culture is based on Creativity and Innovation. We endeavor to practice “something new, 
-something better, something different” every day. Change is constant. Together, we turn everyday 
-change into progress. A strategic vision does define a company’s success – its people who do. Our 
-people are the growth engine of this organization and have helped define what TechnoValue is today.
-    </p>
-    <p>
-        At TechnoValue, we provide our people a creative, collaborative environment that encourages 
-initiative, drive, and a sense of professional fulfillment. We want our people to “be yourself at work” 
-and recognize that diversity of thought is critical to success. We believe in cross-learning opportunities 
-and make a real contribution to developing the business.
-    </p>
-</div>
+        <?php if ($work_culture_desc): ?>
+
+                <p>
+                    <?= htmlspecialchars($work_culture_desc->desc_1); ?>
+                </p>
+                <p>
+                    <?= htmlspecialchars($work_culture_desc->desc_2); ?>
+                </p>
+
+        <?php endif; ?>
+    </div>
 
 
 
@@ -115,7 +129,7 @@ and make a real contribution to developing the business.
 
 <?php if ($use_carousel): ?>
     <script>
-        $(document).ready(function() {
+        $(document).ready(function () {
             $(".team-qualities-carousel").owlCarousel({
                 loop: true,
                 margin: 30,

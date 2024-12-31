@@ -100,6 +100,7 @@
 
 
     <div class="vs-menu-wrapper mobileMenu">
+        
         <div class="vs-menu-area text-center">
             <!-- Toggle button with an initial "hamburger" icon -->
             <button class="vs-menu-toggle"><i class="fal fa-bars"></i></button>
@@ -263,14 +264,20 @@
         <div class="header-top">
             <div class="container">
                 <div class="row align-items-center justify-content-between gx-20">
-                    <div class="col d-none d-md-block">
-                        <div class="header-links style-white">
-                            <ul>
-                                <li><i class="far fa-envelope"></i><a
+                    <div class="col-auto">
+                        <div class="col-auto header-links style-white">
+
+                                <li class="emai"><i class="far fa-envelope"></i><a
                                         href="mailto:sales@technovalue.in">sales@technovalue.in
                                     </a></li>
+                                
+                        </div>
+                    </div>
+                    <div class="col d-none d-md-block">
+                        <div class="header-links style-white">
+                            
                                 <li><i class="far fa-map-marker-alt"></i> Kopar Khairane, Navi Mumbai, Maharashtra 400709</li>
-                            </ul>
+                    
                         </div>
                     </div>
                     <div class="col-auto">

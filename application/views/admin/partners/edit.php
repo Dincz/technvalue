@@ -14,8 +14,8 @@
                 <div class="form-group">
                     <label for="image">Image</label>
                     <input type="file" name="image" class="form-control-file">
-                    <img src="<?php echo base_url('uploads/gallery/' . $partner->image); ?>"
-                        alt="<?php echo $partner->name; ?>" style="max-width: 100px;">
+                    <img class=" my-3" src="<?php echo base_url('uploads/brand/' . $partner->image); ?>"
+                        alt="<?php echo $partner->name; ?>" style="max-width: 150px;">
                 </div>
                 <div class="form-group">
                     <label for="status">Status</label>
@@ -24,7 +24,7 @@
                         <option value="0" <?php echo ($partner->status == 0) ? 'selected' : ''; ?>>Inactive</option>
                     </select>
                 </div>
-                <button type="submit" class="btn btn-primary">Update Partner</button>
+                <button type="submit" class="btn btn-primary">Update</button>
                 <a href="<?php echo site_url('admin/partners'); ?>" class="btn btn-warning">Back</a>
             </form>
         </div>

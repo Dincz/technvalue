@@ -5819,6 +5819,9 @@ a.text-theme:hover,
 		padding-right: 15px;
 		margin-right: 10px;
 	}
+	.emai{
+		display: inline!important;
+	}
 
 	.header-logo {
 		padding: 15px 0 !important;
