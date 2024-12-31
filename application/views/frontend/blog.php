@@ -1,7 +1,8 @@
 <?php $this->load->view('layout/header'); ?>
 
+<h1 class="blog-top-title">Blogs</h1>
 
-<section class="vs-blog-wrapper space-top space-extra-bottom">
+<section class="vs-blog-wrapper space-extra-bottom">
     <div class="container">
         <div class="row">
             <?php foreach ($blog as $blog): ?>

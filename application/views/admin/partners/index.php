@@ -26,7 +26,7 @@
                             <!-- <td><?php echo $partner->id; ?></td> -->
                             <td><?php echo $partner->name; ?></td>
                             <td>
-                                <img src="<?php echo base_url('uploads/gallery/' . $partner->image); ?>"
+                                <img src="<?php echo base_url('uploads/brand/' . $partner->image); ?>"
                                     alt="<?php echo $partner->name; ?>" style="max-width: 100px;">
                             </td>
                             <td><?php echo ($partner->status) ? 'Active' : 'Inactive'; ?></td>

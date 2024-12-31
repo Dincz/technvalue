@@ -57,20 +57,20 @@ $route['translate_uri_dashes'] = FALSE;
 
 //Product Routes
 $route['product-category'] = 'ProductController/productCategory';
-$route['product-category/(:num)'] = 'ProductController/productCategory/$1';
+$route['product-category/(:any)'] = 'ProductController/productCategory/$1';
 // $route['product-detail'] = 'ProductController/productDetail';
-$route['product-detail/(:num)'] = 'ProductController/productDetail/$1';
+$route['product-detail/(:any)'] = 'ProductController/productDetail/$1';
 
 //Service Route
 $route['service-category'] = 'ServiceCategory';
 // $route['service-details'] = 'ServiceDetail';
-$route['service-details/(:num)'] = 'ServiceDetail/index/$1';
+$route['service-details/(:any)'] = 'ServiceDetail/index/$1';
 $route['contact'] = 'Contact';
 $route['about-us'] = 'Aboutus';
 
 //Blog Routes
 $route['blog'] = 'BlogController/blog';
-$route['blog-details/(:num)'] = 'BlogController/blogDetail/$1';
+$route['blog-details/(:any)'] = 'BlogController/blogDetail/$1';
 
 // $route['blog-detail'] = 'BlogController/blogDetail';
 
@@ -237,3 +237,9 @@ $route['admin/technovalueupdates'] = 'admin/TechnovalueUpdates/index';
 $route['admin/technovalueupdates/create'] = 'admin/TechnovalueUpdates/create';
 $route['admin/technovalueupdates/edit/(:num)'] = 'admin/TechnovalueUpdates/edit/$1';
 $route['admin/technovalueupdates/delete/(:num)'] = 'admin/TechnovalueUpdates/delete/$1';
+
+//Route for work culture description section at career page
+$route['admin/workculturedesc'] = 'admin/WorkCultureDesc/index';
+$route['admin/workculturedesc/create'] = 'admin/WorkCultureDesc/create';
+$route['admin/workculturedesc/edit/(:num)'] = 'admin/WorkCultureDesc/edit/$1';
+$route['admin/workculturedesc/delete/(:num)'] = 'admin/WorkCultureDesc/delete/$1';

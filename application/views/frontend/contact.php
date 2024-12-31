@@ -5,7 +5,7 @@
             <div class="breadcumb-menu-wrap">
                 <ul class="breadcumb-menu">
                     <li><a href="<?php echo base_url() ?>">Home</a></li>
-                    <li>Contact</li>
+                    <li class="currentLocation">Contact</li>
                 </ul>
             </div>
         </div>
@@ -26,9 +26,9 @@
         .map-container {
             position: relative;
             /* display: inline-block; */
-          /* text-align:center ; */
+            /* text-align:center ; */
         }
-     
+
 
         .map-point {
             position: absolute;
@@ -54,22 +54,25 @@
         .tippy-content {
             padding: 10px;
         }
-        .map{
-            max-width: 100%!important;
+
+        .map {
+            max-width: 100% !important;
         }
     </style>
 </head>
 
 <body>
-    <div class="map-container ">
-        <img class="map" src="assets/img/TechnoValueIndiaMapLocation-01.webp" alt="TechnoValue India Map" id="map-image">
+    <div class="map-container pt-5 ">
+        <img class="map" src="assets/img/map_image.jpg" alt="TechnoValue India Map" id="map-image">
     </div>
 
     <script>
-        const locations = [
-            {
+        const locations = [{
                 name: "Delhi Representative (Office)",
-                coords: { x: 191, y: 204 },
+                coords: {
+                    x: 191,
+                    y: 204
+                },
                 details: `
     <div class="card-body shadow">
      <div class="card-header bg-primary text-white">
@@ -121,7 +124,10 @@
             },
             {
                 name: "Ahmedabad (Regional Office)",
-                coords: { x: 94, y: 317 },
+                coords: {
+                    x: 94,
+                    y: 317
+                },
                 details: `
     <div class="card-body shadow">
         <div class="card-header bg-primary text-white">
@@ -164,7 +170,10 @@
             },
             {
                 name: "Mumbai ( Sales & Service Office )",
-                coords: { x: 110, y: 358 },
+                coords: {
+                    x: 110,
+                    y: 358
+                },
                 details: `
     <div class="card-body shadow">
         <div class="card-header bg-primary text-white">
@@ -207,7 +216,10 @@
             },
             {
                 name: "Goa Representative (Residential)",
-                coords: { x: 131, y: 449 },
+                coords: {
+                    x: 131,
+                    y: 449
+                },
                 details: `
     <div class="card-body shadow">
         <div class="card-header bg-primary text-white">
@@ -251,7 +263,10 @@
             },
             {
                 name: "Bengaluru ( Regional Office )",
-                coords: { x: 166, y: 482 },
+                coords: {
+                    x: 166,
+                    y: 482
+                },
                 details: `
     <div class="card-body shadow">
         <div class="card-header bg-primary text-white">
@@ -297,7 +312,10 @@
             },
             {
                 name: "Chennai Representative (Residential)",
-                coords: { x: 216, y: 499 },
+                coords: {
+                    x: 216,
+                    y: 499
+                },
                 details: `
             <div class="card-body shadow">
                 <div class="card-header bg-primary text-white">
@@ -340,7 +358,10 @@
             },
             {
                 name: "Hyderabad Representative",
-                coords: { x: 255, y: 550 },
+                coords: {
+                    x: 255,
+                    y: 550
+                },
                 details: `
             <div class="card-body shadow">
                 <div class="card-header bg-primary text-white">
@@ -412,7 +433,6 @@
 
 
 
-
 <!-- PHP View File (contact.php) -->
 <div class="container mt-4">
     <div class="row">
@@ -445,13 +465,13 @@
                             foreach ($whatsapps as $index => $whatsapp): ?>
                                 <a href="https://wa.me/<?= trim($whatsapp); ?>" class="phone-link">
                                     <?php if ($index === 0): // Only add the icon for the first number 
-                                                    ?>
+                                    ?>
                                         <i class="fab fa-whatsapp me-2" style="color: green;"></i>
                                     <?php endif; ?>
                                     <?= trim($whatsapp); ?>
                                 </a>
                                 <?php if ($index < count($whatsapps) - 1): // Add '/' only between numbers 
-                                                ?>
+                                ?>
                                     /
                                 <?php endif; ?>
                             <?php endforeach; ?>
@@ -466,13 +486,13 @@
                             foreach ($emails as $index => $email): ?>
                                 <a href="mailto:<?= trim($email); ?>" class="phone-link">
                                     <?php if ($index === 0): // Only add the icon for the first email 
-                                                    ?>
+                                    ?>
                                         <i class="fas fa-envelope me-2"></i>
                                     <?php endif; ?>
                                     <?= trim($email); ?>
                                 </a>
                                 <?php if ($index < count($emails) - 1): // Add '/' only between emails 
-                                                ?>
+                                ?>
                                     /
                                 <?php endif; ?>
                             <?php endforeach; ?>
@@ -498,9 +518,10 @@
     ==============================-->
 <section class=" space-top space-extra-bottom" id="helpcenter">
     <div class="d-flex justify-content-center text-center row">
-        <div class="col-lg-6 col-12 ">
+        <div class="col-lg-6 col-12">
             <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3769.977622978157!2d73.00683627505293!3d19.108637582102673!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c0c850b3ffff%3A0xf3e7652372200957!2sTechnoValue%20Solutions%20Pvt%20Ltd!5e0!3m2!1sen!2sin!4v1727946323847!5m2!1sen!2sin"
+                class="responsive-map"
                 width="600" height="750" style="border:2px;" allowfullscreen="" loading="lazy"
                 referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
@@ -521,13 +542,13 @@
                         <div class="col-12 form-group">
                             <select name="subject" id="subject2">
                                 <option selected disabled hidden>Select subject</option>
-                                <option value="Web Development">Web Development</option>
-                                <option value="UI Design">UI Design</option>
-                                <option value="CMS Development">CMS Development</option>
-                                <option value="Theme Development">Theme Development</option>
-                                <option value="Wordpress Development">Wordpress Development</option>
+                                <option value="Repair and Maintenance">Repair and Maintenance</option>
+                                <option value="Annual Maintenance Contracts (AMC)">Annual Maintenance Contracts (AMC)</option>
+                                <option value="Preventive Maintenance">Preventive Maintenance</option>
+                                <option value="Calibration Services">Calibration Services</option>
                             </select>
                         </div>
+
                         <div class="col-12 form-group">
                             <textarea name="message" id="message2" placeholder="Type Your Message"></textarea>
                         </div>

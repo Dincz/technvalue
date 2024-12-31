@@ -102,6 +102,7 @@
 
 
     <div class="vs-menu-wrapper mobileMenu">
+        
         <div class="vs-menu-area text-center">
             <!-- Toggle button with an initial "hamburger" icon -->
             <button class="vs-menu-toggle"><i class="fal fa-bars"></i></button>
@@ -129,13 +130,13 @@
                                 <?php
                                 if (isset($hierarchy) && is_array($hierarchy) && !empty($hierarchy)):
                                     foreach ($hierarchy as $category):
-                                        if (isset($category['category_name']) || isset($category['category_id'])):
+                                        if (isset($category['category_name']) || isset($category['category_seo_url'])):
                                 ?>
                                             <li class="col-12 category-item">
                                                 <!-- Category Title -->
                                                 <div class="category-title d-flex justify-content-between" onclick="toggleCategoryDropdown(this)">
                                                     <span class="category-name text-left">
-                                                        <?php echo isset($category['category_name']) ? $category['category_name'] : 'Category ' . $category['category_id']; ?>
+                                                        <?php echo isset($category['category_name']) ? $category['category_name'] : 'Category ' . $category['category_seo_url']; ?>
                                                     </span>
                                                     <i class="fa fa-caret-down arrIcon"></i>
                                                 </div>
@@ -160,7 +161,7 @@
                                                                         <?php foreach ($subcategory['products'] as $product): ?>
                                                                             <li class="product-item">
                                                                                 <a class="text-secondary text-capitalize"
-                                                                                    href="<?php echo site_url('product-detail/' . (isset($product['product_id']) ? $product['product_id'] : '')); ?>">
+                                                                                    href="<?php echo site_url('product-detail/' . (isset($product['product_seo_url']) ? $product['product_seo_url'] : '')); ?>">
                                                                                     <?php echo isset($product['product_name']) ? $product['product_name'] : 'Product'; ?>
                                                                                 </a>
                                                                             </li>
@@ -184,12 +185,6 @@
                             </div>
                         </ul>
                     </li>
-
-
-
-
-
-
                     <li><a href="<?php echo base_url('gallery-category') ?>">Gallery</a></li>
                     <li><a href="<?php echo base_url('partners') ?>">Partners</a></li>
                     <li><a href="<?php echo base_url('blog') ?>">Blog</a></li>
@@ -271,32 +266,22 @@
         <div class="header-top">
             <div class="container">
                 <div class="row align-items-center justify-content-between gx-20">
-                    <div class="col d-none d-md-block">
-                        <div class="header-links style-white">
-                            <ul>
-                                <li><i class="far fa-envelope"></i><a
+                    <div class="col-auto">
+                        <div class="col-auto header-links style-white">
+
+                                <li class="emai"><i class="far fa-envelope"></i><a
                                         href="mailto:sales@technovalue.in">sales@technovalue.in
                                     </a></li>
-                                <li><i class="far fa-map-marker-alt"></i> Kopar Khairane, Navi Mumbai, Maharashtra 400709</li>
-                            </ul>
+                                
                         </div>
                     </div>
-                    <!-- <div class="col-auto">
-                        <div class="header-dropdown style-white">
-                            <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink1"
-                                data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-globe"></i>English</a>
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink1">
-                                <li>
-                                    <a href="#">German</a>
-                                    <a href="#">French</a>
-                                    <a href="#">Italian</a>
-                                    <a href="#">Latvian</a>
-                                    <a href="#">Spanish</a>
-                                    <a href="#">Greek</a>
-                                </li>
-                            </ul>
+                    <div class="col d-none d-md-block">
+                        <div class="header-links style-white">
+                            
+                                <li><i class="far fa-map-marker-alt"></i> Kopar Khairane, Navi Mumbai, Maharashtra 400709</li>
+                    
                         </div>
-                    </div> -->
+                    </div>
                     <div class="col-auto">
                         <div class="header-social style-white">
                             <a href="https://www.facebook.com/technovaluesolutions2019">
@@ -351,13 +336,13 @@
                                                     <?php
                                                     if (isset($hierarchy) && is_array($hierarchy) && !empty($hierarchy)):
                                                         foreach ($hierarchy as $category):
-                                                            if (isset($category['category_name']) || isset($category['category_id'])):
+                                                            if (isset($category['category_name']) || isset($category['category_seo_url'])):
                                                     ?>
                                                                 <li class="col-3 ">
                                                                     <!-- Update the anchor link to redirect to the category page -->
-                                                                    <a href="<?php echo site_url('product-category/' . (isset($category['category_id']) ? $category['category_id'] : '')); ?>"
+                                                                    <a href="<?php echo site_url('product-category/' . (isset($category['category_seo_url']) ? $category['category_seo_url'] : '')); ?>"
                                                                         class="category-title text-capitalize">
-                                                                        <?php echo isset($category['category_name']) ? $category['category_name'] : 'Category ' . $category['category_id']; ?>
+                                                                        <?php echo isset($category['category_name']) ? $category['category_name'] : 'Category ' . $category['category_seo_url']; ?>
                                                                     </a>
                                                                     <div class="submenu-wrapper">
                                                                         <ul class="submenu custom-scrollbar initially-visible">
@@ -375,7 +360,7 @@
                                                                                             <!-- Subcategory name with redirection -->
                                                                                             <span class="subcategory-name d-flex justify-content-between ">
                                                                                                 <a class="d-inline p-0 fw-bold text-capitalize"
-                                                                                                    href="<?php echo site_url('product-category/' . (isset($category['category_id']) ? $category['category_id'] : '') . '#subcategory-' . (isset($subcategory['subcategory_id']) ? $subcategory['subcategory_id'] : '')); ?>">
+                                                                                                    href="<?php echo site_url('product-category/' . (isset($category['category_seo_url']) ? $category['category_seo_url'] : '') .'#subcategory-' . substr(preg_replace('/[^a-zA-Z0-9_-]/', '', strtolower(str_replace(' ', '-', $subcategory['subcategory_seo_url']))), 0, 10)); ?>">
                                                                                                     <?php echo isset($subcategory['subcategory_name']) ? $subcategory['subcategory_name'] : 'Subcategory'; ?>
                                                                                                 </a>
                                                                                                 <i class="fa fa-caret-down arrIcon"
@@ -394,7 +379,7 @@
                                                                                                     <li class="product-item">
                                                                                                         <a
                                                                                                             class=" text-secondary text-capitalize"
-                                                                                                            href="<?php echo site_url('product-detail/' . (isset($product['product_id']) ? $product['product_id'] : '')); ?>">
+                                                                                                            href="<?php echo site_url('product-detail/' . (isset($product['product_seo_url']) ? $product['product_seo_url'] : '')); ?>">
                                                                                                             <?php echo isset($product['product_name']) ? $product['product_name'] : 'Product'; ?>
                                                                                                         </a>
                                                                                                     </li>

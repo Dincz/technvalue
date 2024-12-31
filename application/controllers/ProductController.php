@@ -77,6 +77,7 @@ class ProductController extends CI_Controller
             // exit;
 
         // Load views after data processing
+        
         $this->load->view("layout/header.php", $data);
 
         $this->load->view("frontend/productDetail", $data);

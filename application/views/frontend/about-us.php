@@ -8,8 +8,8 @@
             <h1 class="breadcumb-title">About Us</h1>
             <div class="breadcumb-menu-wrap">
                 <ul class="breadcumb-menu">
-                    <li><a href="index.html">Home</a></li>
-                 <li>About Us</li>
+                    <li><a href="<?php echo base_url() ?>">Home</a></li>
+                 <li class="currentLocation">About Us</li>
                 </ul>
             </div>
         </div>
@@ -43,7 +43,7 @@
         <div class="row justify-content-between align-items-center">
             <div class="col-lg-5 text-center text-lg-start">
                 <div class="title-area">
-                    <h2 class="sec-title3 h1">From the Desk of Director</h2>
+                    <h2 class="sec-title4">From the Desk of Director</h2>
                 </div>
             </div>
             <div class="col-auto d-none d-lg-block">
@@ -53,7 +53,7 @@
                 </div>
             </div>
         </div>
-        <div class="row testi-style2-slide vs-carousel" data-slide-show="2" data-md-slide-show="2">
+        <div class="row testi-style2-slide vs-carousel" data-slide-show="2" data-md-slide-show="2" data-xs-dots="true" data-sm-dots="true">
             <div class="col-xl-6">
                 <div class="testi-style2">
                     <div class="testi-body">
@@ -95,7 +95,7 @@
             <div class="col-lg-6 col-xxl  wow fadeInUp" data-wow-delay="0.4s">
                 <div class="title-area mb-4 pb-1">
                     <!-- <span class="sec-subtitle2"><i class="fal fa-arrow-right"></i>Why Choose Us</span> -->
-                    <h2 class="sec-title3 h1">Why Choose Us...</h2>
+                    <h2 class="sec-title4">Why Choose Us...</h2>
                 </div>
                 <div class="accordion accordion-style2" id="faqVersion3">
                     <?php foreach ($chooseUs as $index => $chooseUs): ?>
@@ -158,17 +158,17 @@
 <!--==============================
     expertise and achievements
     ==============================-->
-<section class=" space-top space-extra-bottom">
+<section class="space-extra-bottom">
     <div class="container   wow fadeInUp" data-wow-delay="0.2s">
         <div class="row justify-content-center text-center">
             <div class="col-xl-12">
                 <div class="title-area">
                     <!-- <span class="sec-subtitle">Great Team Members</span> -->
-                    <h2 class="sec-title3 h1">Expertise</h2>
+                    <h2 class="sec-title4">Expertise</h2>
                 </div>
             </div>
         </div>
-        <div class="row vs-carousel" data-slide-show="3" data-md-slide-show="2">
+        <div class="row vs-carousel" data-slide-show="3" data-md-slide-show="2" data-xs-dots="true" data-sm-dots="true">
         <?php $serial = 1; // Initialize serial number ?>
             <?php foreach ($expertise as $item): ?>
                 <?php if ($item['status']): // Check if the status is active ?>
@@ -202,11 +202,11 @@
                 <div class="col-xl-12">
                     <div class="title-area">
                         <!-- <span class="sec-subtitle">Great Team Members</span> -->
-                        <h2 class="sec-title3 h1 text-center">Our History</h2>
+                        <h2 class="sec-title4 text-center">Our History</h2>
                     </div>
                 </div>
                 <div class="row vs-carousel team-zigzag" data-slide-show="4" data-ml-slide-show="3"
-                    data-lg-slide-show="3" data-md-slide-show="2">
+                    data-lg-slide-show="3" data-md-slide-show="2" data-xs-dots="true" data-sm-dots="true">
                     <?php foreach ($history as $history): ?>
                         <div class="col-sm-6 col-lg-3 process-style1">
                             <div class="process-arrow"><img src="assets/img/icon/process-arrow-1-1.png" alt="arrow">
@@ -230,7 +230,7 @@
 <!--==============================
     CTA Area
     ==============================-->
-<section class="z-index-common space my-5 mx-5" data-bg-src="assets/img/bg/cta-bg-1-2.png">
+    <section class="z-index-common space" data-bg-src="assets/img/bg/cta-bg-1-2.png">
     <div class="container">
         <div class="row text-center text-lg-start align-items-center justify-content-between">
             <div class="col-lg-auto">
@@ -238,7 +238,7 @@
                 <h2 class="h1 sec-title cta-title1">Need A Consultation?</h2>
             </div>
             <div class="col-lg-auto">
-                <a href="#" id="quoteBtn" class="vs-btn">Get A Quote<i class="far fa-arrow-right"></i></a>
+                <a href="contact.html" class="vs-btn">Get A Quote<i class="far fa-arrow-right"></i></a>
             </div>
         </div>
     </div>
@@ -254,7 +254,7 @@
     </div>
     <div class="container container-style3 wow fadeInUp" data-wow-delay="0.3s">
         <div class="row vs-carousel team-zigzag" data-slide-show="4" data-ml-slide-show="3" data-lg-slide-show="3"
-            data-md-slide-show="2">
+            data-md-slide-show="2" data-xs-dots="true" data-sm-dots="true">
             <?php foreach ($meet_our_expert as $moe): ?>
                 <div class="col-xl-3 team-style3">
                     <div class="team-img">

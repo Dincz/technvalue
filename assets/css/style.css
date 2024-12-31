@@ -2581,11 +2581,11 @@ textarea.is-invalid {
 	}
 
 	.scrollToTop {
-		right: 20px;
+		right: 311px;
 	}
 
 	.scrollToTop.show {
-		bottom: 100px;
+		bottom: 58px;
 	}
 }
 
@@ -5819,6 +5819,9 @@ a.text-theme:hover,
 		padding-right: 15px;
 		margin-right: 10px;
 	}
+	.emai{
+		display: inline!important;
+	}
 
 	.header-logo {
 		padding: 15px 0 !important;
@@ -7043,7 +7046,7 @@ blockquote.vs-quote .quote-author {
 	}
 
 	.blog-style1 .blog-title {
-		font-size: 18px;
+		font-size: 16px;
 	}
 }
 
@@ -14027,7 +14030,7 @@ blockquote.vs-quote .quote-author {
 	background-color: var(--theme-color);
 	border-radius: 10px;
 	transition: all ease 0.4s;
-	padding: 30px 35px 28px 35px;
+	padding: 11px 25px;
 	opacity: 1;
 	visibility: visible;
 }
@@ -14239,7 +14242,7 @@ blockquote.vs-quote .quote-author {
 	.project-style3 .project-title,
 	.project-tbstyle7 .project-title,
 	.project-tbstyle8 .project-title {
-		font-size: 18px;
+		font-size: 16px;
 	}
 }
 
@@ -15947,7 +15950,7 @@ blockquote.vs-quote .quote-author {
 
 @media (max-width: 767px) {
 	.space-top {
-		padding-top: 0 !important;
+		padding-top: 35px !important;
 	}
 
 	.hero-content.tb7 {
@@ -18962,9 +18965,9 @@ blockquote.vs-quote .quote-author {
 	}
 
 	.floating-button {
-		right: 65% !important;
+		right: 8% !important;
 		padding: 0.375rem 0.75rem !important;
-		bottom: 33%!important;
+		bottom: 8%!important;
 	}
 	.square-holder{
 		margin-bottom: 20%!important;
@@ -18981,4 +18984,116 @@ blockquote.vs-quote .quote-author {
 
 .currentLocation {
  	color:	#fdc900 !important;
+}
+
+
+.blog-top-title {
+    text-align: center;
+    font-size: 3rem; /* Adjust for larger text */
+    font-weight: bold;
+    margin: 40px 0; /* Adjust for spacing */
+    line-height: 1.2; /* Optional for spacing */
+    color: #333; /* Adjust color as needed */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .blog-top-title {
+        font-size: 2.5rem; /* Slightly smaller on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .blog-top-title {
+        font-size: 2rem; /* Further reduce size for very small screens */
+    }
+}
+
+/* CSS FOR SLIDERS */
+@media (max-width: 1222px) {
+    .nopaddingformobile {
+        padding: 0 !important;
+    }
+}
+@media (max-width: 768px) {
+	.noneinphone {
+		display: none;
+	}
+
+}
+
+.responsive-map {
+	width: 100%;
+	/* Ensures it fits the container width */
+	height: 750px;
+	/* Default height */
+}
+
+/* Adjust height for smaller screens */
+@media (max-width: 768px) {
+
+	/* For tablets and smaller */
+	.responsive-map {
+		height: 500px;
+	}
+}
+
+@media (max-width: 576px) {
+
+	/* For phones */
+	.responsive-map {
+		height: 300px;
+	}
+}
+
+
+.about-section {
+    margin: 50px auto;
+    padding: 40px 60px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    max-width: 1000px;
+    font-family: 'Georgia', serif;
+    line-height: 1.8;
+    color: #222;
+}
+
+.about-section p {
+    margin-bottom: 30px;
+    text-align: justify;
+    font-size: 18px;
+}
+
+.about-section p:last-child {
+    margin-bottom: 0;
+}
+
+.about-section:before {
+    content: "";
+    display: block;
+    height: 4px;
+    width: 60px;
+    background-color: #007BFF;
+    margin: 0 auto 20px auto;
+    border-radius: 2px;
+}
+
+.about-section h2 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #007BFF;
+}
+
+.lessing-margin li:after {
+	margin: 0 0px 0 2px;
+}
+
+.lessing-margin li, .lessing-margin a, .lessing-margin span { 
+	font-size: 13px;
+}
+
+.resizetitile {
+	font-size: 10px;
 }
