@@ -8,6 +8,7 @@ class Home extends CI_Controller {
         parent::__construct();
         // Load the Home_model
         $this->load->model('Home_model'); 
+        $this->load->model('admin/Home_model', 'admin_home'); 
 		$this->load->model('carrier_model');
 		$this->load->model('Gallery_model');
 		$this->load->model('Blog_model');
@@ -27,7 +28,7 @@ class Home extends CI_Controller {
 		$data['customer_feedback'] = $this->Service_Category_model->getFeedback();
 		$data['basicinfo'] = $this->Footer_model->get_basic_info();
 		$data['hierarchy'] = $this->Home_model->get_hierarchical_data();
-		$data['banner'] = $this->Home_model->get_banner();
+		$data['banners'] = $this->Home_model->get_home_page_banners();
 		$data['featured'] = $this->Home_model->get_featured_products();
 
 

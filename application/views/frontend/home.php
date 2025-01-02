@@ -3,68 +3,44 @@
 <!--==============================
     Hero Area
     ==============================-->
-<section class="  ">
+<section>
     <div class="vs-carousel hero-layout4" data-slide-show="1" data-fade="true" data-arrows="true"
         data-prev-arrow="far fa-arrow-up" data-next-arrow="far fa-arrow-down">
-        <div>
-            <div class="hero-bg" data-bg-src="assets/img/hero/hero-4-1.png"></div>
-            <!-- <div class="hero-img"><img src="assets/img/hero/hero-4-1-1.png" alt="hero"></div> -->
-            <div class="hero-shape1"></div>
-            <div class="hero-inner">
-                <div class="hero-shape2"><img src="assets/img/hero/hero-shape-4-1.png" alt="bg shape"></div>
-                <div class="container">
-                    <div class="hero-content">
-                        <span class="hero-subtitle">We Make Your Company Brighter</span>
-                        <h1 class="hero-title">Online Business</h1>
-                        <h1 class="hero-title2">Solution For You</h1>
-                        <div class="hero-btns">
-                            <a href="#" id="quoteBtn" class="vs-btn style7">Get In Touch</a>
-                            <!-- <a href="blog.html" class="vs-btn style10 mobile-white">Learn More</a> -->
+
+        <?php foreach ($banners as $banner): ?>
+            <div class="position-relative ">
+                <!-- Background Image -->
+                <div class="hero-bg" style="background-image: url('<?php echo base_url('uploads/banners/' . $banner['image']); ?>');">                </div>
+                <div class="HomeOverlay"></div>
+                <!-- Optional Image in the Hero Section -->
+                <?php if (!empty($banner['image'])): ?>
+                    <div class="hero-img">
+                        <!-- <img src="<?php echo base_url('uploads/banners/' . $banner['image']); ?>" alt="hero"> -->
+                    </div>
+                <?php endif; ?>
+
+                <div class="hero-shape1"></div>
+                <div class="hero-inner">
+                    <div class="hero-shape2">
+                        <img src="assets/img/hero/hero-shape-4-1.png" alt="bg shape">
+                    </div>
+                    <div class="container">
+                        <div class="hero-content">
+                            <!-- <span class="hero-subtitle"><?php echo htmlspecialchars($banner['slogan']); ?></span> -->
+                            <h1 class="hero-title "><?php echo htmlspecialchars($banner['slogan']); ?></h1>
+                            <h1 class="hero-title2"><?php echo htmlspecialchars($banner['subtitle']); ?></h1>
+                            <div class="hero-btns">
+                                <a href="" class="vs-btn style7">Get In Touch</a>
+                                <!-- <a href="blog.html" class="vs-btn style10 mobile-white">Learn More</a> -->
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div>
-            <div class="hero-bg" data-bg-src="assets/img/hero/hero-4-2.png"></div>
-            <div class="hero-img"><img src="assets/img/hero/hero-4-1-2.png" alt="hero"></div>
-            <div class="hero-shape1"></div>
-            <div class="hero-inner">
-                <div class="hero-shape2"><img src="assets/img/hero/hero-shape-4-1.png" alt="bg shape"></div>
-                <div class="container">
-                    <div class="hero-content">
-                        <span class="hero-subtitle">We Make Your Company Digital</span>
-                        <h1 class="hero-title">Grow Business</h1>
-                        <h1 class="hero-title2">Support For You</h1>
-                        <div class="hero-btns">
-                            <a href="about" class="vs-btn style7">Get In Touch</a>
-                            <a href="blog.html" class="vs-btn style10 mobile-white">Learn More</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div>
-            <div class="hero-bg" data-bg-src="assets/img/hero/hero-4-3.png"></div>
-            <div class="hero-img"><img src="assets/img/hero/hero-4-1-3.png" alt="hero"></div>
-            <div class="hero-shape1"></div>
-            <div class="hero-inner">
-                <div class="hero-shape2"><img src="assets/img/hero/hero-shape-4-1.png" alt="bg shape"></div>
-                <div class="container">
-                    <div class="hero-content">
-                        <span class="hero-subtitle">We Make Your Company Success</span>
-                        <h1 class="hero-title">Digital Store</h1>
-                        <h1 class="hero-title2">Provider For You</h1>
-                        <div class="hero-btns">
-                            <a href="about" class="vs-btn style7">Get In Touch</a>
-                            <a href="blog.html" class="vs-btn style10 mobile-white">Learn More</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <?php endforeach; ?>
     </div>
 </section>
+
 <!-- <div class="big-name d-none d-xxl-block">Crezvatic</div>    -->
 
 <!-- whats new section  -->
@@ -90,7 +66,7 @@
                         <?php else: ?>
                             <p>No updates available.</p>
                         <?php endif; ?>
-                        <!-- <a href="<?php echo base_url().'product-category/1'?>" class="btn view-all-btn">View All</a> -->
+                        <!-- <a href="<?php echo base_url() . 'product-category/1' ?>" class="btn view-all-btn">View All</a> -->
                     </div>
                 </div>
             </div>
@@ -120,12 +96,12 @@
                                 Experience: <?php echo $job->experience; ?><br>
                                 Location: <?php echo $job->location; ?>
                             </p>
-                            <a href="<?php echo base_url().'job-detail/'.$job->page_name; ?>" class="text-danger">Read More »</a>
+                            <a href="<?php echo base_url() . 'job-detail/' . $job->page_name; ?>" class="text-danger">Read More »</a>
                             <hr>
                         <?php
                         }
                         ?>
-                         <div class="bottom-0 position-absolute mb-4">
+                        <div class="bottom-0 position-absolute mb-4">
                             <a href="<?php echo base_url() ?>career" class="btn view-all-btn ">View All</a>
                         </div>
                     </div>
@@ -194,21 +170,21 @@
                 <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
                     <div class="card h-100 shadow-lg border-0 rounded overflow-hidden">
                         <div class="card-img-top position-relative">
-                            <img src="<?php echo base_url('uploads/Product/' . htmlspecialchars($product['image'])); ?>" 
-                                 alt="<?php echo htmlspecialchars($product['p_name']); ?>" 
-                                 class="img-fluid w-100">
+                            <img src="<?php echo base_url('uploads/Product/' . htmlspecialchars($product['image'])); ?>"
+                                alt="<?php echo htmlspecialchars($product['p_name']); ?>"
+                                class="img-fluid w-100">
                         </div>
                         <div class="card-body text-center">
                             <h5 class="card-title mb-2 text-dark">
-                                <a href="<?php base_url()?>product-detail/<?php echo urlencode($product['p_id']); ?>" 
-                                   class="text-decoration-none fw-bold">
+                                <a href="<?php base_url() ?>product-detail/<?php echo urlencode($product['p_id']); ?>"
+                                    class="text-decoration-none fw-bold">
                                     <?php echo htmlspecialchars($product['p_name']); ?>
                                 </a>
                             </h5>
                         </div>
                         <div class="card-footer bg-white text-center">
-                            <a href="<?php base_url()?>product-detail/<?php echo $product['p_id']; ?>" 
-                               class="btn btn-outline-primary btn-sm">
+                            <a href="<?php base_url() ?>product-detail/<?php echo $product['p_id']; ?>"
+                                class="btn btn-outline-primary btn-sm">
                                 Read Details <i class="far fa-arrow-right ms-1"></i>
                             </a>
                         </div>
@@ -225,21 +201,21 @@
                 <div class="item">
                     <div class="card h-100 shadow-lg border-0 rounded overflow-hidden">
                         <div class="card-img-top position-relative">
-                            <img src="<?php echo base_url('uploads/Product/' . htmlspecialchars($product['image'])); ?>" 
-                                 alt="<?php echo htmlspecialchars($product['p_name']); ?>" 
-                                 class="img-fluid w-100">
+                            <img src="<?php echo base_url('uploads/Product/' . htmlspecialchars($product['image'])); ?>"
+                                alt="<?php echo htmlspecialchars($product['p_name']); ?>"
+                                class="img-fluid w-100">
                         </div>
                         <div class="card-body text-center">
                             <h5 class="card-title mb-2 text-dark">
-                                <a href="<?php base_url()?>product-detail/<?php echo urlencode($product['p_id']); ?>" 
-                                   class="text-decoration-none fw-bold">
+                                <a href="<?php base_url() ?>product-detail/<?php echo urlencode($product['p_id']); ?>"
+                                    class="text-decoration-none fw-bold">
                                     <?php echo htmlspecialchars($product['p_name']); ?>
                                 </a>
                             </h5>
                         </div>
                         <div class="card-footer bg-white text-center">
-                            <a href="<?php base_url()?>product-detail/<?php echo $product['p_id']; ?>" 
-                               class="btn btn-outline-primary btn-sm">
+                            <a href="<?php base_url() ?>product-detail/<?php echo $product['p_id']; ?>"
+                                class="btn btn-outline-primary btn-sm">
                                 Read Details <i class="far fa-arrow-right ms-1"></i>
                             </a>
                         </div>
@@ -252,7 +228,7 @@
 
 <!-- Owl Carousel Initialization -->
 <script>
-    $(document).ready(function(){
+    $(document).ready(function() {
         $(".owl-carousel").owlCarousel({
             loop: true,
             margin: 15,
@@ -283,7 +259,8 @@
     <div class="owl-carousel" id="brandslide1">
         <?php if (!empty($client)): ?>
             <?php foreach ($client as $clients): ?>
-                <?php if ($clients['status'] == 1): // Check if the (client) is active ?>
+                <?php if ($clients['status'] == 1): // Check if the (client) is active 
+                ?>
                     <div class="vs-brand1">
                         <!-- Dynamically load image from the array -->
                         <img src="<?php echo base_url('uploads/brand/' . $clients['image']); ?>" alt="Client Logo">
@@ -333,7 +310,7 @@
             <!-- <span class="sec-subtitle2">Blog & News</span> -->
             <h2 class="sec-title4">Blogs</h2>
         </div>
-        <div class="row  vs-carousel wow fadeInUp" data-wow-delay="0.4s" data-slide-show="3" data-md-slide-show="2"    data-xs-dots="true" data-sm-dots="true">
+        <div class="row  vs-carousel wow fadeInUp" data-wow-delay="0.4s" data-slide-show="3" data-md-slide-show="2" data-xs-dots="true" data-sm-dots="true">
             <?php foreach ($blog as $blog): ?>
                 <div class="col-md-6 col-lg-4">
                     <div class="vs-blog blog-style1">
@@ -414,7 +391,7 @@
 
     <div class="container overflow-hidden px-xxl-0">
         <div class="row vs-carousel" data-slide-show="4" data-ml-slide-show="3" data-lg-slide-show="3"
-            data-md-slide-show="2" id="projectslide1"    data-xs-dots="true" data-sm-dots="true">
+            data-md-slide-show="2" id="projectslide1" data-xs-dots="true" data-sm-dots="true">
 
             <?php foreach ($gallery_items as $item): ?>
                 <div class="col-xl-3">
