@@ -33,7 +33,6 @@ class Home extends CI_Controller
 		$data['featured'] = $this->Home_model->get_featured_products();
 
 
-
 		$this->load->view('frontend/home', $data);
 	}
 }

@@ -39,7 +39,7 @@ class Home_model extends CI_Model
     }
     public function get_featured_products()
     {
-        $this->db->select('p_id, p_name, image');
+        $this->db->select('p_id, p_name, seo_url, image');
         $this->db->from('products');
         $this->db->where('featured', 1);
         $query = $this->db->get();

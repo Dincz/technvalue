@@ -124,14 +124,23 @@ class Product_model extends CI_Model
     // Fetch product by ID
     public function get_product_by_id($id)
     {
-        $this->db->where('seo_url', $id);
-        $query = $this->db->get('products');
-
+        $this->db->select('
+            products.*, 
+            subcategory.seo_url AS subcategory_seo_url, 
+            category.seo_url AS category_seo_url
+        ');
+        $this->db->from('products');
+        $this->db->join('subcategory', 'subcategory.sc_id = products.sc_id', 'left');
+        $this->db->join('category', 'category.c_id = subcategory.c_id', 'left');
+        $this->db->where('products.seo_url', $id);
+        $query = $this->db->get();
+    
         if ($query->num_rows() > 0) {
             return $query->row_array();
         }
         return false;
     }
+    
     // Update product details
     public function update_product($id, $data)
     {

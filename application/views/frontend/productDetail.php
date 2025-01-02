@@ -7,15 +7,14 @@
         data-bg-src="<?= base_url('uploads/banners/banner-1.jpg'); ?>" loading="lazy">
         <div class="container z-index-common">
             <div class="breadcumb-content">
-                <h1 class="breadcumb-title">Product Detail</h1>
+                <h1 class="breadcumb-title currentLocation"><?php echo $product['p_name'] ?></h1>
                 <div class="breadcumb-menu-wrap">
                     <ul class="breadcumb-menu">
                         <li><a href="<?php echo base_url() ?>">Home</a></li>
-                        <li><a href="<?php echo base_url() . 'product-category/' . $product['c_id']; ?>"><?php echo $product['category_name'] ?></a></li>
+                        <li><a href="<?php echo base_url() . 'product-category/' . $product['c_id']; ?>"><?php echo $product['category_seo_url'] ?></a></li>
                         <!-- /product-category/3#subcategory-12 -->
-                        <li><a href="<?php echo base_url() . 'product-category/' . $product['c_id'] . '#subcategory-'  . $product['sc_id']; ?>"><?php echo $product['subcategory_name'] ?></a></li>
+                        <li><a href="<?php echo base_url() . 'product-category/' . $product['c_id'] . '#subcategory-'  . $product['sc_id']; ?>"><?php echo $product['subcategory_seo_url'] ?></a></li>
 
-                        <li class="currentLocation"><?php echo $product['p_name'] ?></li>
                     </ul>
                 </div>
             </div>
@@ -88,7 +87,7 @@
                                     ?>
                                 </a>
                             </h3>
-                            <a href="<?php echo base_url('product-detail/' . $row['p_id']); ?>" class="vs-btn style3">
+                            <a href="<?php echo base_url('product-detail/' . $row['seo_url']); ?>" class="vs-btn style3">
                                 View Details<i class="far fa-arrow-right"></i>
                             </a>
 

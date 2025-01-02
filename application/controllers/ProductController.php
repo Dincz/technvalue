@@ -72,9 +72,7 @@ class ProductController extends CI_Controller
             show_404(); // Show a 404 error if product is not found
         }
 
-            // echo '<pre>';
-            // print_r($data['product']);
-            // exit;
+
 
         // Load views after data processing
         

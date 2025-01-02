@@ -203,14 +203,14 @@
                         </div>
                         <div class="card-body text-center">
                             <h5 class="card-title mb-2 text-dark">
-                                <a href="<?php base_url() ?>product-detail/<?php echo urlencode($product['p_id']); ?>"
+                                <a href="<?php base_url() ?>product-detail/<?php echo urlencode($product['seo_url']); ?>"
                                     class="text-decoration-none fw-bold">
                                     <?php echo htmlspecialchars($product['p_name']); ?>
                                 </a>
                             </h5>
                         </div>
                         <div class="card-footer bg-white text-center">
-                            <a href="<?php base_url() ?>product-detail/<?php echo $product['p_id']; ?>"
+                            <a href="<?php base_url() ?>product-detail/<?php echo $product['seo_url']; ?>"
                                 class="btn btn-outline-primary btn-sm">
                                 Read Details <i class="far fa-arrow-right ms-1"></i>
                             </a>
