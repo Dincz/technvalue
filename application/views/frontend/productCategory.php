@@ -3,7 +3,7 @@
 // exit;
 ?>
 
-<div class="breadcumb-wrapper" data-bg-src="<?= base_url('uploads/banners/') . $banner['image']; ?>">
+<div class="breadcumb-wrapper" data-bg-src="<?= base_url('uploads/banners/') . $banner['image']; ?>" loading="lazy">
     <div class="container z-index-common">
         <div class="breadcumb-content">
             <!-- Display the category name dynamically -->
@@ -72,7 +72,7 @@
                                         <div class="project-style1" style="min-height:210px">
                                             <div class="project-img">
                                                 <a href="<?php echo base_url('product-detail/' . $product['seo_url']); ?>">
-                                                    <img src="<?php echo base_url('uploads/Product/' . $product['image']); ?>" class="img-fluid" alt="Product Image">
+                                                    <img src="<?php echo base_url('uploads/Product/' . $product['image']); ?>" class="img-fluid" alt="Product Image" loading="lazy">
                                                 </a>
                                             </div>
                                             <div class="project-content text-center px-0">

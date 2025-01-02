@@ -1,4 +1,4 @@
-<div class="breadcumb-wrapper" data-bg-src="<?= base_url('uploads/banners/banner-1.jpg') ?>">
+<div class="breadcumb-wrapper" data-bg-src="<?= base_url('uploads/banners/banner-1.jpg') ?>" loading="lazy">
 
     <div class="container z-index-common">
         <div class="breadcumb-content">
@@ -21,7 +21,7 @@
             <div class="col-md-3 col-lg-3 filter-item Business Finance" style="position: absolute;  top: 0px;">
                 <div class="project-style3">
                     <div class="project-img">
-                        <img src="uploads/career/<?php echo $job->image_url; ?>" alt="image">
+                        <img src="uploads/career/<?php echo $job->image_url; ?>" alt="image" loading="lazy">
                     </div>
                     <div class="project-bottom">
                         <div class="media-body">
@@ -87,7 +87,7 @@
 
     <div class="mb-5" id="weoffer">
         <div class="space-top space-extra-bottom background-image"
-            style="background-image: url('assets/img/bg/process-bg-1-1.png');">
+            style="background-image: url('assets/img/bg/process-bg-1-1.png');" loading="lazy">
             <div class="container">
                 <?php if ($use_carousel): ?>
                     <div class="owl-carousel team-qualities-carousel">

@@ -63,7 +63,7 @@
 
 <body>
     <div class="map-container pt-5 ">
-        <img class="map" src="assets/img/map_image.jpg" alt="TechnoValue India Map" id="map-image">
+        <img class="map" src="assets/img/map_image.jpg" alt="TechnoValue India Map" id="map-image" loading="lazy">
     </div>
 
     <script>

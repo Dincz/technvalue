@@ -10,7 +10,7 @@
                     <div class="vs-blog blog-style1">
                         <div class="blog-img">
                             <img src="<?= base_url('uploads/blog/') . $blog['blog_small_image']; ?>" alt="Blog Image"
-                                class="w-100">
+                                class="w-100" loading="lazy">
                         </div>
                         <div class="blog-content">
                             <div class="blog-meta">

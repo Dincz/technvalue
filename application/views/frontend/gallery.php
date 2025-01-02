@@ -1,5 +1,5 @@
 <?php $this->load->view('layout/header'); ?>
-<div class="breadcumb-wrapper" data-bg-src="<?= base_url('uploads/banners/') . $banner['image']; ?>">
+<div class="breadcumb-wrapper" data-bg-src="<?= base_url('uploads/banners/') . $banner['image']; ?>" loading="lazy">
     <div class="container z-index-common">
         <div class="breadcumb-content">
             <h1 class="breadcumb-title">Gallery Images</h1>
@@ -37,7 +37,7 @@
         <div class="list">
             <?php foreach ($gallery_items as $gallery_items): ?>
                 <div class="card mb-4 shadow-sm">
-                    <img src="<?php echo base_url('uploads/gallery/All_images/' . $gallery_items->images); ?>" alt="Gallery Image" class="img-fluid rounded">
+                    <img src="<?php echo base_url('uploads/gallery/All_images/' . $gallery_items->images); ?>" alt="Gallery Image" class="img-fluid rounded" loading="lazy">
                 </div>
             <?php endforeach; ?>
         </div>

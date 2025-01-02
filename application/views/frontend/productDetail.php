@@ -4,7 +4,7 @@
     ?>
 
     <div class="breadcumb-wrapper background-image"
-        data-bg-src="<?= base_url('uploads/banners/banner-1.jpg'); ?>">
+        data-bg-src="<?= base_url('uploads/banners/banner-1.jpg'); ?>" loading="lazy">
         <div class="container z-index-common">
             <div class="breadcumb-content">
                 <h1 class="breadcumb-title">Product Detail</h1>
@@ -22,13 +22,20 @@
         </div>
     </div>
 
-    <section class="position-relative space-bottom" style="background-image: url(assets/img/bg/ab-bg-1-1.jpg);">
+    <style>
+        .img-responsive {
+            max-width: 100%;
+            height: auto;
+            object-fit: contain;
+        }
+    </style>
+    <section class="position-relative space-bottom" style="background-image: url(assets/img/bg/ab-bg-1-1.jpg);" loading="lazy">
         <div class="container z-index-common">
             <div class="row gx-60">
                 <div class="col-lg-6 col-xl-5 mb-50 mb-lg-0 wow fadeInUp wow-animated m-0" data-wow-delay="0.2s">
                     <div class="img-box1">
                         <div class="img-1 mt-5">
-                            <img src="<?php echo base_url('uploads/Product/' . $product['image']); ?>" class="img-fluid mt-0" alt="Product Image">
+                            <img src="<?php echo base_url('uploads/Product/' . $product['image']); ?>" class="img-responsive mt-0 limiting-height" alt="Product Image" loading="lazy">
                         </div>
                     </div>
                 </div>
@@ -54,17 +61,10 @@
     </section>
 
     <blockquote class="blockquote p-4 bg-light border rounded">
-    <p class="mb-0"><?php echo $product['application']; ?></p>
-</blockquote>
+        <p class="mb-0"><?php echo $product['application']; ?></p>
+    </blockquote>
 
 
-    <!-- <div class="vs-blog blog-single">
-        <h1 class="text-center">Product Video</h1>
-        <div class="blog-img text-center m-5">
-            <a href="<?php echo base_url("product-category") ?>"><img src="<?php echo base_url("assets/img/blog/blog-s-1-4.png") ?>" alt="Blog Image"></a>
-            <a href="<?php echo $product['video_link']; ?>" class="play-btn popup-video"><i class="fas fa-play"></i></a>
-        </div>
-    </div> -->
 
     <div class="related-product mx-4 my-3 space-top">
         <h1 class="text-center">Related Products</h1>
@@ -78,7 +78,7 @@
                     <div class="project-style1 d-flex flex-column justify-content-center align-items-center" style="min-height:210px">
                         <div class="project-img">
                             <a href="<?php echo base_url('product-detail') ?>">
-                                <img src="<?php echo base_url('uploads/Product/' . $row['image']); ?>" class="img-fluid relatedImg" alt="Product Image">
+                                <img src="<?php echo base_url('uploads/Product/' . $row['image']); ?>" class="img-fluid relatedImg " alt="Product Image" loading="lazy">
                             </a>
                         </div>
                         <div class="project-content">
@@ -100,7 +100,7 @@
     </div>
 
     <section class="cta-Banner z-index-common space background-image m-5"
-        style="background-image: url('<?php echo base_url('assets/img/bg/cta-bg-1-1.png'); ?>');">
+        style="background-image: url('<?php echo base_url('assets/img/bg/cta-bg-1-1.png'); ?>');" loading="lazy">
 
         <div class="container">
             <div class="row text-center text-lg-start align-items-center justify-content-between">

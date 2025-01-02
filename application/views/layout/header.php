@@ -196,69 +196,7 @@
         </div>
     </div>
 
-    <!--==============================
-    Sidemenu
-============================== -->
-    <div class="sidemenu-wrapper d-none d-lg-block  ">
-        <div class="sidemenu-content">
-            <button class="closeButton sideMenuCls"><i class="far fa-times"></i></button>
-            <div class="widget  ">
-                <div class="vs-widget-about">
-                    <div class="footer-logo">
-                        <a href="<?php echo base_url() ?>"><img src="<?php echo base_url() ?>assets/img/logo.png"
-                                alt="Crezvatic" class="logo"></a>
-                    </div>
-                    <p class="footer-text">Intrinsicly evisculate emerging cutting edge scenarios redefine future-proof
-                        e-markets demand line</p>
-                    <div class="footer-social">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-behance"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="widget  ">
-                <h4 class="widget_title">Gallery Posts</h4>
-                <div class="sidebar-gallery">
-                    <div class="gallery-thumb">
-                        <img src="<?php echo base_url() ?>assets/img/widget/gal-1-1.png" alt="Gallery Image"
-                            class="w-100">
-                    </div>
-                    <div class="gallery-thumb">
-                        <img src="<?php echo base_url() ?>assets/img/widget/gal-1-2.png" alt="Gallery Image"
-                            class="w-100">
-                    </div>
-                    <div class="gallery-thumb">
-                        <img src="<?php echo base_url() ?>assets/img/widget/gal-1-3.png" alt="Gallery Image"
-                            class="w-100">
-                    </div>
-                    <div class="gallery-thumb">
-                        <img src="<?php echo base_url() ?>assets/img/widget/gal-1-4.png" alt="Gallery Image"
-                            class="w-100">
-                    </div>
-                    <div class="gallery-thumb">
-                        <img src="<?php echo base_url() ?>assets/img/widget/gal-1-5.png" alt="Gallery Image"
-                            class="w-100">
-                    </div>
-                    <div class="gallery-thumb">
-                        <img src="<?php echo base_url() ?>assets/img/widget/gal-1-6.png" alt="Gallery Image"
-                            class="w-100">
-                    </div>
-                </div>
-            </div>
-            <div class="widget  ">
-                <h3 class="widget_title">Office Maps</h3>
-                <div class="footer-map">
-                    <iframe title="office location map"
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d163720.11965853968!2d8.496481908353967!3d50.121347879150306!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47bd096f477096c5%3A0x422435029b0c600!2sFrankfurt%2C%20Germany!5e0!3m2!1sen!2sbd!4v1651732317319!5m2!1sen!2sbd"
-                        width="200" height="180" style="border:0;" allowfullscreen="" loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade"></iframe>
-                </div>
-            </div>
-        </div>
-    </div>
+
     <!--==============================
         Header Area
     ==============================-->

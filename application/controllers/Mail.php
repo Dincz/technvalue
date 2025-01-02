@@ -19,16 +19,16 @@ class Mail extends CI_Controller{
         $mail->isSMTP();
         $mail->Host     = 'smtp.gmail.com';
         $mail->SMTPAuth = true;
-        $mail->Username = 'aishwarya@crezvatic.com'; // Your Gmail address
-        $mail->Password = 'evas mnsr suxv ucti'; // App Password or Gmail password
+        $mail->Username = 'tabish.crezvatic@gmail.com'; // Your Gmail address
+        $mail->Password = 'jfah wugv zciw wrcx'; // App Password or Gmail password
         $mail->SMTPSecure = 'tls';  
         $mail->Port     = 587; // TLS port for Gmail
         
-        $mail->setFrom('aishwarya@crezvatic.com', 'Sender Aishwarya');
-        $mail->addReplyTo('aishwarya@crezvatic.com', 'CodexWorld');
+        $mail->setFrom('tabish.crezvatic@gmail.com', 'Sender Aishwarya');
+        $mail->addReplyTo('tabish.crezvatic@gmail.com', 'CodexWorld');
        
         // Add a recipient
-        $mail->addAddress('aishwaryapbhoir@gmail.com');
+        $mail->addAddress('tabish.crezvatic@gmail.com');
        
         // Email subject
         $mail->Subject = 'New Quote Request Submission';

@@ -1,7 +1,8 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
-class Home extends CI_Controller {
+class Home extends CI_Controller
+{
 
 	  // Constructor to load the model
 	  public function __construct() {
@@ -16,7 +17,7 @@ class Home extends CI_Controller {
 		$this->load->model('Footer_model');
 
 
-    }
+	}
 	public function index($title = NULL)
 	{
 		$data['client'] = $this->Home_model->get_client();

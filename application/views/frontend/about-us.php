@@ -2,7 +2,7 @@
 <!--==============================
     Breadcumb
 ============================== -->
-<div class="breadcumb-wrapper " data-bg-src="<?= base_url('uploads/banners/banner-1.jpg'); ?>">
+<div class="breadcumb-wrapper " data-bg-src="<?= base_url('uploads/banners/banner-1.jpg'); ?>" loading="lazy">
     <div class="container z-index-common">
         <div class="breadcumb-content">
             <h1 class="breadcumb-title">About Us</h1>
@@ -38,7 +38,7 @@
 <!--==============================
     From the Desk of Director
     ==============================-->
-<section class=" space-top space-extra-bottom" data-bg-src="assets/img/bg/testi-bg-4-1.png">
+<section class=" space-top space-extra-bottom" data-bg-src="assets/img/bg/testi-bg-4-1.png" loading="lazy">
     <div class="container  wow fadeInUp" data-wow-delay="0.2s">
         <div class="row justify-content-between align-items-center">
             <div class="col-lg-5 text-center text-lg-start">
@@ -258,7 +258,7 @@
             <?php foreach ($meet_our_expert as $moe): ?>
                 <div class="col-xl-3 team-style3">
                     <div class="team-img">
-                        <a><img src="<?= base_url('uploads/team/') . $moe['image']; ?>" alt="image"></a>
+                        <a><img src="<?= base_url('uploads/team/') . $moe['image']; ?>" alt="image" loading="lazy"></a>
                     </div>
                     <div class="team-content">
                         <h3 class="team-title"><a class="text-inherit"><?= htmlspecialchars($moe['name']); ?></a></h3>
@@ -277,94 +277,6 @@
 </section>
 <!-- Why Choose Us  -->
 
-
-
-
-<!--==============================
-    Blog Area
-    ==============================-->
-<!-- <section class="vs-blog-wrapper space-top space-extra-bottom">
-        <div class="container  wow fadeInUp" data-wow-delay="0.2s">
-            <div class="row justify-content-center text-center">
-                <div class="col-xl-6">
-                    <div class="title-area">
-                        <span class="sec-subtitle">Weekly Updates</span>
-                        <h2 class="sec-title3 h1">Weekly Latest Updates</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="row vs-carousel" data-slide-show="3" data-md-slide-show="2">
-                <div class="col-xl-4">
-                    <div class="vs-blog blog-style1">
-                        <div class="blog-img">
-                            <img src="assets/img/blog/blog-1-1.png" alt="Blog Image" class="w-100">
-                            <div class="blog-content">
-                                <div class="blog-meta">
-                                    <a href="blog.html"><i class="far fa-calendar"></i>24 Feb, 2022</a>
-                                    <a href="blog.html"><i class="fal fa-user"></i>by admin</a>
-                                </div>
-                                <h3 class="blog-title h5"><a href="blog-details.html">Contrary to popular belief ipsum
-                                        is not simply </a></h3>
-                                <a href="blog-details.html" class="link-btn">Read Details<i
-                                        class="far fa-arrow-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-4">
-                    <div class="vs-blog blog-style1">
-                        <div class="blog-img">
-                            <img src="assets/img/blog/blog-1-4.png" alt="Blog Image" class="w-100">
-                            <div class="blog-content">
-                                <div class="blog-meta">
-                                    <a href="blog.html"><i class="far fa-calendar"></i>30 Mar, 2022</a>
-                                    <a href="blog.html"><i class="fal fa-user"></i>by admin</a>
-                                </div>
-                                <h3 class="blog-title h5"><a href="blog-details.html">Lorem ipsum placeholder text
-                                        commonly used</a></h3>
-                                <a href="blog-details.html" class="link-btn">Read Details<i
-                                        class="far fa-arrow-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-4">
-                    <div class="vs-blog blog-style1">
-                        <div class="blog-img">
-                            <img src="assets/img/blog/blog-1-2.png" alt="Blog Image" class="w-100">
-                            <div class="blog-content">
-                                <div class="blog-meta">
-                                    <a href="blog.html"><i class="far fa-calendar"></i>31 Jul, 2022</a>
-                                    <a href="blog.html"><i class="fal fa-user"></i>by admin</a>
-                                </div>
-                                <h3 class="blog-title h5"><a href="blog-details.html">From its medieval to the digital
-                                        learn everything</a></h3>
-                                <a href="blog-details.html" class="link-btn">Read Details<i
-                                        class="far fa-arrow-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-4">
-                    <div class="vs-blog blog-style1">
-                        <div class="blog-img">
-                            <img src="assets/img/blog/blog-1-3.png" alt="Blog Image" class="w-100">
-                            <div class="blog-content">
-                                <div class="blog-meta">
-                                    <a href="blog.html"><i class="far fa-calendar"></i>26 Aug, 2022</a>
-                                    <a href="blog.html"><i class="fal fa-user"></i>by admin</a>
-                                </div>
-                                <h3 class="blog-title h5"><a href="blog-details.html">Global Business Goal Make Life
-                                        Easy From Tech</a></h3>
-                                <a href="blog-details.html" class="link-btn">Read Details<i
-                                        class="far fa-arrow-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> -->
 
 
 <?php $this->load->view('layout/footer'); ?>
