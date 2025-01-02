@@ -30,8 +30,14 @@
                 <label for="service_full_description">Full Description:</label>
                 <textarea id="content" style="height:150px;" name="service_full_description"
                     class="form-control"><?php echo $service->service_full_description; ?></textarea>
-                    
+
             </div>
+            <div class="form-group">
+                <label for="seo_url">SEO Url:</label>
+                <input id="content" name="seo_url"
+                    value="<?php echo $service->seo_url; ?>" required class="form-control"></input>
+            </div>
+
             <div class="form-group">
                 <label for="service_image">Service Image:</label>
                 <input type="file" name="service_image" class="form-control-file">

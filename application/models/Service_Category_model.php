@@ -19,7 +19,7 @@ class Service_Category_model extends CI_Model
 
     public function get_service_by_id($s_id)
     {
-        $this->db->where('s_id', $s_id);
+        $this->db->where('seo_url', $s_id);
         $query = $this->db->get('services');
         return $query->row_array();
     }

@@ -37,10 +37,10 @@
                             <div class="service-icon"><img  src="<?= base_url('uploads/icons/') . $service['service_icon'];  ?>"
                                     alt="service-icon" style="max-width: 73%;"></div>
                             <h3 class="service-title h5"><a
-                                    href="<?= base_url('service-details/' . $service['s_id']); ?>"><?= $service['service_title']; ?></a>
+                                    href="<?= base_url('service-details/' . $service['seo_url']); ?>"><?= $service['service_title']; ?></a>
                             </h3>
                             <p class="service-text"><?= $service['service_short_description']; ?></p>
-                            <a href="<?= base_url('service-details/' . $service['s_id']); ?>" class="vs-btn style3">Read More<i
+                            <a href="<?= base_url('service-details/' . $service['seo_url']); ?>" class="vs-btn style3">Read More<i
                                     class="far fa-long-arrow-right"></i></a>
                         </div>
                     </div>
