@@ -3,66 +3,41 @@
 <!--==============================
     Hero Area
     ==============================-->
-<section class="  ">
+    <section>
     <div class="vs-carousel hero-layout4" data-slide-show="1" data-fade="true" data-arrows="true"
         data-prev-arrow="far fa-arrow-up" data-next-arrow="far fa-arrow-down">
-        <div>
-            <div class="hero-bg" loading="lazy" data-bg-src="assets/img/hero/hero-4-1.png"></div>
-            <!-- <div class="hero-img"><img src="assets/img/hero/hero-4-1-1.png" alt="hero"></div> -->
-            <div class="hero-shape1"></div>
-            <div class="hero-inner">
-                <div class="hero-shape2"><img src="assets/img/hero/hero-shape-4-1.png" alt="bg shape" loading="lazy"></div>
-                <div class="container">
-                    <div class="hero-content">
-                        <span class="hero-subtitle">We Make Your Company Brighter</span>
-                        <h1 class="hero-title">Online Business</h1>
-                        <h1 class="hero-title2">Solution For You</h1>
-                        <div class="hero-btns">
-                            <a href="#" id="quoteBtn" class="vs-btn style7">Get In Touch</a>
-                            <!-- <a href="blog.html" class="vs-btn style10 mobile-white">Learn More</a> -->
+
+        <?php foreach ($banners as $banner): ?>
+            <div class="position-relative ">
+                <!-- Background Image -->
+                <div class="hero-bg" style="background-image: url('<?php echo base_url('uploads/banners/' . $banner['image']); ?>');">                </div>
+                <div class="HomeOverlay"></div>
+                <!-- Optional Image in the Hero Section -->
+                <?php if (!empty($banner['image'])): ?>
+                    <div class="hero-img">
+                        <!-- <img src="<?php echo base_url('uploads/banners/' . $banner['image']); ?>" alt="hero"> -->
+                    </div>
+                <?php endif; ?>
+
+                <div class="hero-shape1"></div>
+                <div class="hero-inner">
+                    <div class="hero-shape2">
+                        <img src="assets/img/hero/hero-shape-4-1.png" alt="bg shape">
+                    </div>
+                    <div class="container">
+                        <div class="hero-content">
+                            <!-- <span class="hero-subtitle"><?php echo htmlspecialchars($banner['slogan']); ?></span> -->
+                            <h1 class="hero-title "><?php echo htmlspecialchars($banner['slogan']); ?></h1>
+                            <h1 class="hero-title2"><?php echo htmlspecialchars($banner['subtitle']); ?></h1>
+                            <div class="hero-btns">
+                                <a href="" class="vs-btn style7">Get In Touch</a>
+                                <!-- <a href="blog.html" class="vs-btn style10 mobile-white">Learn More</a> -->
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div>
-            <div class="hero-bg" data-bg-src="assets/img/hero/hero-4-2.png" loading="lazy"></div>
-            <div class="hero-img"><img src="assets/img/hero/hero-4-1-2.png" alt="hero" loading="lazy"></div>
-            <div class="hero-shape1"></div>
-            <div class="hero-inner">
-                <div class="hero-shape2"><img src="assets/img/hero/hero-shape-4-1.png" loading="lazy" alt="bg shape"></div>
-                <div class="container">
-                    <div class="hero-content">
-                        <span class="hero-subtitle">We Make Your Company Digital</span>
-                        <h1 class="hero-title">Grow Business</h1>
-                        <h1 class="hero-title2">Support For You</h1>
-                        <div class="hero-btns">
-                            <a href="about" class="vs-btn style7">Get In Touch</a>
-                            <a href="blog.html" class="vs-btn style10 mobile-white">Learn More</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div>
-            <div class="hero-bg" data-bg-src="assets/img/hero/hero-4-3.png" loading="lazy"></div>
-            <div class="hero-img"><img src="assets/img/hero/hero-4-1-3.png" alt="hero" loading="lazy"></div>
-            <div class="hero-shape1"></div>
-            <div class="hero-inner">
-                <div class="hero-shape2"><img src="assets/img/hero/hero-shape-4-1.png" loading="lazy" alt="bg shape"></div>
-                <div class="container">
-                    <div class="hero-content">
-                        <span class="hero-subtitle">We Make Your Company Success</span>
-                        <h1 class="hero-title">Digital Store</h1>
-                        <h1 class="hero-title2">Provider For You</h1>
-                        <div class="hero-btns">
-                            <a href="about" class="vs-btn style7">Get In Touch</a>
-                            <a href="blog.html" class="vs-btn style10 mobile-white">Learn More</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <?php endforeach; ?>
     </div>
 </section>
 <!-- <div class="big-name d-none d-xxl-block">Crezvatic</div>    -->

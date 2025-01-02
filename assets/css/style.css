@@ -538,7 +538,22 @@ h6 {
 	}
 }
 
+
+.HomeOverlay{
+	background-color: #000;
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	z-index: 1;
+	opacity: .2;
+
+}
+
 /* home page whats new section  */
+
+
 .whatsNew .home .tab {
 	overflow: hidden;
 	border: 1px solid #ccc;
