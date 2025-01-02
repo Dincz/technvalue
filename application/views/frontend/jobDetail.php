@@ -1,7 +1,7 @@
 <?php $this->load->view('layout/header') ?>
 
 
-<div class="breadcumb-wrapper" data-bg-src="<?= base_url('uploads/banners/') . $banner['image']; ?>">
+<div class="breadcumb-wrapper" data-bg-src="<?= base_url('uploads/banners/') . $banner['image']; ?>" loading="lazy">
 
     <div class="container z-index-common">
         <div class="breadcumb-content">

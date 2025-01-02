@@ -1,4 +1,4 @@
-<div class="breadcumb-wrapper" data-bg-src="<?= base_url('uploads/banners/') . $banner['image']; ?>">
+<div class="breadcumb-wrapper" data-bg-src="<?= base_url('uploads/banners/') . $banner['image']; ?>" loading="lazy">
     <div class="container z-index-common">
         <div class="breadcumb-content">
             <h1 class="breadcumb-title">Gallery Category</h1>
@@ -12,7 +12,7 @@
     </div>
 </div>
 <section class="space-top space-extra-bottom background-image"
-    style="background-image: url(&quot;assets/img/bg/sr-bg-1-1.png&quot;);">
+    style="background-image: url(&quot;assets/img/bg/sr-bg-1-1.png&quot;);" loading="lazy">
     <div class="container">
         <div class="row justify-content-center text-center">
             <div class="col-lg-8 col-xl-6 wow fadeInUp wow-animated" data-wow-delay="0.2s"
@@ -29,7 +29,7 @@
                     <div class="card h-100 border-0 rounded-3 overflow-hidden position-relative gallery-item"
                         style="transition: all 0.3s ease;">
                         <div class="card-img background-image ratio ratio-4x3"
-                            style="background-image: url('<?php echo base_url('uploads/gallery/All_images/' . $item['background_image']); ?>');">
+                            style="background-image: url('<?php echo base_url('uploads/gallery/All_images/' . $item['background_image']); ?>');" loading="lazy">
                         </div>
                         <div class="card-img-overlay d-flex flex-column justify-content-end p-4 text-white"
                             style="background-color: rgba(0, 0, 0, 0.1); transition: background-color 0.3s ease;">

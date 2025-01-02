@@ -7,11 +7,11 @@
     <div class="vs-carousel hero-layout4" data-slide-show="1" data-fade="true" data-arrows="true"
         data-prev-arrow="far fa-arrow-up" data-next-arrow="far fa-arrow-down">
         <div>
-            <div class="hero-bg" data-bg-src="assets/img/hero/hero-4-1.png"></div>
+            <div class="hero-bg" loading="lazy" data-bg-src="assets/img/hero/hero-4-1.png"></div>
             <!-- <div class="hero-img"><img src="assets/img/hero/hero-4-1-1.png" alt="hero"></div> -->
             <div class="hero-shape1"></div>
             <div class="hero-inner">
-                <div class="hero-shape2"><img src="assets/img/hero/hero-shape-4-1.png" alt="bg shape"></div>
+                <div class="hero-shape2"><img src="assets/img/hero/hero-shape-4-1.png" alt="bg shape" loading="lazy"></div>
                 <div class="container">
                     <div class="hero-content">
                         <span class="hero-subtitle">We Make Your Company Brighter</span>
@@ -26,11 +26,11 @@
             </div>
         </div>
         <div>
-            <div class="hero-bg" data-bg-src="assets/img/hero/hero-4-2.png"></div>
-            <div class="hero-img"><img src="assets/img/hero/hero-4-1-2.png" alt="hero"></div>
+            <div class="hero-bg" data-bg-src="assets/img/hero/hero-4-2.png" loading="lazy"></div>
+            <div class="hero-img"><img src="assets/img/hero/hero-4-1-2.png" alt="hero" loading="lazy"></div>
             <div class="hero-shape1"></div>
             <div class="hero-inner">
-                <div class="hero-shape2"><img src="assets/img/hero/hero-shape-4-1.png" alt="bg shape"></div>
+                <div class="hero-shape2"><img src="assets/img/hero/hero-shape-4-1.png" loading="lazy" alt="bg shape"></div>
                 <div class="container">
                     <div class="hero-content">
                         <span class="hero-subtitle">We Make Your Company Digital</span>
@@ -45,11 +45,11 @@
             </div>
         </div>
         <div>
-            <div class="hero-bg" data-bg-src="assets/img/hero/hero-4-3.png"></div>
-            <div class="hero-img"><img src="assets/img/hero/hero-4-1-3.png" alt="hero"></div>
+            <div class="hero-bg" data-bg-src="assets/img/hero/hero-4-3.png" loading="lazy"></div>
+            <div class="hero-img"><img src="assets/img/hero/hero-4-1-3.png" alt="hero" loading="lazy"></div>
             <div class="hero-shape1"></div>
             <div class="hero-inner">
-                <div class="hero-shape2"><img src="assets/img/hero/hero-shape-4-1.png" alt="bg shape"></div>
+                <div class="hero-shape2"><img src="assets/img/hero/hero-shape-4-1.png" loading="lazy" alt="bg shape"></div>
                 <div class="container">
                     <div class="hero-content">
                         <span class="hero-subtitle">We Make Your Company Success</span>
@@ -82,7 +82,7 @@
                         <?php if (!empty($whats_new)): ?>
                             <?php foreach ($whats_new as $new_item): ?>
                                 <img src="<?php echo base_url('uploads/services/' . $new_item['w_image']); ?>"
-                                    alt="<?php echo $new_item['w_title']; ?>" class="img-fluid mb-3 w-100">
+                                    alt="<?php echo $new_item['w_title']; ?>" class="img-fluid mb-3 w-100" loading="lazy">
                                 <h6 class="m-0"><?php echo $new_item['w_title']; ?></h6>
                                 <p class="m-0"><strong><?php echo $new_item['w_description']; ?></strong></p>
                                 <hr>
@@ -90,7 +90,7 @@
                         <?php else: ?>
                             <p>No updates available.</p>
                         <?php endif; ?>
-                        <!-- <a href="<?php echo base_url().'product-category/1'?>" class="btn view-all-btn">View All</a> -->
+                        <!-- <a href="<?php echo base_url() . 'product-category/1' ?>" class="btn view-all-btn">View All</a> -->
                     </div>
                 </div>
             </div>
@@ -120,12 +120,12 @@
                                 Experience: <?php echo $job->experience; ?><br>
                                 Location: <?php echo $job->location; ?>
                             </p>
-                            <a href="<?php echo base_url().'job-detail/'.$job->page_name; ?>" class="text-danger">Read More »</a>
+                            <a href="<?php echo base_url() . 'job-detail/' . $job->page_name; ?>" class="text-danger">Read More »</a>
                             <hr>
                         <?php
                         }
                         ?>
-                         <div class="bottom-0 position-absolute mb-4">
+                        <div class="bottom-0 position-absolute mb-4">
                             <a href="<?php echo base_url() ?>career" class="btn view-all-btn ">View All</a>
                         </div>
                     </div>
@@ -146,6 +146,8 @@
                 </div>
 
             </div>
+            <!-- Include Swiper CSS (Ensure this is in your <head> section or before the swiper initialization) -->
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.css" />
 
             <!-- Section 3: Aimil Updates (Slider) -->
             <div class="col-md-4 col-12 mb-4 whatsNew">
@@ -156,13 +158,9 @@
                             <div class="swiper-wrapper">
                                 <?php if (!empty($technical_updates)): ?>
                                     <?php foreach ($technical_updates as $update): ?>
-                                        <?php if ($update['status'] == 1): // Display only active updates 
-                                        ?>
+                                        <?php if ($update['status'] == 1): ?>
                                             <div class="swiper-slide">
-                                                <!-- Dynamically display the update image -->
-                                                <img src="<?php echo base_url('uploads/services/' . $update['u_image']); ?>"
-                                                    alt="No Image Found <?php echo $update['u_id']; ?>">
-                                                <!-- Display the update description -->
+                                                <img src="<?php echo base_url('uploads/services/' . $update['u_image']); ?>" alt="No Image Found <?php echo $update['u_id']; ?>">
                                                 <strong><?php echo $update['u_title']; ?></strong>
                                                 <p><?php echo $update['u_description']; ?></p>
                                             </div>
@@ -172,12 +170,17 @@
                                     <p>No updates available.</p>
                                 <?php endif; ?>
                             </div>
-                            <!-- Pagination for numbers -->
                             <div class="swiper-pagination"></div>
                         </div>
                     </div>
                 </div>
             </div>
+
+            <!-- Swiper Initialization -->
+
+
+
+
 
         </div>
     </div>
@@ -194,21 +197,21 @@
                 <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
                     <div class="card h-100 shadow-lg border-0 rounded overflow-hidden">
                         <div class="card-img-top position-relative">
-                            <img src="<?php echo base_url('uploads/Product/' . htmlspecialchars($product['image'])); ?>" 
-                                 alt="<?php echo htmlspecialchars($product['p_name']); ?>" 
-                                 class="img-fluid w-100">
+                            <img src="<?php echo base_url('uploads/Product/' . htmlspecialchars($product['image'])); ?>"
+                                alt="<?php echo htmlspecialchars($product['p_name']); ?>"
+                                class="img-fluid w-100" loading="lazy">
                         </div>
                         <div class="card-body text-center">
                             <h5 class="card-title mb-2 text-dark">
-                                <a href="<?php base_url()?>product-detail/<?php echo urlencode($product['p_id']); ?>" 
-                                   class="text-decoration-none fw-bold">
+                                <a href="<?php base_url() ?>product-detail/<?php echo urlencode($product['p_id']); ?>"
+                                    class="text-decoration-none fw-bold">
                                     <?php echo htmlspecialchars($product['p_name']); ?>
                                 </a>
                             </h5>
                         </div>
                         <div class="card-footer bg-white text-center">
-                            <a href="<?php base_url()?>product-detail/<?php echo $product['p_id']; ?>" 
-                               class="btn btn-outline-primary btn-sm">
+                            <a href="<?php base_url() ?>product-detail/<?php echo $product['p_id']; ?>"
+                                class="btn btn-outline-primary btn-sm">
                                 Read Details <i class="far fa-arrow-right ms-1"></i>
                             </a>
                         </div>
@@ -225,21 +228,21 @@
                 <div class="item">
                     <div class="card h-100 shadow-lg border-0 rounded overflow-hidden">
                         <div class="card-img-top position-relative">
-                            <img src="<?php echo base_url('uploads/Product/' . htmlspecialchars($product['image'])); ?>" 
-                                 alt="<?php echo htmlspecialchars($product['p_name']); ?>" 
-                                 class="img-fluid w-100">
+                            <img src="<?php echo base_url('uploads/Product/' . htmlspecialchars($product['image'])); ?>"
+                                alt="<?php echo htmlspecialchars($product['p_name']); ?>"
+                                class="img-fluid w-100" loading="lazy">
                         </div>
                         <div class="card-body text-center">
                             <h5 class="card-title mb-2 text-dark">
-                                <a href="<?php base_url()?>product-detail/<?php echo urlencode($product['p_id']); ?>" 
-                                   class="text-decoration-none fw-bold">
+                                <a href="<?php base_url() ?>product-detail/<?php echo urlencode($product['p_id']); ?>"
+                                    class="text-decoration-none fw-bold">
                                     <?php echo htmlspecialchars($product['p_name']); ?>
                                 </a>
                             </h5>
                         </div>
                         <div class="card-footer bg-white text-center">
-                            <a href="<?php base_url()?>product-detail/<?php echo $product['p_id']; ?>" 
-                               class="btn btn-outline-primary btn-sm">
+                            <a href="<?php base_url() ?>product-detail/<?php echo $product['p_id']; ?>"
+                                class="btn btn-outline-primary btn-sm">
                                 Read Details <i class="far fa-arrow-right ms-1"></i>
                             </a>
                         </div>
@@ -250,28 +253,7 @@
     </div>
 </section>
 
-<!-- Owl Carousel Initialization -->
-<script>
-    $(document).ready(function(){
-        $(".owl-carousel").owlCarousel({
-            loop: true,
-            margin: 15,
-            nav: false,
-            dots: true,
-            responsive: {
-                0: {
-                    items: 1
-                },
-                600: {
-                    items: 2
-                },
-                1000: {
-                    items: 3
-                }
-            }
-        });
-    });
-</script>
+
 
 
 
@@ -283,10 +265,11 @@
     <div class="owl-carousel" id="brandslide1">
         <?php if (!empty($client)): ?>
             <?php foreach ($client as $clients): ?>
-                <?php if ($clients['status'] == 1): // Check if the (client) is active ?>
+                <?php if ($clients['status'] == 1): // Check if the (client) is active 
+                ?>
                     <div class="vs-brand1">
                         <!-- Dynamically load image from the array -->
-                        <img src="<?php echo base_url('uploads/brand/' . $clients['image']); ?>" alt="Client Logo">
+                        <img src="<?php echo base_url('uploads/brand/' . $clients['image']); ?>" alt="Client Logo" loading="lazy">
                     </div>
                 <?php endif; ?>
             <?php endforeach; ?>
@@ -298,34 +281,7 @@
 
 
 
-<!-- blogs section started here  -->
 
-<!-- <section class="vs-blog-wrapper space-top space-extra-bottom">
-    <div class="container">
-        <div class="title-area text-center wow fadeInUp" data-wow-delay="0.2s">
-            <h2 class="sec-title4">Blog</h2>
-        </div>
-        <div class="row vs-carousel wow fadeInUp" data-wow-delay="0.4s" data-slide-show="3" data-md-slide-show="2">
-        <div class="col-md-6 col-lg-4 vs-blog blog-style3">
-                <div class="blog-body ">
-                    <div class="blog-img rounded">
-                        <a href="blog-details.html"><img src="assets/img/blog/blog-5-1.png" alt="Blog Image"
-                                class="w-100"></a>
-                    </div>
-                    <div class="blog-content">
-                        <div class="blog-meta">
-                            <a href="blog.html"><i class="far fa-folder"></i>Develop</a>
-                            <a href="blog.html"><i class="fal fa-user"></i>David Smith</a>
-                        </div>
-                        <h3 class="blog-title h5"><a href="blog-details.html">Getting Improve Your Startup Growing
-                                Business Ides</a></h3>
-                        <a href="blog-details.html" class="link-btn">Read More<i class="far fa-arrow-right"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div> 
-    </div>
-</section> -->
 
 <section class="vs-blog-wrapper space-top space-extra-bottom">
     <div class="container">
@@ -333,13 +289,13 @@
             <!-- <span class="sec-subtitle2">Blog & News</span> -->
             <h2 class="sec-title4">Blogs</h2>
         </div>
-        <div class="row  vs-carousel wow fadeInUp" data-wow-delay="0.4s" data-slide-show="3" data-md-slide-show="2"    data-xs-dots="true" data-sm-dots="true">
+        <div class="row  vs-carousel wow fadeInUp" data-wow-delay="0.4s" data-slide-show="3" data-md-slide-show="2" data-xs-dots="true" data-sm-dots="true">
             <?php foreach ($blog as $blog): ?>
                 <div class="col-md-6 col-lg-4">
                     <div class="vs-blog blog-style1">
                         <div class="blog-img">
                             <img src="<?= base_url('uploads/blog/') . $blog['blog_small_image']; ?>" alt="Blog Image"
-                                class="w-100">
+                                class="w-100" loading="lazy">
                         </div>
                         <div class="blog-content">
                             <div class="blog-meta">
@@ -414,7 +370,7 @@
 
     <div class="container overflow-hidden px-xxl-0">
         <div class="row vs-carousel" data-slide-show="4" data-ml-slide-show="3" data-lg-slide-show="3"
-            data-md-slide-show="2" id="projectslide1"    data-xs-dots="true" data-sm-dots="true">
+            data-md-slide-show="2" id="projectslide1" data-xs-dots="true" data-sm-dots="true">
 
             <?php foreach ($gallery_items as $item): ?>
                 <div class="col-xl-3">
@@ -424,7 +380,7 @@
                                 <img src="<?php echo base_url('uploads/gallery/All_images/' . $item['background_image']); ?>"
                                     alt="project"
                                     class="img-fluid w-100 h-100 rounded"
-                                    style="object-fit: cover;">
+                                    style="object-fit: cover;" loading="lazy">
                             </div>
                             <div class="project-shape"></div>
                         </div>
@@ -458,23 +414,6 @@
 
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 <script>
-    var swiper = new Swiper('.swiper-container', {
-        slidesPerView: 1, // Show one slide at a time
-        pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
-            renderBullet: function(index, className) {
-                return '<span class="' + className + '">' + (index + 1) + '</span>'; // Show numbers
-            },
-        },
-        autoplay: {
-            delay: 3000,
-            disableOnInteraction: false,
-        },
-    });
-</script>
-
-<script>
     function openTab(evt, tabName) {
         var i, tabcontent, tablinks;
 
@@ -498,3 +437,26 @@
     // Set default tab to be active
     document.getElementsByClassName("tablinks")[0].click();
 </script>
+
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js"></script>
+            <script>
+                var swiper = new Swiper('.swiper-container', {
+                    slidesPerView: 1,
+                    spaceBetween: 10,
+                    pagination: {
+                        el: '.swiper-pagination',
+                        clickable: true,
+                        renderBullet: function(index, className) {
+                            return '<span class="' + className + '">' + (index + 1) + '</span>';
+                        },
+                    },
+                    autoplay: {
+                        delay: 3000,
+                        disableOnInteraction: false,
+                    },
+                    loop: true
+                });
+            </script>

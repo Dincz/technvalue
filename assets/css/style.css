@@ -19158,3 +19158,35 @@ select {
 .resizetitile {
 	font-size: 10px;
 }
+
+/* Product detail page limiting height */
+
+
+.limiting-height {
+	max-height: 450px;
+}
+
+/* Update homepage slider */
+.swiper-container {
+	width: 100%;
+	overflow: hidden;
+}
+
+.swiper-wrapper {
+	display: flex;
+}
+
+.swiper-slide {
+	text-align: center;
+	font-size: 18px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.swiper-slide img {
+	width: 100%;
+	height: auto;
+	max-height: 200px;
+}
