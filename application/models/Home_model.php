@@ -115,8 +115,6 @@ class Home_model extends CI_Model
 
         return $hierarchical_data;
     }
-<<<<<<< HEAD
-=======
 
     public function get_work_culture_desc()
     {
@@ -126,5 +124,4 @@ class Home_model extends CI_Model
         $query = $this->db->get();
         return $query->row(); // Assuming there's only one active row
     }
->>>>>>> d51813c37ba2065912ac505658e310b4cba9c4e2
 }

@@ -91,7 +91,6 @@
                             <p>No updates available.</p>
                         <?php endif; ?>
                         <!-- <a href="<?php echo base_url() . 'product-category/1' ?>" class="btn view-all-btn">View All</a> -->
-                        <!-- <a href="<?php echo base_url() . 'product-category/1' ?>" class="btn view-all-btn">View All</a> -->
                     </div>
                 </div>
             </div>
@@ -114,7 +113,7 @@
                     <div id="aimilShows" class="tabcontent p-5">
                         <?php
                         foreach ($jobs as $job) {
-                            ?>
+                        ?>
                             <p class="m-0 fw-semibold recolor">Title: <?php echo $job->title; ?></p>
                             <p class="m-0 recolor">
                                 <strong>Department: <?php echo $job->department; ?></strong><br>
@@ -123,10 +122,9 @@
                             </p>
                             <a href="<?php echo base_url() . 'job-detail/' . $job->page_name; ?>" class="text-danger">Read More »</a>
                             <hr>
-                            <?php
+                        <?php
                         }
                         ?>
-                        <div class="bottom-0 position-absolute mb-4">
                         <div class="bottom-0 position-absolute mb-4">
                             <a href="<?php echo base_url() ?>career" class="btn view-all-btn ">View All</a>
                         </div>
@@ -153,7 +151,6 @@
 
             <!-- Section 3: Aimil Updates (Slider) -->
             <div class="col-md-4 col-12 mb-4 whatsNew">
-
                 <div class="card py-5">
                     <div class="card-body">
                         <h5 class="section-title">Technovalue Updates</h5>
@@ -188,24 +185,6 @@
         </div>
     </div>
 </section>
-<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-
-<script>
-    var swiper = new Swiper('.swiper-container', {
-        slidesPerView: 1, // Show one slide at a time
-        pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
-            renderBullet: function (index, className) {
-                return '<span class="' + className + '">' + (index + 1) + '</span>'; // Show numbers
-            },
-        },
-        autoplay: {
-            delay: 3000,
-            disableOnInteraction: false,
-        },
-    });
-</script>
 <!--  new section end  -->
 
 <section class="container py-5">
@@ -226,15 +205,11 @@
                             <h5 class="card-title mb-2 text-dark">
                                 <a href="<?php base_url() ?>product-detail/<?php echo urlencode($product['p_id']); ?>"
                                     class="text-decoration-none fw-bold">
-                                <a href="<?php base_url() ?>product-detail/<?php echo urlencode($product['p_id']); ?>"
-                                    class="text-decoration-none fw-bold">
                                     <?php echo htmlspecialchars($product['p_name']); ?>
                                 </a>
                             </h5>
                         </div>
                         <div class="card-footer bg-white text-center">
-                            <a href="<?php base_url() ?>product-detail/<?php echo $product['p_id']; ?>"
-                                class="btn btn-outline-primary btn-sm">
                             <a href="<?php base_url() ?>product-detail/<?php echo $product['p_id']; ?>"
                                 class="btn btn-outline-primary btn-sm">
                                 Read Details <i class="far fa-arrow-right ms-1"></i>
@@ -261,15 +236,11 @@
                             <h5 class="card-title mb-2 text-dark">
                                 <a href="<?php base_url() ?>product-detail/<?php echo urlencode($product['p_id']); ?>"
                                     class="text-decoration-none fw-bold">
-                                <a href="<?php base_url() ?>product-detail/<?php echo urlencode($product['p_id']); ?>"
-                                    class="text-decoration-none fw-bold">
                                     <?php echo htmlspecialchars($product['p_name']); ?>
                                 </a>
                             </h5>
                         </div>
                         <div class="card-footer bg-white text-center">
-                            <a href="<?php base_url() ?>product-detail/<?php echo $product['p_id']; ?>"
-                                class="btn btn-outline-primary btn-sm">
                             <a href="<?php base_url() ?>product-detail/<?php echo $product['p_id']; ?>"
                                 class="btn btn-outline-primary btn-sm">
                                 Read Details <i class="far fa-arrow-right ms-1"></i>
@@ -400,7 +371,6 @@
     <div class="container overflow-hidden px-xxl-0">
         <div class="row vs-carousel" data-slide-show="4" data-ml-slide-show="3" data-lg-slide-show="3"
             data-md-slide-show="2" id="projectslide1" data-xs-dots="true" data-sm-dots="true">
-            data-md-slide-show="2" id="projectslide1" data-xs-dots="true" data-sm-dots="true">
 
             <?php foreach ($gallery_items as $item): ?>
                 <div class="col-xl-3">
@@ -429,12 +399,12 @@
 
 
 <!-- <?php
-// Output the floating button
-$buttonLink = "tel:+1234567890";
-echo '<a href="' . $buttonLink . '" class="floating-button">';
-echo '<i class="fas fa-phone"></i>';
-echo '</a>';
-?> -->
+        // Output the floating button
+        $buttonLink = "tel:+1234567890";
+        echo '<a href="' . $buttonLink . '" class="floating-button">';
+        echo '<i class="fas fa-phone"></i>';
+        echo '</a>';
+        ?> -->
 
 <!--==============================
             Footer Area
