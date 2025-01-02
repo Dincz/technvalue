@@ -81,7 +81,10 @@ class CareerController extends CI_Controller
 
         // print_r($data['content']);
         // exit;
+<<<<<<< HEAD
         $this->load->view("layout/header", $data);
+=======
+>>>>>>> d51813c37ba2065912ac505658e310b4cba9c4e2
         $this->load->view("frontend/jobDetail", $data);
         $this->load->view("layout/footer");
 

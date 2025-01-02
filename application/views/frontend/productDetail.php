@@ -4,7 +4,7 @@
     ?>
 
     <div class="breadcumb-wrapper background-image"
-       data-bg-src="<?= base_url('uploads/banners/banner-1.jpg'); ?>">
+        data-bg-src="<?= base_url('uploads/banners/banner-1.jpg'); ?>">
         <div class="container z-index-common">
             <div class="breadcumb-content">
                 <h1 class="breadcumb-title">Product Detail</h1>
@@ -21,7 +21,7 @@
             </div>
         </div>
     </div>
-    
+
     <section class="position-relative space-bottom" style="background-image: url(assets/img/bg/ab-bg-1-1.jpg);">
         <div class="container z-index-common">
             <div class="row gx-60">
@@ -71,7 +71,7 @@
     </div>
     <div class="container space-top">
         <div class="row vs-carousel" data-slide-show="3" data-lg-slide-show="3" data-md-slide-show="2"
-        data-xs-arrows="true" data-sm-arrows="true">
+            data-xs-arrows="true" data-sm-arrows="true">
             <!-- Related products can be added here similarly -->
             <?php foreach ($products as $row) { ?>
                 <div class="col-xl-4 product1">

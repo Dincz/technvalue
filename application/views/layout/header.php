@@ -129,14 +129,14 @@
                                 <?php
                                 if (isset($hierarchy) && is_array($hierarchy) && !empty($hierarchy)):
                                     foreach ($hierarchy as $category):
-                                        if (isset($category['category_name']) || isset($category['category_id'])):
-                                            ?>
+                                        if (isset($category['category_name']) || isset($category['category_seo_url'])):
+                                ?>
                                             <li class="col-12 category-item">
                                                 <!-- Category Title -->
                                                 <div class="category-title d-flex justify-content-between"
                                                     onclick="toggleCategoryDropdown(this)">
                                                     <span class="category-name text-left">
-                                                        <?php echo isset($category['category_name']) ? $category['category_name'] : 'Category ' . $category['category_id']; ?>
+                                                        <?php echo isset($category['category_name']) ? $category['category_name'] : 'Category ' . $category['category_seo_url']; ?>
                                                     </span>
                                                     <i class="fa fa-caret-down arrIcon"></i>
                                                 </div>
@@ -162,7 +162,7 @@
                                                                         <?php foreach ($subcategory['products'] as $product): ?>
                                                                             <li class="product-item">
                                                                                 <a class="text-secondary text-capitalize"
-                                                                                    href="<?php echo site_url('product-detail/' . (isset($product['product_id']) ? $product['product_id'] : '')); ?>">
+                                                                                    href="<?php echo site_url('product-detail/' . (isset($product['product_seo_url']) ? $product['product_seo_url'] : '')); ?>">
                                                                                     <?php echo isset($product['product_name']) ? $product['product_name'] : 'Product'; ?>
                                                                                 </a>
                                                                             </li>
@@ -338,13 +338,13 @@
                                                     <?php
                                                     if (isset($hierarchy) && is_array($hierarchy) && !empty($hierarchy)):
                                                         foreach ($hierarchy as $category):
-                                                            if (isset($category['category_name']) || isset($category['category_id'])):
-                                                                ?>
+                                                            if (isset($category['category_name']) || isset($category['category_seo_url'])):
+                                                    ?>
                                                                 <li class="col-3 ">
                                                                     <!-- Update the anchor link to redirect to the category page -->
-                                                                    <a href="<?php echo site_url('product-category/' . (isset($category['category_id']) ? $category['category_id'] : '')); ?>"
+                                                                    <a href="<?php echo site_url('product-category/' . (isset($category['category_seo_url']) ? $category['category_seo_url'] : '')); ?>"
                                                                         class="category-title text-capitalize">
-                                                                        <?php echo isset($category['category_name']) ? $category['category_name'] : 'Category ' . $category['category_id']; ?>
+                                                                        <?php echo isset($category['category_name']) ? $category['category_name'] : 'Category ' . $category['category_seo_url']; ?>
                                                                     </a>
                                                                     <div class="submenu-wrapper">
                                                                         <ul class="submenu custom-scrollbar initially-visible">
@@ -363,7 +363,7 @@
                                                                                             <span
                                                                                                 class="subcategory-name d-flex justify-content-between ">
                                                                                                 <a class="d-inline p-0 fw-bold text-capitalize"
-                                                                                                    href="<?php echo site_url('product-category/' . (isset($category['category_id']) ? $category['category_id'] : '') . '#subcategory-' . (isset($subcategory['subcategory_id']) ? $subcategory['subcategory_id'] : '')); ?>">
+                                                                                                    href="<?php echo site_url('product-category/' . (isset($category['category_seo_url']) ? $category['category_seo_url'] : '') .'#subcategory-' . substr(preg_replace('/[^a-zA-Z0-9_-]/', '', strtolower(str_replace(' ', '-', $subcategory['subcategory_seo_url']))), 0, 10)); ?>">
                                                                                                     <?php echo isset($subcategory['subcategory_name']) ? $subcategory['subcategory_name'] : 'Subcategory'; ?>
                                                                                                 </a>
                                                                                                 <i class="fa fa-caret-down arrIcon"
@@ -380,8 +380,9 @@
                                                                                             <ul class="products custom-scrollbar">
                                                                                                 <?php foreach ($subcategory['products'] as $product): ?>
                                                                                                     <li class="product-item">
-                                                                                                        <a class=" text-secondary text-capitalize"
-                                                                                                            href="<?php echo site_url('product-detail/' . (isset($product['product_id']) ? $product['product_id'] : '')); ?>">
+                                                                                                        <a
+                                                                                                            class=" text-secondary text-capitalize"
+                                                                                                            href="<?php echo site_url('product-detail/' . (isset($product['product_seo_url']) ? $product['product_seo_url'] : '')); ?>">
                                                                                                             <?php echo isset($product['product_name']) ? $product['product_name'] : 'Product'; ?>
                                                                                                         </a>
                                                                                                     </li>

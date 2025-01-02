@@ -57,20 +57,20 @@ $route['translate_uri_dashes'] = FALSE;
 
 //Product Routes
 $route['product-category'] = 'ProductController/productCategory';
-$route['product-category/(:num)'] = 'ProductController/productCategory/$1';
+$route['product-category/(:any)'] = 'ProductController/productCategory/$1';
 // $route['product-detail'] = 'ProductController/productDetail';
-$route['product-detail/(:num)'] = 'ProductController/productDetail/$1';
+$route['product-detail/(:any)'] = 'ProductController/productDetail/$1';
 
 //Service Route
 $route['service-category'] = 'ServiceCategory';
 // $route['service-details'] = 'ServiceDetail';
-$route['service-details/(:num)'] = 'ServiceDetail/index/$1';
+$route['service-details/(:any)'] = 'ServiceDetail/index/$1';
 $route['contact'] = 'Contact';
 $route['about-us'] = 'Aboutus';
 
 //Blog Routes
 $route['blog'] = 'BlogController/blog';
-$route['blog-details/(:num)'] = 'BlogController/blogDetail/$1';
+$route['blog-details/(:any)'] = 'BlogController/blogDetail/$1';
 
 // $route['blog-detail'] = 'BlogController/blogDetail';
 

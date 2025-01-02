@@ -1,3 +1,8 @@
+<?php
+// print_r($subcategories);
+// exit;
+?>
+
 <div class="breadcumb-wrapper" data-bg-src="<?= base_url('uploads/banners/') . $banner['image']; ?>">
     <div class="container z-index-common">
         <div class="breadcumb-content">
@@ -7,7 +12,7 @@
             <div class="breadcumb-menu-wrap">
                 <ul class="breadcumb-menu">
                     <li><a href="<?php echo base_url() ?>">Home</a></li>
-                    <li><?php echo isset($category['c_name']) ? $category['c_name'] : 'Product Category'; ?></li>
+                    <li class="currentLocation"><?php echo isset($category['c_name']) ? $category['c_name'] : 'Product Category'; ?></li>
                 </ul>
             </div>
         </div>
@@ -15,7 +20,7 @@
 </div>
 
 <div class="product-heading">
-    <h1 class="text-center my-4 text-primary text-capitalize border-bottom w-auto " >
+    <h1 class="text-center my-4 text-primary text-capitalize border-bottom w-auto ">
         <?php echo isset($category['c_name']) ? $category['c_name'] : 'Product Category Page'; ?></h1>
 </div>
 
@@ -24,7 +29,7 @@
     <?php if (isset($subcategories) && !empty($subcategories)): ?>
         <?php foreach ($subcategories as $subcategory): ?>
             <!-- Display subcategory name dynamically and add anchor link -->
-            <div id="subcategory-<?php echo $subcategory['sc_id']; ?>" class="related-product">
+            <div id="subcategory-<?php echo substr(preg_replace('/[^a-zA-Z0-9_-]/', '', strtolower(str_replace(' ', '-', $subcategory['seo_url']))), 0, 10); ?>" class="related-product">
                 <h1 class="mx-5">
                     <a href="#subcategory-<?php echo $subcategory['sc_id']; ?>" class="scroll-to-subcategory text-capitalize" style="color:black">
                         <?php echo isset($subcategory['sc_name']) ? $subcategory['sc_name'] : ' Sub Category '; ?>
@@ -48,6 +53,7 @@
             // Loop through types (including 'None' for products without a type)
             foreach ($products_by_type as $type => $products_for_type):
                 // Shortened ID using the first letter of the type and subcategory ID
+
                 $short_id = strtolower(substr($type, 0, 1)) . $subcategory['sc_id'];
             ?>
                 <!-- Only display type name if it's not 'None' -->
@@ -60,21 +66,22 @@
                     <div class="owl-carousel owl-theme" id="productsubcategory-<?php echo $short_id; ?>">
                         <?php if (!empty($products_for_type)): ?>
                             <?php foreach ($products_for_type as $product): ?>
+
                                 <div class="item">
                                     <div class="col-xl-4 product1">
                                         <div class="project-style1" style="min-height:210px">
                                             <div class="project-img">
-                                                <a href="<?php echo base_url('product-detail/' . $product['p_id']); ?>">
+                                                <a href="<?php echo base_url('product-detail/' . $product['seo_url']); ?>">
                                                     <img src="<?php echo base_url('uploads/Product/' . $product['image']); ?>" class="img-fluid" alt="Product Image">
                                                 </a>
                                             </div>
                                             <div class="project-content text-center px-0">
                                                 <h3 class="project-title h6">
-                                                    <a class="text-inherit text-capitalize" href="<?php echo base_url('product-detail/' . $product['p_id']); ?>">
+                                                    <a class="text-inherit text-capitalize" href="<?php echo base_url('product-detail/' . $product['seo_url']); ?>">
                                                         <?php echo isset($product['p_name']) ? $product['p_name'] : 'Product'; ?>
                                                     </a>
                                                 </h3>
-                                                <a href="<?php echo base_url('product-detail/' . $product['p_id']); ?>" class="vs-btn style3">
+                                                <a href="<?php echo base_url('product-detail/' . $product['seo_url']); ?>" class="vs-btn style3">
                                                     View Details<i class="far fa-arrow-right"></i>
                                                 </a>
                                             </div>
@@ -117,7 +124,7 @@
                 $('#productsubcategory-<?php echo strtolower(substr($type, 0, 1)) . $subcategory['sc_id']; ?>').owlCarousel({
                     loop: false, 
                     margin: 50, 
-                    nav: true, 
+                    nav: false, 
                     dots: true, 
                     responsive: {
                         0: {
