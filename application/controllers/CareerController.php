@@ -75,27 +75,30 @@ class CareerController extends CI_Controller
     {
         $data['title'] = $title;
         $data['content'] = $this->carrier_model->get_job_detail($data['title'] = $title);
+
         $data['banner'] = $this->Banner_model->get_banner_by_page_name('jobdetail'); // Adjust the page name as needed
         $data['hierarchy'] = $this->Home_model->get_hierarchical_data();
 
         // print_r($data['content']);
         // exit;
-<<<<<<< HEAD
         $this->load->view("layout/header", $data);
-=======
->>>>>>> 1b766a007c0a4b6589f51da5dd5e9437591c4209
         $this->load->view("frontend/jobDetail", $data);
+        $this->load->view("layout/footer");
+
+
     }
 
     public function jobApplyForm()
     {
+        $data['hierarchy'] = $this->Home_model->get_hierarchical_data();
+
         $title = $this->input->get('title'); // Get the job title from the URL query parameter
         $data['title'] = $title;
 
         $this->load->view("layout/header", $data);
-        $this->load->view("frontend/jobapplyform", $data['title']=$title);
+        $this->load->view("frontend/jobapplyform", $data['title'] = $title);
         $this->load->view("layout/footer");
     }
 
-    
+
 }
