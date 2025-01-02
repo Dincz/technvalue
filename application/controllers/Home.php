@@ -1,13 +1,15 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
-class Home extends CI_Controller {
+class Home extends CI_Controller
+{
 
-	  // Constructor to load the model
-	  public function __construct() {
-        parent::__construct();
-        // Load the Home_model
-        $this->load->model('Home_model'); 
+	// Constructor to load the model
+	public function __construct()
+	{
+		parent::__construct();
+		// Load the Home_model
+		$this->load->model('Home_model');
 		$this->load->model('carrier_model');
 		$this->load->model('Gallery_model');
 		$this->load->model('Blog_model');
@@ -15,7 +17,7 @@ class Home extends CI_Controller {
 		$this->load->model('Footer_model');
 
 
-    }
+	}
 	public function index($title = NULL)
 	{
 		$data['client'] = $this->Home_model->get_client();

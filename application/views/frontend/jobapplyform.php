@@ -71,180 +71,184 @@
                     </div>
                 <?php endif; ?>
 
-                <?php echo form_open_multipart('careers/apply', ['class' => 'needs-validation']); ?>
-                <div class="row justify-content-center">
-                    <!-- Position Applied For -->
-                    <div class="col-md-6 input-container">
-                        <label class="form-label">Position Applied For</label>
-                        <div class="input-group">
-                            <span class="input-group-text"><i class="fas fa-briefcase"></i></span>
-                            <input type="text" class="form-control" name="position"
-                                value="<?php echo isset($title) ? html_escape($title) : ''; ?>" readonly>
+                <form action="<?php echo base_url('JobApply') ?>" Method="post" enctype="multipart/form-data">
+
+                    <div class="row justify-content-center">
+                        <!-- Position Applied For -->
+                        <div class="col-md-6 input-container">
+                            <label class="form-label">Position Applied For</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="fas fa-briefcase"></i></span>
+                                <input type="text" class="form-control" name="position"
+                                    value="<?php echo isset($title) ? html_escape($title) : ''; ?>" readonly>
+                            </div>
+                        </div>
+
+                        <!-- Full Name -->
+                        <div class="col-md-6 input-container">
+                            <label class="form-label">Full Name</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                <input type="text" class="form-control" name="name"
+                                    value="<?php echo set_value('name'); ?>" required>
+                            </div>
+                        </div>
+
+                        <!-- Date of Birth -->
+                        <div class="col-md-6 input-container">
+                            <label class="form-label">Date of Birth</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="fas fa-calendar"></i></span>
+                                <input type="date" class="form-control" name="dob"
+                                    value="<?php echo set_value('dob'); ?>" required>
+                            </div>
+                        </div>
+
+                        <!-- Gender -->
+                        <div class="col-md-6 input-container">
+                            <label class="form-label">Gender</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="fas fa-venus-mars"></i></span>
+                                <select class="form-select" name="gender" required>
+                                    <option value="">Select Gender</option>
+                                    <option value="male" <?php echo set_select('gender', 'male'); ?>>Male</option>
+                                    <option value="female" <?php echo set_select('gender', 'female'); ?>>Female</option>
+                                    <option value="other" <?php echo set_select('gender', 'other'); ?>>Other</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Phone -->
+                        <div class="col-md-6 input-container">
+                            <label class="form-label">Phone Number</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="fas fa-phone"></i></span>
+                                <input type="tel" class="form-control" name="phone"
+                                    value="<?php echo set_value('phone'); ?>" required>
+                            </div>
+                        </div>
+
+                        <!-- Email -->
+                        <div class="col-md-6 input-container">
+                            <label class="form-label">Email Address</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                                <input type="email" class="form-control" name="email"
+                                    value="<?php echo set_value('email'); ?>" required>
+                            </div>
+                        </div>
+
+                        <!-- Qualification -->
+                        <div class="col-md-6 input-container">
+                            <label class="form-label">Qualification</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="fas fa-graduation-cap"></i></span>
+                                <input type="text" class="form-control" name="qualification"
+                                    value="<?php echo set_value('qualification'); ?>" required>
+                            </div>
+                        </div>
+
+                        <!-- Experience -->
+                        <div class="col-md-6 input-container">
+                            <label class="form-label">Total Experience (Years)</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="fas fa-briefcase"></i></span>
+                                <input type="number" class="form-control" name="experience"
+                                    value="<?php echo set_value('experience'); ?>" required>
+                            </div>
+                        </div>
+
+                        <!-- Current Company -->
+                        <div class="col-md-6 input-container">
+                            <label class="form-label">Current Company</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="fas fa-building"></i></span>
+                                <input type="text" class="form-control" name="current_company"
+                                    value="<?php echo set_value('current_company'); ?>" required>
+                            </div>
+                        </div>
+
+                        <!-- Designation -->
+                        <div class="col-md-6 input-container">
+                            <label class="form-label">Current Designation</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="fas fa-id-badge"></i></span>
+                                <input type="text" class="form-control" name="designation"
+                                    value="<?php echo set_value('designation'); ?>" required>
+                            </div>
+                        </div>
+
+                        <!-- Department -->
+                        <div class="col-md-6 input-container">
+                            <label class="form-label">Department</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="fas fa-sitemap"></i></span>
+                                <input type="text" class="form-control" name="department"
+                                    value="<?php echo set_value('department'); ?>">
+                            </div>
+                        </div>
+
+                        <!-- Location -->
+                        <div class="col-md-6 input-container">
+                            <label class="form-label">Current Location</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="fas fa-map-marker-alt"></i></span>
+                                <input type="text" class="form-control" name="location"
+                                    value="<?php echo set_value('location'); ?>">
+                            </div>
+                        </div>
+
+                        <!-- Current CTC -->
+                        <div class="col-md-6 input-container">
+                            <label class="form-label">Current CTC</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="fas fa-dollar-sign"></i></span>
+                                <input type="number" class="form-control" name="current_ctc"
+                                    value="<?php echo set_value('current_ctc'); ?>" required>
+                            </div>
+                        </div>
+
+                        <!-- Expected CTC -->
+                        <div class="col-md-6 input-container">
+                            <label class="form-label">Expected CTC</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="fas fa-dollar-sign"></i></span>
+                                <input type="number" class="form-control" name="expected_ctc"
+                                    value="<?php echo set_value('expected_ctc'); ?>" required>
+                            </div>
+                        </div>
+
+                        <!-- Notice Period -->
+                        <div class="col-md-6 input-container">
+                            <label class="form-label">Notice Period (Days)</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="fas fa-clock"></i></span>
+                                <input type="number" class="form-control" name="notice_period"
+                                    value="<?php echo set_value('notice_period'); ?>" required>
+                            </div>
+                        </div>
+
+                        <!-- Resume Upload -->
+                        <div class="col-md-6 input-container">
+                            <label class="form-label">Upload Resume</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="fas fa-file-upload"></i></span>
+                                <input type="file" class="form-control" name="resume" accept=".pdf,.doc,.docx" required>
+                            </div>
+                            <small class="text-muted">Accepted formats: PDF, DOC, DOCX (Max size: 5MB)</small>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <div class="col-12 text-center mt-4">
+                            <button type="submit" class="btn btn-primary px-5">
+                                Submit Application <i class="fas fa-paper-plane ms-2"></i>
+                            </button>
                         </div>
                     </div>
+                </form>
 
-                    <!-- Full Name -->
-                    <div class="col-md-6 input-container">
-                        <label class="form-label">Full Name</label>
-                        <div class="input-group">
-                            <span class="input-group-text"><i class="fas fa-user"></i></span>
-                            <input type="text" class="form-control" name="name" value="<?php echo set_value('name'); ?>"
-                                required>
-                        </div>
-                    </div>
 
-                    <!-- Date of Birth -->
-                    <div class="col-md-6 input-container">
-                        <label class="form-label">Date of Birth</label>
-                        <div class="input-group">
-                            <span class="input-group-text"><i class="fas fa-calendar"></i></span>
-                            <input type="date" class="form-control" name="dob" value="<?php echo set_value('dob'); ?>"
-                                required>
-                        </div>
-                    </div>
 
-                    <!-- Gender -->
-                    <div class="col-md-6 input-container">
-                        <label class="form-label">Gender</label>
-                        <div class="input-group">
-                            <span class="input-group-text"><i class="fas fa-venus-mars"></i></span>
-                            <select class="form-select" name="gender" required>
-                                <option value="">Select Gender</option>
-                                <option value="male" <?php echo set_select('gender', 'male'); ?>>Male</option>
-                                <option value="female" <?php echo set_select('gender', 'female'); ?>>Female</option>
-                                <option value="other" <?php echo set_select('gender', 'other'); ?>>Other</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <!-- Phone -->
-                    <div class="col-md-6 input-container">
-                        <label class="form-label">Phone Number</label>
-                        <div class="input-group">
-                            <span class="input-group-text"><i class="fas fa-phone"></i></span>
-                            <input type="tel" class="form-control" name="phone"
-                                value="<?php echo set_value('phone'); ?>" required>
-                        </div>
-                    </div>
-
-                    <!-- Email -->
-                    <div class="col-md-6 input-container">
-                        <label class="form-label">Email Address</label>
-                        <div class="input-group">
-                            <span class="input-group-text"><i class="fas fa-envelope"></i></span>
-                            <input type="email" class="form-control" name="email"
-                                value="<?php echo set_value('email'); ?>" required>
-                        </div>
-                    </div>
-
-                    <!-- Qualification -->
-                    <div class="col-md-6 input-container">
-                        <label class="form-label">Qualification</label>
-                        <div class="input-group">
-                            <span class="input-group-text"><i class="fas fa-graduation-cap"></i></span>
-                            <input type="text" class="form-control" name="qualification"
-                                value="<?php echo set_value('qualification'); ?>" required>
-                        </div>
-                    </div>
-
-                    <!-- Experience -->
-                    <div class="col-md-6 input-container">
-                        <label class="form-label">Total Experience (Years)</label>
-                        <div class="input-group">
-                            <span class="input-group-text"><i class="fas fa-briefcase"></i></span>
-                            <input type="number" class="form-control" name="experience"
-                                value="<?php echo set_value('experience'); ?>" required>
-                        </div>
-                    </div>
-
-                    <!-- Current Company -->
-                    <div class="col-md-6 input-container">
-                        <label class="form-label">Current Company</label>
-                        <div class="input-group">
-                            <span class="input-group-text"><i class="fas fa-building"></i></span>
-                            <input type="text" class="form-control" name="current_company"
-                                value="<?php echo set_value('current_company'); ?>" required>
-                        </div>
-                    </div>
-
-                    <!-- Designation -->
-                    <div class="col-md-6 input-container">
-                        <label class="form-label">Current Designation</label>
-                        <div class="input-group">
-                            <span class="input-group-text"><i class="fas fa-id-badge"></i></span>
-                            <input type="text" class="form-control" name="designation"
-                                value="<?php echo set_value('designation'); ?>" required>
-                        </div>
-                    </div>
-
-                    <!-- Department -->
-                    <div class="col-md-6 input-container">
-                        <label class="form-label">Department</label>
-                        <div class="input-group">
-                            <span class="input-group-text"><i class="fas fa-sitemap"></i></span>
-                            <input type="text" class="form-control" name="department"
-                                value="<?php echo set_value('department'); ?>">
-                        </div>
-                    </div>
-
-                    <!-- Location -->
-                    <div class="col-md-6 input-container">
-                        <label class="form-label">Current Location</label>
-                        <div class="input-group">
-                            <span class="input-group-text"><i class="fas fa-map-marker-alt"></i></span>
-                            <input type="text" class="form-control" name="location"
-                                value="<?php echo set_value('location'); ?>">
-                        </div>
-                    </div>
-
-                    <!-- Current CTC -->
-                    <div class="col-md-6 input-container">
-                        <label class="form-label">Current CTC</label>
-                        <div class="input-group">
-                            <span class="input-group-text"><i class="fas fa-dollar-sign"></i></span>
-                            <input type="number" class="form-control" name="current_ctc"
-                                value="<?php echo set_value('current_ctc'); ?>" required>
-                        </div>
-                    </div>
-
-                    <!-- Expected CTC -->
-                    <div class="col-md-6 input-container">
-                        <label class="form-label">Expected CTC</label>
-                        <div class="input-group">
-                            <span class="input-group-text"><i class="fas fa-dollar-sign"></i></span>
-                            <input type="number" class="form-control" name="expected_ctc"
-                                value="<?php echo set_value('expected_ctc'); ?>" required>
-                        </div>
-                    </div>
-
-                    <!-- Notice Period -->
-                    <div class="col-md-6 input-container">
-                        <label class="form-label">Notice Period (Days)</label>
-                        <div class="input-group">
-                            <span class="input-group-text"><i class="fas fa-clock"></i></span>
-                            <input type="number" class="form-control" name="notice_period"
-                                value="<?php echo set_value('notice_period'); ?>" required>
-                        </div>
-                    </div>
-
-                    <!-- Resume Upload -->
-                    <div class="col-md-6 input-container">
-                        <label class="form-label">Upload Resume</label>
-                        <div class="input-group">
-                            <span class="input-group-text"><i class="fas fa-file-upload"></i></span>
-                            <input type="file" class="form-control" name="resume" accept=".pdf,.doc,.docx" required>
-                        </div>
-                        <small class="text-muted">Accepted formats: PDF, DOC, DOCX (Max size: 5MB)</small>
-                    </div>
-
-                    <!-- Submit Button -->
-                    <div class="col-12 text-center mt-4">
-                        <button type="submit" class="btn btn-primary px-5">
-                            Submit Application <i class="fas fa-paper-plane ms-2"></i>
-                        </button>
-                    </div>
-                </div>
-                <?php echo form_close(); ?>
             </div>
         </div>
     </div>
