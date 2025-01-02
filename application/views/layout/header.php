@@ -126,7 +126,9 @@
                         <!-- Mega Menu with Categories -->
                         <ul class="mega-menu">
                             <div class="row">
+                                <??>
                                 <?php
+
                                 if (isset($hierarchy) && is_array($hierarchy) && !empty($hierarchy)):
                                     foreach ($hierarchy as $category):
                                         if (isset($category['category_name']) || isset($category['category_seo_url'])):

@@ -59,10 +59,13 @@ class Home_model extends CI_Model {
     public function get_hierarchical_data() {
         $this->db->select('
             c.c_id as category_id,
-            c.c_name as category_name,  
+            c.c_name as category_name,
+            c.seo_url as category_seo_url, 
             sc.sc_id as subcategory_id,
+            sc.seo_url as subcategory_seo_url,
             sc.sc_name as subcategory_name,
             p.p_id as product_id,
+            p.seo_url as product_seo_url,
             p.p_name as product_name
         ');
         $this->db->from('category c');
@@ -72,6 +75,8 @@ class Home_model extends CI_Model {
         
         $query = $this->db->get();
         $results = $query->result_array();
+
+  
         
         $hierarchical_data = [];
         
@@ -83,6 +88,7 @@ class Home_model extends CI_Model {
             if (!isset($hierarchical_data[$category_id])) {
                 $hierarchical_data[$category_id] = [
                     'category_id' => $category_id,
+                    'category_seo_url' => $row['category_seo_url'],  // Added this line
                     'category_name' => $row['category_name'],  // Added this line
                     'subcategories' => []
                 ];
@@ -92,6 +98,7 @@ class Home_model extends CI_Model {
             if ($subcategory_id && !isset($hierarchical_data[$category_id]['subcategories'][$subcategory_id])) {
                 $hierarchical_data[$category_id]['subcategories'][$subcategory_id] = [
                     'subcategory_id' => $subcategory_id,
+                    'subcategory_seo_url' => $row['subcategory_seo_url'],  // Added this line
                     'subcategory_name' => $row['subcategory_name'],
                     'products' => []
                 ];
@@ -101,11 +108,14 @@ class Home_model extends CI_Model {
             if ($row['product_id']) {
                 $hierarchical_data[$category_id]['subcategories'][$subcategory_id]['products'][] = [
                     'product_id' => $row['product_id'],
+                    'product_seo_url' => $row['product_seo_url'],  // Added this line
                     'product_name' => $row['product_name']
+                    
                 ];
             }
         }
-        
+
+
         return $hierarchical_data;
     }
 
