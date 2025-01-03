@@ -5,9 +5,9 @@
 
 <div class="breadcumb-wrapper" data-bg-src="<?= base_url('uploads/banners/') . $banner['image']; ?>" loading="lazy">
     <div class="container z-index-common">
-        <div class="breadcumb-content">
+        <div class="breadcumb-content relocating">
             <!-- Display the category name dynamically -->
-            <h1 class="breadcumb-title">
+            <h1 class="breadcumb-title currentLocation text-capitalize updatingCatcss">
                 <?php echo isset($category['c_name']) ? $category['c_name'] : 'Product Category'; ?></h1>
             <div class="breadcumb-menu-wrap">
                 <ul class="breadcumb-menu">
@@ -19,13 +19,21 @@
     </div>
 </div>
 
-<div class="product-heading">
+<!-- <nav aria-label="breadcrumb ">
+        <ol class="breadcrumb addingStyle d-none d-md-flex">
+            <li class="breadcrumb-item"><a href="#"><i class="far fa-house"></i></a></li>
+            <li class="breadcrumb-item"><a href="<?php echo base_url() . 'product-category/' . $product['c_id']; ?>" class="text-capitalize"><?php echo $product['category_seo_url'] ?></a></li>
+            <li class="breadcrumb-item active" aria-current="page"><a href="<?php echo base_url() . 'product-category/' . $product['c_id'] . '#subcategory-'  . $product['sc_id']; ?>" class="text-capitalize"><?php echo $product['subcategory_seo_url'] ?> </a></li>
+        </ol>
+    </nav> -->
+
+<!-- <div class="product-heading">
     <h1 class="text-center my-4 text-primary text-capitalize border-bottom w-auto ">
         <?php echo isset($category['c_name']) ? $category['c_name'] : 'Product Category Page'; ?></h1>
-</div>
+</div> -->
 
 
-<div class="contain">
+<div class="contain space-top">
     <?php if (isset($subcategories) && !empty($subcategories)): ?>
         <?php foreach ($subcategories as $subcategory): ?>
             <!-- Display subcategory name dynamically and add anchor link -->

@@ -8,8 +8,8 @@
 <div class="breadcumb-wrapper" data-bg-src="<?= base_url('uploads/banners/') . $banner['image']; ?>" loading="lazy">
 
     <div class="container z-index-common">
-        <div class="breadcumb-content">
-        <h1 class="breadcumb-title">Service Details</h1>
+        <div class="breadcumb-content relocating">
+        <h1 class="breadcumb-title updatingCatcss">Service Details</h1>
             <div class="breadcumb-menu-wrap ">
                 <ul class="breadcumb-menu lessing-margin">
                     <li><a href="<?= base_url()?>">Home</a></li>

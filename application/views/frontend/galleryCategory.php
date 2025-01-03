@@ -1,11 +1,11 @@
 <div class="breadcumb-wrapper" data-bg-src="<?= base_url('uploads/banners/') . $banner['image']; ?>" loading="lazy">
     <div class="container z-index-common">
-        <div class="breadcumb-content">
-            <h1 class="breadcumb-title">Gallery Category</h1>
+        <div class="breadcumb-content relocating">
+            <h1 class="breadcumb-title updatingCatcss">Gallery Category</h1>
             <div class="breadcumb-menu-wrap">
                 <ul class="breadcumb-menu">
                     <li><a href="<?php echo base_url() ?>">Home</a></li>
-                    <li>Gallery Category</li>
+                    <li class="currentLocation">Gallery Category</li>
                 </ul>
             </div>
         </div>
