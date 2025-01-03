@@ -5,29 +5,22 @@
 
     <div class="breadcumb-wrapper background-image"
         data-bg-src="<?= base_url('uploads/banners/banner-1.jpg'); ?>" loading="lazy">
-        <div class="container z-index-common">
+        <div class="container z-index-common revokenpm">
             <div class="breadcumb-content">
-                <h1 class="breadcumb-title currentLocation"><?php echo $product['p_name'] ?></h1>
+                <h1 class="breadcumb-title currentLocation text-capitalize"><?php echo $product['p_name'] ?></h1>
                 <div class="breadcumb-menu-wrap">
-                    <ul class="breadcumb-menu">
-                        <li><a href="<?php echo base_url() ?>">Home</a></li>
-                        <li><a href="<?php echo base_url() . 'product-category/' . $product['c_id']; ?>"><?php echo $product['category_seo_url'] ?></a></li>
-                        <!-- /product-category/3#subcategory-12 -->
-                        <li><a href="<?php echo base_url() . 'product-category/' . $product['c_id'] . '#subcategory-'  . $product['sc_id']; ?>"><?php echo $product['subcategory_seo_url'] ?></a></li>
-
-                    </ul>
                 </div>
             </div>
         </div>
     </div>
 
-    <style>
-        .img-responsive {
-            max-width: 100%;
-            height: auto;
-            object-fit: contain;
-        }
-    </style>
+    <nav aria-label="breadcrumb ">
+        <ol class="breadcrumb addingStyle d-none d-md-flex">
+            <li class="breadcrumb-item"><a href="#"><i class="far fa-house"></i></a></li>
+            <li class="breadcrumb-item"><a href="<?php echo base_url() . 'product-category/' . $product['c_id']; ?>" class="text-capitalize"><?php echo $product['category_seo_url'] ?></a></li>
+            <li class="breadcrumb-item active" aria-current="page"><a href="<?php echo base_url() . 'product-category/' . $product['c_id'] . '#subcategory-'  . $product['sc_id']; ?>" class="text-capitalize"><?php echo $product['subcategory_seo_url'] ?> </a></li>
+        </ol>
+    </nav>
     <section class="position-relative space-bottom" style="background-image: url(assets/img/bg/ab-bg-1-1.jpg);" loading="lazy">
         <div class="container z-index-common">
             <div class="row gx-60">
@@ -39,12 +32,12 @@
                     </div>
                 </div>
                 <div class="col-lg-6 col-xl-7 align-self-center wow fadeInUp wow-animated mt-5" data-wow-delay="0.3s">
-                    <h2 class="sec-title4 text-center"><?php echo $product['p_name']; ?></h2>
-                    <p class="mb-2 mt-1 pb-1 "><?php echo $product['description']; ?></p>
+                    <h2 class="sec-title4 text-left"><?php echo $product['p_name']; ?></h2>
+                    <p class="mb-2 mt-1 pb-1 text-start txtsizing"><?php echo $product['description']; ?></p>
 
                     <div class="principal mx-4 mt-5">
                         <!-- <h5>Brand</h5> -->
-                        <div class="d-flex ">
+                        <div class="d-flex adjustinginMobile">
                             <!-- <span class="logo_img"> <a><img src="<?php echo base_url('uploads/Brands/' . $product['brand']); ?>" alt="brand-logo"></a></span> -->
                             <div class="downbtn">
                                 <button class="vs-btn style5 mx-5">Download PDF</button>
@@ -70,7 +63,7 @@
     </div>
     <div class="container space-top">
         <div class="row vs-carousel" data-slide-show="3" data-lg-slide-show="3" data-md-slide-show="2"
-            data-xs-arrows="true" data-sm-arrows="true">
+            data-xs-arrows="false" data-sm-arrows="false" >
             <!-- Related products can be added here similarly -->
             <?php foreach ($products as $row) { ?>
                 <div class="col-xl-4 product1">
